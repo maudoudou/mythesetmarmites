@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mythes &amp; Marmites — studio d'édition &amp; de récits</title>
+<meta name="description" content="Studio d'édition et de récits de Maud Lenoir. Livres, menus, expositions, guides, faire-part : des imprimés et des histoires qui se partagent à table.">
+<link rel="icon" href="images/logo-brown.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= EN-TÊTE ================= -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="#/" aria-label="Mythes &amp; Marmites — accueil">
+      <img src="images/logo-brown.svg" alt="Mythes &amp; Marmites">
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a class="navlink" href="#/studio" data-route="studio">Le studio</a>
+      <a class="navlink" href="#/a-table" data-route="a-table">À table</a>
+      <a class="navlink" href="#/jeu" data-route="jeu">Le jeu</a>
+      <a class="btn btn--sm" href="#/contact">Parler d'un projet</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= ACCUEIL ================= -->
+<section class="page" data-page="accueil">
+
+  <div style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
+      <img src="images/loup-brown.svg" alt="" style="position:absolute;width:230px;top:60px;right:-10px">
+      <img src="images/marmite-brown.svg" alt="" style="position:absolute;width:160px;bottom:30px;right:240px">
+    </div>
+    <div class="wrap" style="padding-top:84px;padding-bottom:74px;position:relative">
+      <div class="row" style="align-items:center;gap:56px">
+        <div style="flex:1.45;min-width:320px">
+          <p class="eyebrow" style="margin-bottom:22px">Studio d'édition &amp; de récits — Maud Lenoir</p>
+          <h1 class="display" style="max-width:19ch">Des imprimés et des histoires qui se partagent à table.</h1>
+          <p class="lede" style="margin:26px 0 34px;max-width:44ch">Livres, menus, expositions, guides, faire-part&nbsp;: je fabrique les objets imprimés qui font passer un récit.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <a class="btn" href="#/studio">Voir le studio</a>
+            <a class="btn btn--ghost" href="#/a-table">Lire, cuisiner <span class="ar">→</span></a>
+          </div>
+        </div>
+        <div style="flex:1;min-width:260px;display:flex;justify-content:flex-end">
+          <div class="ph ph--r20" style="width:100%;max-width:360px;height:420px"><span>Une pile de vos imprimés, ou votre table de travail — lumière du jour</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trois portes -->
+  <div style="background:#fff;border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
+    <div class="wrap sec">
+      <h2 class="sec-title">Ce qui se fabrique ici</h2>
+      <div class="dotted"></div>
+      <div class="row rise">
+        <a href="#/studio" style="flex:1;min-width:240px;color:inherit" class="door">
+          <img class="card__ill" src="images/livre-violet.svg" alt="" style="width:96px;height:96px;object-fit:contain;margin-bottom:18px">
+          <p class="card__kicker card__kicker--violet">01 · LE STUDIO</p>
+          <h3 style="font-size:21px;font-weight:700;margin:8px 0">Vos histoires, mises en page</h3>
+          <p class="card__text" style="font-size:15.5px;margin-bottom:12px">Un livre, une exposition, une identité, une grande table à habiller&nbsp;: je dessine et je fabrique l'objet qui va avec.</p>
+          <span class="more more--violet">Voir le studio <span class="ar">→</span></span>
+        </a>
+        <a href="#/a-table" style="flex:1;min-width:240px;color:inherit" class="door">
+          <img class="card__ill" src="images/carotte-orange.svg" alt="" style="width:88px;height:96px;object-fit:contain;margin-bottom:18px">
+          <p class="card__kicker">02 · À TABLE</p>
+          <h3 style="font-size:21px;font-weight:700;margin:8px 0">Une recette, une histoire</h3>
+          <p class="card__text" style="font-size:15.5px;margin-bottom:12px">Deux fois par mois&nbsp;: un plat à faire ce soir, et le conte, le mythe ou l'album qui le suit. À lire en cuisinant.</p>
+          <span class="more">Passer à table <span class="ar">→</span></span>
+        </a>
+        <a href="#/jeu" style="flex:1;min-width:240px;color:inherit" class="door">
+          <img class="card__ill" src="images/marmite-green.svg" alt="" style="width:96px;height:96px;object-fit:contain;margin-bottom:18px">
+          <p class="card__kicker card__kicker--green">03 · LE JEU</p>
+          <h3 style="font-size:21px;font-weight:700;margin:8px 0">La Grande Tablée</h3>
+          <p class="card__text" style="font-size:15.5px;margin-bottom:12px">Un jeu de récit coopératif, à partir de 6 ans. Prototype en test, à jouer entre le plat et le dessert.</p>
+          <span class="more more--green">Voir le jeu <span class="ar">→</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deux entrées -->
+  <div class="wrap sec">
+    <h2 class="sec-title">Vos histoires, mises en page</h2>
+    <div class="dotted"></div>
+    <div class="grid grid-2 rise">
+      <div class="card">
+        <p class="card__kicker">POUR LES STRUCTURES</p>
+        <h3 style="font-size:25px;line-height:1.15;margin:12px 0 14px">Un projet à porter devant du public</h3>
+        <p class="card__text" style="font-size:15.5px;line-height:1.65;margin-bottom:22px">Un ouvrage à publier, une exposition à raconter, une saison à annoncer, un atelier à monter. Je prends le récit en amont et je vais jusqu'aux fichiers prêts à imprimer.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:11px;font-size:15px;line-height:1.5">
+          <li style="display:flex;gap:10px"><span style="color:var(--pomme);font-weight:800">·</span>Livres, albums, collections, couvertures</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--pomme);font-weight:800">·</span>Livrets et panneaux d'exposition, signalétique</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--pomme);font-weight:800">·</span>Identité, affiches, programmes, guides</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--pomme);font-weight:800">·</span>Ateliers lecture-cuisine et séances de jeu</li>
+        </ul>
+        <a class="more" style="margin-top:24px" href="#/studio">Ce que ça donne, en détail <span class="ar">→</span></a>
+      </div>
+      <div class="card">
+        <p class="card__kicker card__kicker--green">POUR LES PARTICULIERS</p>
+        <h3 style="font-size:25px;line-height:1.15;margin:12px 0 14px">Une occasion qui mérite du papier</h3>
+        <p class="card__text" style="font-size:15.5px;line-height:1.65;margin-bottom:22px">Un mariage, une naissance, un grand repas, les recettes de votre famille à réunir avant qu'elles se perdent. On dessine ça ensemble, en petite série.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:11px;font-size:15px;line-height:1.5">
+          <li style="display:flex;gap:10px"><span style="color:var(--haricot);font-weight:800">·</span>Faire-part, invitations, menus, marque-places</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--haricot);font-weight:800">·</span>Le livre de recettes de la famille</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--haricot);font-weight:800">·</span>Un souvenir imprimé, en dix exemplaires ou en cent</li>
+          <li style="display:flex;gap:10px"><span style="color:var(--haricot);font-weight:800">·</span>Un atelier chez vous, autour de la table</li>
+        </ul>
+        <a class="more more--green" style="margin-top:24px" href="#/contact">Racontez-moi l'occasion <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec" style="text-align:center">
+    <p class="lede lede--big" style="max-width:20ch;margin:0 auto">« Que reste-t-il des histoires que l'on se racontait&nbsp;? »</p>
+    <p class="eyebrow eyebrow--mute" style="margin-top:24px;letter-spacing:.14em">Le point de départ de Mythes &amp; Marmites</p>
+  </div>
+
+  <!-- Dernières parutions -->
+  <div style="background:var(--encre);color:var(--lait)">
+    <div class="wrap sec">
+      <div class="between" style="margin-bottom:42px">
+        <div>
+          <p class="eyebrow eyebrow--or" style="margin-bottom:12px">Sur la table cette semaine</p>
+          <h2 class="sec-title">Trois plats, trois histoires</h2>
+        </div>
+        <a class="btn btn--ghost-light" href="#/a-table">Tout lire <span class="ar">→</span></a>
+      </div>
+      <div class="grid grid-3" id="home-latest"></div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="panel panel--pomme" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:30px;padding:64px 56px">
+      <img class="panel__ill" src="images/marmite-cream.svg" alt="" style="right:34px;bottom:-10px;width:200px;opacity:.9">
+      <div style="position:relative;max-width:560px">
+        <h2 class="h2" style="color:var(--lait)">Un livre, une identité, un atelier&nbsp;?</h2>
+        <p class="serif" style="font-size:20px;color:rgba(248,245,244,.9);margin-top:16px">Racontez-moi le projet — même en trois lignes, même s'il est encore flou.</p>
+      </div>
+      <a class="btn btn--light" style="position:relative;font-size:17px;padding:17px 32px" href="#/contact">Parler d'un projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LE STUDIO ================= -->
+<section class="page hide" data-page="studio">
+  <div class="wrap" style="padding-top:78px">
+    <div class="row" style="gap:52px;align-items:flex-start;margin-bottom:70px">
+      <div style="flex:1.5;min-width:330px">
+        <p class="eyebrow eyebrow--violet" style="margin-bottom:18px">Le studio · Maud Lenoir</p>
+        <h1 style="font-size:clamp(36px,4.6vw,54px);line-height:1.03;max-width:20ch">Je fabrique des livres, des jeux et des tables qui parlent.</h1>
+        <p class="lede" style="font-size:22px;margin:20px 0 24px;max-width:44ch">Studio d'édition et de récits. Terrain&nbsp;: la littérature jeunesse, la cuisine, la transmission.</p>
+        <p class="body" style="max-width:60ch;margin-bottom:16px">Je travaille pour des maisons d'édition, des lieux qui reçoivent du public, des équipes qui montent un projet — et pour des familles qui veulent garder une trace de quelque chose. Toujours de la même façon&nbsp;: on part d'un récit, on cherche l'objet juste, on l'imprime bien.</p>
+        <p class="body" style="max-width:60ch">Et je continue de lire&nbsp;: j'entre en master de recherche en littérature d'enfance et de jeunesse. Ce que j'y trouve revient dans ce que je publie ici.</p>
+      </div>
+      <div class="card" style="flex:1;min-width:250px">
+        <img class="card__ill" src="images/candide-violet.svg" alt="" style="width:120px;margin-bottom:24px">
+        <p class="card__kicker" style="color:var(--encre-55)">EN DEUX LIGNES</p>
+        <div style="font-size:15px;line-height:1.8;color:rgba(83,71,65,.8);margin-top:14px">
+          <div>Livres et objets imprimés</div>
+          <div>Identités, affiches, signalétique</div>
+          <div>Jeux et outils de récit</div>
+          <div>Ateliers d'écriture et de cuisine</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Qui suis-je -->
+    <div class="card rise" style="padding:0;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden;margin-bottom:70px">
+      <div style="flex:1;min-width:280px;min-height:420px;display:flex">
+        <div class="ph ph--fill"><span>Portrait — vous, en train de travailler ou de cuisiner</span></div>
+      </div>
+      <div style="flex:1.25;min-width:300px;padding:46px">
+        <p class="card__kicker">QUI SUIS-JE&nbsp;?</p>
+        <p class="serif" style="font-size:30px;line-height:1.3;margin:14px 0 22px;max-width:24ch">J'ai grandi entre une bibliothèque et une cuisine, et je n'ai jamais vraiment choisi.</p>
+        <p class="body" style="font-size:16px;margin-bottom:16px">Maud Lenoir. J'ai appris à dessiner des livres, puis à les faire imprimer, puis à les faire lire à voix haute. Ce qui m'intéresse n'est pas l'objet pour l'objet&nbsp;: c'est le moment où quelqu'un l'ouvre et se met à raconter.</p>
+        <p class="body" style="font-size:16px;margin-bottom:26px">Alors je fais les deux&nbsp;: je mets en pages les histoires des autres, et j'écris les miennes — un jeu, un carnet de recettes, des contes remis sur la table.</p>
+        <div style="display:flex;gap:26px;flex-wrap:wrap;font-size:14px;color:rgba(83,71,65,.6)">
+          <span>Basée en France</span><span>Micro-entreprise</span><span>Déplacements possibles</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Comment on peut travailler ensemble</h2>
+    <div class="dotted"></div>
+    <div class="grid grid-3 rise" style="margin-bottom:70px">
+      <div class="card">
+        <img class="card__ill" src="images/livre-orange.svg" alt="" style="width:64px;height:64px;object-fit:contain;margin-bottom:20px">
+        <p class="card__kicker">IMPRIMÉ</p>
+        <h3 style="font-size:20px;font-weight:700;margin:10px 0">Livres &amp; objets à lire</h3>
+        <p class="card__text" style="font-size:15px;line-height:1.65">Albums, collections, couvertures, livrets, menus, faire-part. Je vais jusqu'aux fichiers prêts pour l'imprimeur et je suis le tirage.</p>
+      </div>
+      <div class="card">
+        <img class="card__ill" src="images/marmite-green.svg" alt="" style="width:64px;height:64px;object-fit:contain;margin-bottom:20px">
+        <p class="card__kicker card__kicker--green">EN VRAI</p>
+        <h3 style="font-size:20px;font-weight:700;margin:10px 0">Ateliers &amp; interventions</h3>
+        <p class="card__text" style="font-size:15px;line-height:1.65">Séances de lecture-cuisine, atelier d'écriture, partie de jeu animée. Devant une classe, une famille, ou trente personnes debout.</p>
+      </div>
+      <div class="card">
+        <img class="card__ill" src="images/loup-violet.svg" alt="" style="width:64px;height:64px;object-fit:contain;margin-bottom:20px">
+        <p class="card__kicker card__kicker--violet">IDENTITÉ</p>
+        <h3 style="font-size:20px;font-weight:700;margin:10px 0">Se reconnaître au premier coup d'œil</h3>
+        <p class="card__text" style="font-size:15px;line-height:1.65">Logo, couleurs, affiches, panneaux, guides de visite — pour ceux qui préfèrent le fait main au gabarit.</p>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Quelques projets</h2>
+    <div class="dotted dotted--pomme"></div>
+    <div class="grid grid-2 rise" style="gap:22px;margin-bottom:22px">
+      <div>
+        <div class="ph" style="height:380px"><span>Projet — double page ou couverture, à plat</span></div>
+        <h3 style="font-size:18px;font-weight:700;margin-top:16px">Titre du projet</h3>
+        <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px">Ce qu'on m'a demandé, ce que j'ai fait, ce que ça a donné — trois lignes suffisent.</p>
+      </div>
+      <div>
+        <div class="ph" style="height:380px"><span>Projet — affiche, panneau, ou table dressée</span></div>
+        <h3 style="font-size:18px;font-weight:700;margin-top:16px">Titre du projet</h3>
+        <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px">Ce qu'on m'a demandé, ce que j'ai fait, ce que ça a donné.</p>
+      </div>
+    </div>
+    <div class="grid grid-3 rise" style="gap:22px;margin-bottom:70px">
+      <div><div class="ph" style="height:230px"><span>Détail — papier, typographie, façonnage</span></div><p class="small" style="margin-top:12px">Un détail de fabrication</p></div>
+      <div><div class="ph" style="height:230px"><span>Un atelier en cours — mains, papier, tablier</span></div><p class="small" style="margin-top:12px">Un atelier en cours</p></div>
+      <div><div class="ph" style="height:230px"><span>Papeterie d'occasion — menus, marque-places</span></div><p class="small" style="margin-top:12px">Papeterie d'une grande table</p></div>
+    </div>
+
+    <div class="panel panel--ink rise" style="margin-bottom:56px">
+      <img class="panel__ill" src="images/livre-cream.svg" alt="" style="right:44px;bottom:-18px;width:170px;opacity:.12">
+      <p class="eyebrow eyebrow--or" style="position:relative;margin-bottom:18px">Ce que je cherche en ce moment</p>
+      <p class="serif" style="font-size:30px;line-height:1.35;max-width:30ch;margin-bottom:30px;position:relative">Ce qu'on mange dans les livres pour enfants&nbsp;: une enquête en cours.</p>
+      <p class="on-ink" style="font-size:16px;line-height:1.7;max-width:62ch;margin-bottom:30px;position:relative">Master de recherche en littérature d'enfance et de jeunesse. Je suis la nourriture d'un livre à l'autre&nbsp;: la faim dans les contes, le banquet comme fin heureuse, le partage comme épreuve. Ce qui se raconte bien part dans <em>À table</em>, sous l'étiquette <em>Notes de lecture</em> — sans jargon, juste ce qui se dit à table.</p>
+      <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="#/a-table?cat=notes">Lire les notes de lecture <span class="ar">→</span></a>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
+      <p class="serif" style="font-size:24px;max-width:34ch">Un livre, une identité, un atelier&nbsp;?</p>
+      <a class="btn" href="#/contact">Parler d'un projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= À TABLE ================= -->
+<section class="page hide" data-page="a-table">
+  <div class="wrap" style="padding-top:78px">
+    <p class="eyebrow" style="margin-bottom:18px">À table · deux fois par mois</p>
+    <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et l'histoire qui va avec.</h1>
+    <p class="lede" style="max-width:48ch;margin:18px 0 40px">On cuisine d'abord — le récit se lit en marge, pendant que ça mijote.</p>
+
+    <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
+    <div class="dotted dotted--full" style="margin:34px 0 40px;opacity:.22"></div>
+
+    <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
+    <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
+    <nav class="pager" id="pager" aria-label="Pages"></nav>
+    <div style="height:40px"></div>
+  </div>
+</section>
+
+<!-- ================= ARTICLE ================= -->
+<section class="page hide" data-page="article">
+  <div class="wrap" style="padding-top:56px" id="article"></div>
+</section>
+
+<!-- ================= LE JEU ================= -->
+<section class="page hide" data-page="jeu">
+  <div class="wrap" style="padding-top:78px">
+    <p class="eyebrow eyebrow--green" style="margin-bottom:18px">Le jeu · La Grande Tablée</p>
+    <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:18ch">Une marmite, des cartes, et toute une tablée.</h1>
+    <p class="lede" style="max-width:48ch;margin:18px 0 30px">Un jeu de récit coopératif&nbsp;: on cuisine des histoires autant qu'on les raconte. Aujourd'hui prototype, joué en famille comme en salle.</p>
+    <p class="badge" style="margin-bottom:50px"><span class="badge__dot"></span> Prototype — pas encore en vente. Je cherche un éditeur et des tables pour le tester.</p>
+
+    <div class="grid grid-4" style="margin-bottom:56px">
+      <div class="stat"><p class="stat__n" style="color:var(--pomme)">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
+      <div class="stat"><p class="stat__n" style="color:var(--haricot)">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
+      <div class="stat"><p class="stat__n" style="color:var(--reverie)">45 min</p><p class="stat__l">une partie, le temps d'un repas</p></div>
+      <div class="stat"><p class="stat__n">48</p><p class="stat__l">cartes-contes dessinées à la main</p></div>
+    </div>
+
+    <div class="row" style="gap:48px;align-items:flex-start;margin-bottom:70px">
+      <div style="flex:1.4;min-width:320px">
+        <h2 class="sec-title" style="font-size:28px;margin-bottom:26px">Dans la boîte</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="images/livre-orange.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none">
+            <div><h3 style="font-size:17px;font-weight:700">48 cartes-contes</h3><p class="card__text">Un héros par carte, du conte populaire au mythe — et une amorce de recette.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="images/marmite-green.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none">
+            <div><h3 style="font-size:17px;font-weight:700">Le plateau-marmite</h3><p class="card__text">On y mijote les histoires, on y dépose les ingrédients du récit.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="images/poule-rousse-violet.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none">
+            <div><h3 style="font-size:17px;font-weight:700">Le carnet de recettes-récits</h3><p class="card__text">Pour garder une trace des histoires inventées et les rapporter chez soi.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel--or" style="flex:1;min-width:280px;align-self:stretch">
+        <h2 class="serif" style="font-size:26px;margin-bottom:20px">Le tour de jeu</h2>
+        <ol style="padding-left:22px;font-size:15.5px;line-height:1.9">
+          <li>On tire une carte-conte.</li>
+          <li>Le héros pose sa question à la tablée.</li>
+          <li>Chacun ajoute un ingrédient&nbsp;: un souvenir, un goût, une suite.</li>
+          <li>On mijote l'histoire ensemble…</li>
+          <li>…et on la note pour la rapporter.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Pourquoi ce jeu existe</h2>
+    <div class="dotted"></div>
+    <div class="row rise" style="margin-bottom:60px">
+      <div class="pillar">
+        <p class="eyebrow" style="letter-spacing:.14em;margin-bottom:12px">Le constat</p>
+        <p class="body" style="font-size:16px">Les écrans captent l'attention des plus jeunes, et les histoires que l'on se transmettait à table s'effacent. Le repas, lui, reste l'un des derniers moments où l'on se retrouve vraiment.</p>
+      </div>
+      <div class="pillar pillar--green">
+        <p class="eyebrow eyebrow--green" style="letter-spacing:.14em;margin-bottom:12px">Le pari</p>
+        <p class="body" style="font-size:16px">Mêler contes, mythes et cuisine pour redonner aux familles l'envie — et les mots — de se raconter, d'une génération à l'autre.</p>
+      </div>
+      <div class="pillar pillar--violet">
+        <p class="eyebrow eyebrow--violet" style="letter-spacing:.14em;margin-bottom:12px">Ce que ça change</p>
+        <p class="body" style="font-size:16px">Des moments de partage retrouvés, un lien intergénérationnel ravivé, et un rapport plus joyeux et plus conscient à l'alimentation.</p>
+      </div>
+    </div>
+
+    <!-- Carrousel photos -->
+    <div class="rail rise" style="margin-bottom:14px">
+      <div class="ph ph--r20" style="width:520px;height:360px"><span>Une partie en cours — mains, cartes, plateau</span></div>
+      <div class="ph ph--r20" style="width:340px;height:360px"><span>Les cartes-contes étalées</span></div>
+      <div class="ph ph--r20" style="width:340px;height:360px"><span>Détail du plateau-marmite</span></div>
+      <div class="ph ph--r20" style="width:340px;height:360px"><span>Le carnet ouvert, écrit à la main</span></div>
+    </div>
+    <p class="small" style="margin-bottom:60px">Faites glisser pour voir la suite</p>
+
+    <div class="panel panel--ink rise" style="margin-bottom:56px">
+      <img class="panel__ill" src="images/asterix-cream.svg" alt="" style="right:40px;bottom:-20px;width:180px;opacity:.12">
+      <p class="eyebrow eyebrow--or" style="position:relative;margin-bottom:18px">Où en est le jeu</p>
+      <p class="serif" style="font-size:30px;line-height:1.35;max-width:26ch;margin-bottom:34px;position:relative">Il se construit avec celles et ceux qui le testent.</p>
+      <div class="grid grid-3" style="position:relative;gap:26px">
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Fait</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">48 cartes dessinées, règles écrites, prototype imprimé et joué en famille.</p></div>
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">En cours</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Séances de test devant du public, réglages du tour de jeu, carnet de recettes.</p></div>
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Cherche</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Un éditeur jeunesse, et des lieux prêts à accueillir une partie.</p></div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
+      <p class="serif" style="font-size:24px;max-width:34ch">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
+      <a class="btn btn--green" href="#/contact">Tester le jeu avec moi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page hide" data-page="contact">
+  <div class="wrap" style="padding:78px 40px 60px">
+    <div id="contact-form" class="row" style="gap:60px;align-items:flex-start">
+      <div style="flex:1;min-width:300px">
+        <p class="eyebrow" style="margin-bottom:18px">Parler d'un projet</p>
+        <h1 class="display" style="font-size:clamp(34px,4.4vw,52px)">Racontez-moi.</h1>
+        <p class="lede" style="font-size:22px;margin:18px 0 24px;max-width:36ch">Un livre à mettre en pages, une identité à dessiner, un atelier à monter, un grand repas à habiller — ou juste une envie d'essayer le jeu.</p>
+        <p class="body" style="font-size:15.5px;max-width:44ch;margin-bottom:30px">Je réponds sous deux jours ouvrés. Si le projet ne me correspond pas, je le dis franchement et j'essaie de vous orienter.</p>
+        <img class="card__ill" src="images/ours-boucle-dor-green.svg" alt="" style="width:190px">
+      </div>
+      <form class="card" style="flex:1;min-width:320px;padding:38px" id="form" novalidate>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <label class="field"><span class="field__l">C'est à quel sujet&nbsp;?</span>
+            <select class="select" name="sujet">
+              <option>Un livre, un objet imprimé</option>
+              <option>Une identité, des affiches</option>
+              <option>Un atelier ou une intervention</option>
+              <option>Une occasion à fêter</option>
+              <option>Essayer le jeu</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="field"><span class="field__l">Vous êtes</span><input class="input" name="nom" placeholder="Votre nom, et votre structure s'il y en a une"></label>
+          <label class="field"><span class="field__l">Votre e-mail</span><input class="input" type="email" name="email" placeholder="vous@exemple.fr"></label>
+          <label class="field"><span class="field__l">Le projet, en quelques lignes</span><textarea class="textarea" name="message" rows="5" placeholder="Ce que vous avez, ce qu'il vous manque, et pour quand."></textarea></label>
+          <button class="btn" type="submit" style="justify-content:center">Envoyer</button>
+          <p class="small" style="text-align:center;font-size:12.5px">Aperçu — aucune donnée n'est envoyée.</p>
+        </div>
+      </form>
+    </div>
+
+    <div id="contact-sent" class="hide" style="text-align:center;padding:60px 20px">
+      <img src="images/marmite-green.svg" alt="" style="width:160px;margin:0 auto 30px">
+      <p class="eyebrow eyebrow--green" style="margin-bottom:18px">C'est bien arrivé</p>
+      <h1 style="font-size:clamp(32px,4vw,48px);max-width:18ch;margin:0 auto 18px">Je vous lis, et je vous réponds.</h1>
+      <p class="lede" style="max-width:34ch;margin:0 auto 36px">Sous deux jours ouvrés. En attendant, il y a du pain qui lève par ici.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn--ink" href="#/a-table">Lire une recette</a>
+        <a class="btn btn--ghost" href="#/">Revenir à l'accueil</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= PIED ================= -->
+<footer class="foot">
+  <div class="foot__in">
+    <div style="max-width:300px">
+      <img src="images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:32px;width:auto;margin-bottom:16px">
+      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent à table.</p>
+    </div>
+    <div style="display:flex;gap:54px;flex-wrap:wrap">
+      <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
+        <a class="navlink" href="#/studio">Le studio</a>
+        <a class="navlink" href="#/a-table">À table</a>
+        <a class="navlink" href="#/jeu">Le jeu</a>
+        <a class="navlink" href="#/contact">Parler d'un projet</a>
+      </nav>
+      <div style="font-size:14px;color:rgba(248,245,244,.7);line-height:1.7">
+        <div>mythesetmarmites.fr</div>
+        <div><a href="mailto:bonjour@mythesetmarmites.fr">bonjour@mythesetmarmites.fr</a></div>
+        <div style="margin-top:10px">Illustrations&nbsp;: Christelle Louiset</div>
+        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Le récit avant la norme. »</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
