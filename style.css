@@ -353,6 +353,8 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
         padding-left:var(--gut);padding-right:var(--gut);gap:14px}
   .rail .ph{width:78vw !important;max-width:400px;aspect-ratio:4/3}
 
+  /* En-tÃªte opaque : le contenu ne fantomise plus derriÃ¨re en dÃ©filant */
+  .nav{background:var(--lait);backdrop-filter:none}
   .panel{padding:32px 26px !important;border-radius:20px}
   .panel__ill{width:118px !important;opacity:.13 !important;right:18px !important;bottom:-8px !important}
   .panel--or{padding:28px 26px}
@@ -364,6 +366,25 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
 
 @media (max-width:600px){
   body{--gut:22px}
+  /* Titres : moins de lignes bÃ¢tardes */
+  .h2{font-size:26px !important;letter-spacing:-.01em}
+  .panel .h2{font-size:27px !important}
+  .panel .serif{font-size:18px !important}
+  h3[style*="font-size:25px"]{font-size:21px !important}
+  h2[style*="font-size:28px"]{font-size:24px !important}
+  .panel .serif[style*="font-size:30px"]{font-size:22px !important;line-height:1.4 !important}
+  .card .serif[style*="font-size:30px"]{font-size:23px !important}
+  .card .serif[style*="font-size:24px"]{font-size:20px !important}
+  .panel--or .serif,.panel--or h2{font-size:22px !important}
+
+  /* Filtres : pastilles compactes, deux Ã  trois par ligne */
+  .chips{gap:8px}
+  .chip{padding:9px 14px;font-size:13px;border-width:1px}
+  .chips+.dotted{margin:22px 0 26px !important}
+
+  .tile{padding:22px}
+  .pager{gap:7px;flex-wrap:wrap}
+  .pager__b{min-width:42px;height:42px;padding:0 10px;font-size:14px}
   .grid-2,.grid-3{grid-template-columns:minmax(0,1fr)}
   .grid{gap:18px}
   .grid-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -378,9 +399,6 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
   .panel--or{padding:24px 22px}
   .stat{padding:20px}
   .stat__n{font-size:26px}
-  .chip{padding:11px 17px;font-size:13.5px}
-  .chips{gap:9px}
-  .pager__b{min-width:44px;height:44px}
   .lede{font-size:19px !important}
   .lede--big{font-size:25px !important}
   .sec-title{font-size:24px}
