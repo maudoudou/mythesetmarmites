@@ -51,8 +51,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 ::selection{background:var(--or);color:var(--encre)}
 
 .wrap{max-width:var(--main);margin:0 auto;padding:0 40px}
-.sec{padding:78px 0}
-.sec--tight{padding:0 0 78px}
+.sec{padding-top:78px;padding-bottom:78px}
+.sec--tight{padding-top:0;padding-bottom:78px}
 .hide{display:none !important}
 
 /* ---------- Type ---------- */
@@ -306,7 +306,7 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
   .nav__in{padding:14px 28px}
   .grid-3,.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .panel{padding:38px}
-  .sec{padding:56px 0}
+  .sec{padding-top:56px;padding-bottom:56px}
 }
 
 @media (max-width:820px){
@@ -338,7 +338,7 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
   /* Respiration verticale des pages */
   .page>.wrap{padding-top:44px !important}
   .page>.wrap[style*="padding-bottom:74px"]{padding-bottom:52px !important}
-  .sec{padding:46px 0}
+  .sec{padding-top:46px;padding-bottom:46px}
   .row[style*="margin-bottom:70px"],
   .grid[style*="margin-bottom:70px"],
   .card[style*="margin-bottom:70px"]{margin-bottom:46px !important}
