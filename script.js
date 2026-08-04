@@ -565,6 +565,24 @@ function route() {
 
 window.addEventListener('hashchange', route);
 
+/* ---------------------------- Menu mobile ---------------------------- */
+const burger = $('#burger');
+const navLinks = $('#nav-links');
+function closeMenu() {
+  document.body.classList.remove('menu-open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Ouvrir le menu');
+}
+burger.addEventListener('click', () => {
+  const open = !document.body.classList.contains('menu-open');
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+});
+navLinks.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+window.addEventListener('hashchange', closeMenu);
+window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
 /* ---------------------------- Formulaire ---------------------------- */
 $('#form').addEventListener('submit', e => {
   e.preventDefault();
