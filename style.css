@@ -188,7 +188,10 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 /* Cadre contenant une vraie photo : le pointillÃ© et la trame disparaissent */
 .ph.has-img{border:0;padding:0;background:none}
 .ph.has-img::before{display:none}
-.ph>img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.ph>img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;display:block}
+/* Cadre pleine hauteur : occupe toute la carte, quelle que soit la hauteur du texte */
+.ph--fill{position:absolute;inset:0}
+.card>div:has(>.ph--fill){position:relative}
 .ph--fill{width:100%;height:100%;border-radius:0;border-left:0;border-top:0;border-bottom:0}
 
 /* Carrousel horizontal */
