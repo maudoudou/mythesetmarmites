@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Mythes & Marmites — feuille de style unique
-   Studio d'édition & de récits — Maud Lenoir
+   Mythes & Marmites â€” feuille de style unique
+   Studio d'Ã©dition & de rÃ©cits â€” Maud Lenoir
    ========================================================================== */
 
 /* ---------- Polices ---------- */
@@ -20,7 +20,7 @@
   --pomme:#EB6755;   /* le conte */
   --haricot:#62B47E; /* le partage */
   --reverie:#9599EA; /* on repart */
-  --or:#F4CC71;      /* la tablée */
+  --or:#F4CC71;      /* la tablÃ©e */
   --encre-80:rgba(83,71,65,.82);
   --encre-70:rgba(83,71,65,.72);
   --encre-55:rgba(83,71,65,.55);
@@ -71,7 +71,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .small{font-size:14px;color:var(--encre-55)}
 .sec-title{font-family:var(--serif);font-style:italic;font-size:30px}
 
-/* ---------- Filet pointillé (signature) ---------- */
+/* ---------- Filet pointillÃ© (signature) ---------- */
 .dotted{
   height:3px;max-width:180px;margin:14px 0 44px;opacity:.32;
   background-image:radial-gradient(circle,var(--encre) 1.4px,transparent 1.7px);
@@ -103,14 +103,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn .ar{transition:transform .18s var(--ease)}
 .btn:hover .ar{transform:translateX(4px)}
 
-/* Lien d'action « … → » */
+/* Lien d'action Â« â€¦ â†’ Â» */
 .more{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14.5px;color:var(--pomme);cursor:pointer}
 .more .ar{transition:transform .18s var(--ease)}
 .more:hover .ar{transform:translateX(5px)}
 .more--green{color:var(--haricot)}
 .more--violet{color:var(--reverie)}
 
-/* ---------- En-tête ---------- */
+/* ---------- En-tÃªte ---------- */
 .nav{
   position:sticky;top:0;z-index:60;
   background:rgba(248,245,244,.92);backdrop-filter:blur(8px);
@@ -206,12 +206,12 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .tile--link:hover{background:rgba(248,245,244,.12);transform:translateY(-4px)}
 .tile--link:hover .card__ill{transform:rotate(-4deg) scale(1.05)}
 
-/* Colonne à filet haut */
+/* Colonne Ã  filet haut */
 .pillar{border-top:3px solid var(--pomme);padding-top:22px;flex:1;min-width:280px}
 .pillar--green{border-color:var(--haricot)}
 .pillar--violet{border-color:var(--reverie)}
 
-/* Bandeau d'état */
+/* Bandeau d'Ã©tat */
 .badge{
   display:inline-flex;align-items:center;gap:10px;background:#fff;
   border:1px solid rgba(83,71,65,.14);border-radius:999px;padding:9px 20px;
@@ -294,7 +294,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 }
 
 /* ---------- Menu mobile ---------- */
-.burger{display:none;width:44px;height:44px;margin-right:-8px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger{display:none;width:44px;height:44px;margin-right:-11px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
 .burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--encre);transition:transform .2s var(--ease),opacity .15s ease}
 body.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body.menu-open .burger span:nth-child(2){opacity:0}
@@ -310,70 +310,94 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
 }
 
 @media (max-width:820px){
+  /* Une seule gouttiÃ¨re pour tout le site : en-tÃªte, contenu, pied */
+  body{--gut:26px}
   .burger{display:flex}
-  .nav__in{padding:12px 22px}
+  .wrap,.nav__in,.foot__in,.nav__links{padding-left:var(--gut);padding-right:var(--gut)}
+  .page>.wrap{padding-left:var(--gut) !important;padding-right:var(--gut) !important}
+  .nav__in{padding-top:13px;padding-bottom:13px}
   .nav__logo img{height:30px}
   .nav__links{
     position:absolute;left:0;right:0;top:100%;
     flex-direction:column;align-items:stretch;gap:0;
     background:var(--lait);border-bottom:1px solid var(--hairline);
-    padding:0 22px;max-height:0;overflow:hidden;
+    padding-top:0;padding-bottom:0;max-height:0;overflow:hidden;
     transition:max-height .28s var(--ease),padding .28s var(--ease);
   }
-  body.menu-open .nav__links{max-height:340px;padding:10px 22px 22px}
-  .nav__links .navlink{padding:15px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--hairline-soft)}
+  body.menu-open .nav__links{max-height:360px;padding-top:8px;padding-bottom:22px}
+  .nav__links .navlink{padding:16px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--hairline-soft)}
+  .nav__links .navlink:last-of-type{border-bottom:0}
   .nav__links .navlink::after{display:none}
-  .nav__links .btn{margin-top:16px;justify-content:center;padding:14px 24px;font-size:16px}
+  .nav__links .btn{margin-top:14px;justify-content:center;padding:15px 24px;font-size:16px}
 
-  /* Colonnes empilées : on neutralise les min-width des mises en page larges */
+  /* Colonnes empilÃ©es : on neutralise les min-width des mises en page larges */
   .row>*{min-width:0 !important;flex:1 1 100% !important}
-  .row{gap:32px !important}
+  .row{gap:34px !important}
   .between{align-items:flex-start}
 
-  /* Hauteurs d'images ramenées à l'échelle du téléphone */
-  .ph{height:auto !important;min-height:0;aspect-ratio:4/3;padding:18px;font-size:12.5px}
-  .ph--fill{aspect-ratio:4/3;min-height:260px}
-  .rail .ph{width:82vw !important;max-width:420px;aspect-ratio:4/3}
+  /* Respiration verticale des pages */
+  .page>.wrap{padding-top:44px !important}
+  .page>.wrap[style*="padding-bottom:74px"]{padding-bottom:52px !important}
+  .sec{padding:46px 0}
+  .row[style*="margin-bottom:70px"],
+  .grid[style*="margin-bottom:70px"],
+  .card[style*="margin-bottom:70px"]{margin-bottom:46px !important}
 
-  .panel{padding:30px 24px !important;border-radius:20px}
-  .panel__ill{width:120px !important;opacity:.14 !important}
-  .panel--or{padding:26px 22px}
-  .card{padding:26px !important}
-  .sec{padding:48px 0}
+  /* Hauteurs d'images ramenÃ©es Ã  l'Ã©chelle du tÃ©lÃ©phone */
+  .ph{height:auto !important;min-height:0;aspect-ratio:4/3;padding:18px;font-size:12.5px}
+  .ph--fill{aspect-ratio:4/3;min-height:0}
+  .card[style*="display:flex"] .ph--fill{border-radius:0}
+
+  /* Le carrousel file jusqu'au bord, mais dÃ©marre sur la gouttiÃ¨re */
+  .rail{margin-left:calc(-1 * var(--gut));margin-right:calc(-1 * var(--gut));
+        padding-left:var(--gut);padding-right:var(--gut);gap:14px}
+  .rail .ph{width:78vw !important;max-width:400px;aspect-ratio:4/3}
+
+  .panel{padding:32px 26px !important;border-radius:20px}
+  .panel__ill{width:118px !important;opacity:.13 !important;right:18px !important;bottom:-8px !important}
+  .panel--or{padding:28px 26px}
+  .card{padding:28px !important}
+  .card[style*="padding:0"]{padding:0 !important}
+  .card>div[style*="padding:46px"]{padding:30px 26px !important}
+  .article-lead{margin-top:26px !important}
 }
 
 @media (max-width:600px){
-  .wrap{padding:0 20px !important}
-  .nav__in{padding:12px 20px}
-  .nav__links{padding:0 20px}
-  body.menu-open .nav__links{padding:10px 20px 22px}
+  body{--gut:22px}
   .grid-2,.grid-3{grid-template-columns:minmax(0,1fr)}
+  .grid{gap:18px}
   .grid-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .foot__in{padding:38px 20px;gap:28px}
+  .foot__in{padding-top:38px;padding-bottom:40px;gap:30px}
   .foot__in>div{max-width:none}
-  .foot__in>div:last-child{gap:28px}
+  .foot__in>div:last-child{gap:30px}
   .ing{grid-template-columns:1fr}
   .article-meta{gap:8px 20px;padding-bottom:26px}
-  .card{padding:22px !important;border-radius:16px}
+  .card{padding:24px !important;border-radius:16px}
+  .card--r16{padding:22px !important}
+  .panel{padding:28px 22px !important}
+  .panel--or{padding:24px 22px}
   .stat{padding:20px}
   .stat__n{font-size:26px}
   .chip{padding:11px 17px;font-size:13.5px}
   .chips{gap:9px}
   .pager__b{min-width:44px;height:44px}
   .lede{font-size:19px !important}
-  .lede--big{font-size:26px !important}
-  .sec-title{font-size:25px}
-  .display{font-size:clamp(30px,8.4vw,40px) !important}
-  .card--r16{padding:20px !important}
+  .lede--big{font-size:25px !important}
+  .sec-title{font-size:24px}
+  .display{font-size:clamp(29px,8.2vw,40px) !important}
   .recipe-step__n{font-size:18px;width:22px}
   .quote-mark{padding-left:14px}
+  .badge{padding:11px 18px;font-size:13.5px;line-height:1.45}
+  .dotted{margin-bottom:30px}
   .btn{width:100%;justify-content:center}
-  .btn--sm,.rail .btn,.more{width:auto}
-  h1,h2{overflow-wrap:break-word}
+  .nav__in>.btn--sm{width:auto}
+  .more{width:auto}
+  h1,h2,h3{overflow-wrap:break-word}
+  h1[style*="max-width"],p[style*="max-width"]{max-width:none !important}
 }
 
 @media (max-width:400px){
+  body{--gut:20px}
   .grid-4{grid-template-columns:minmax(0,1fr)}
-  .display{font-size:30px !important}
+  .display{font-size:29px !important}
 }
-
