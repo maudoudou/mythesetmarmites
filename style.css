@@ -313,7 +313,7 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
   /* Une seule gouttiÃ¨re pour tout le site : en-tÃªte, contenu, pied */
   body{--gut:26px}
   .burger{display:flex}
-  .wrap,.nav__in,.foot__in,.nav__links{padding-left:var(--gut);padding-right:var(--gut)}
+  .wrap,.nav__in,.foot__in,.nav__links{padding-left:var(--gut) !important;padding-right:var(--gut) !important}
   .page>.wrap{padding-left:var(--gut) !important;padding-right:var(--gut) !important}
   .nav__in{padding-top:13px;padding-bottom:13px}
   .nav__logo img{height:30px}
