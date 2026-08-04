@@ -493,7 +493,7 @@ function articleHTML(a) {
     <div class="article-meta"><span>${a.date}</span>${a.meta.map(m => `<span>${m}</span>`).join('')}</div>
   </div>
 
-  <div class="ph ph--r20" style="height:400px;margin:34px 0 10px"><span>${a.photo}</span></div>
+  <div class="ph ph--r20${a.img ? ' has-img' : ''}" style="height:400px;margin:34px 0 10px">${a.img ? `<img src="${a.img}" alt="${a.photo}">` : `<span>${a.photo}</span>`}</div>
 
   <div class="row" style="gap:52px;align-items:flex-start;padding-top:44px">
     <div style="flex:1.5;min-width:330px">${recipe}</div>
