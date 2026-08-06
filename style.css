@@ -157,6 +157,22 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .door h3{transition:color .15s ease}
 .door:hover .ar{transform:translateX(5px)}
 
+/* DÃ©pliage Â« voir plus Â» : filet pointillÃ© + pastille centrale */
+.disclose{display:inline-flex;align-items:center;gap:10px;flex:none;
+  border:1.5px solid rgba(83,71,65,.2);border-radius:999px;padding:10px 22px;
+  font-weight:700;font-size:14.5px;color:var(--encre);background:var(--lait);
+  transition:background .15s ease,border-color .15s ease,color .15s ease}
+.disclose:hover{background:var(--pomme);border-color:var(--pomme);color:var(--lait)}
+.disclose:active{transform:translateY(1px)}
+.disclose__ar{transition:transform .25s var(--ease)}
+.disclose:hover .disclose__ar{transform:translateY(3px)}
+.disclose[aria-expanded="true"] .disclose__ar{transform:rotate(180deg)}
+.disclose[aria-expanded="true"]:hover .disclose__ar{transform:rotate(180deg) translateY(3px)}
+.reveal{display:grid;grid-template-rows:0fr;opacity:0;overflow:hidden;
+  transition:grid-template-rows .38s var(--ease),opacity .28s ease}
+.reveal>*{min-height:0}
+.reveal.is-open{grid-template-rows:1fr;opacity:1}
+
 /* ---------- Grilles ---------- */
 .grid{display:grid;gap:24px}
 .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
