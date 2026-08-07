@@ -21,7 +21,7 @@ const ARTICLES = [
     resume: "Personne ne veut aider à moudre le grain, mais tout le monde arrive quand le pain sort du four. Un levain à quatre mains.",
     ill: 'poule-rousse-orange', date: '12 août 2026', foot: '4 à 6 parts · 12 août',
     meta: ['25 min de travail', '12 h de repos', '4 à 6 parts'],
-    photo: "Le pain fini, tranché sur la table — lumière du matin",
+    photo: 'images/photos/pain-poule-rousse.jpg',
     ing: ['500 g de farine de blé T80', '10 g de sel fin', "350 g d'eau tiède", '1 c. à s. de miel', '100 g de levain liquide', 'Un peu de son pour le linge'],
     steps: [
       "Mélangez farine et eau du bout des doigts, sans travailler. Laissez reposer 30 minutes : la farine boit toute seule.",
