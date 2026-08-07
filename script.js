@@ -478,7 +478,7 @@ function articleHTML(a) {
     </div>`;
 
   const aside = a.type === 'recette' ? `
-    <p class="card__kicker" style="color:var(--encre-55);margin-bottom:14px">EN MARGE · LE RÉCIT</p>
+    <p class="card__kicker" style="color:var(--encre-55);margin-bottom:14px">L'HISTOIRE QUI VA AVEC</p>
     ${a.recit.map((p, i) => i === 0
       ? `<p class="serif" style="font-size:19px;line-height:1.62;color:rgba(83,71,65,.86);margin-bottom:18px">${p}</p>`
       : `<p class="body" style="font-size:15.5px;margin-bottom:18px">${p}</p>`).join('')}` : `
