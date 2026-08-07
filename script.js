@@ -584,11 +584,36 @@ window.addEventListener('hashchange', closeMenu);
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
 /* ---------------------------- Formulaire ---------------------------- */
-$('#form').addEventListener('submit', e => {
+$('#form').addEventListener('submit', async e => {
   e.preventDefault();
-  $('#contact-form').classList.add('hide');
-  $('#contact-sent').classList.remove('hide');
-  window.scrollTo(0, 0);
+  const form = e.target;
+  const status = $('#form-status');
+  const btn = form.querySelector('button[type="submit"]');
+
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+
+  btn.textContent = 'Envoi…';
+  btn.disabled = true;
+  status.textContent = '';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    if (!res.ok) throw new Error('refus du serveur');
+    form.reset();
+    $('#contact-form').classList.add('hide');
+    $('#contact-sent').classList.remove('hide');
+    window.scrollTo(0, 0);
+  } catch (err) {
+    status.textContent = "L'envoi n'a pas abouti. Écrivez-moi directement à bonjour@mythesetmarmites.fr";
+    status.style.color = 'var(--pomme)';
+  } finally {
+    btn.textContent = 'Envoyer';
+    btn.disabled = false;
+  }
 });
 
 /* ---------------------------- Démarrage ---------------------------- */

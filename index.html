@@ -182,17 +182,17 @@
     </div>
 
     <div class="grid grid-3 rise" style="gap:22px;margin-bottom:34px">
-      <div><div class="ph has-img" style="height:230px"><img src="images/photos/suede-web.jpg" alt=""></div><p class="small" style="margin-top:12px">Collection carnet de voyage — Scandinavan</p></div>
-      <div><div class="ph has-img" style="height:230px"><img src="images/photos/scandi-web.jpg" alt=""></div><p class="small" style="margin-top:12px"></p></div>
-      <div><div class="ph has-img" style="height:230px"><img src="images/photos/europe-web.jpg" alt=""></div><p class="small" style="margin-top:12px"></p></div>
+      <div><div class="ph has-img" style="height:230px"><img src="images/photos/suede-web.jpg" alt="Collection carnet de voyage — Scandinavie"></div><p class="small" style="margin-top:12px">Collection carnet de voyage — Scandinavie</p></div>
+      <div><div class="ph has-img" style="height:230px"><img src="images/photos/scandi-web.jpg" alt="Collection carnet de voyage — livret Suède"></div><p class="small" style="margin-top:12px">© Maud Lenoir</p></div>
+      <div><div class="ph has-img" style="height:230px"><img src="images/photos/europe-web.jpg" alt="Collection carnet de voyage — Europe centrale"></div><p class="small" style="margin-top:12px">© Maud Lenoir</p></div>
     </div>
 
     <div class="reveal" id="rail-projets">
       <div class="rail" style="margin-bottom:12px">
-        <div class="ph ph--r20" style="width:520px;height:360px"><span>Projet — double page ou couverture, à plat</span></div>
-        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet — affiche ou panneau</span></div>
-        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet — identité, déclinaisons</span></div>
-        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet — papeterie d'événement</span></div>
+        <div class="ph ph--r20" style="width:520px;height:360px"><span>Projet à venir - site en cours de mise à jour</span></div>
+        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet à venir - site en cours de mise à jour</span></div>
+        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet à venir - site en cours de mise à jour</span></div>
+        <div class="ph ph--r20" style="width:340px;height:360px"><span>Projet à venir - site en cours de mise à jour</span></div>
       </div>
       <p class="small" style="padding-bottom:30px">Faites glisser pour voir la suite</p>
     </div>
@@ -379,7 +379,7 @@
         <p class="body" style="font-size:15.5px;max-width:44ch;margin-bottom:30px">Je réponds sous deux jours ouvrés. Si le projet ne me correspond pas, je le dis franchement et j'essaie de vous orienter.</p>
         <img class="card__ill" src="images/ours-boucle-dor-green.svg" alt="" style="width:190px">
       </div>
-      <form class="card" style="flex:1;min-width:320px;padding:38px" id="form" novalidate>
+      <form class="card" style="flex:1;min-width:320px;padding:38px" id="form" action="https://formspree.io/f/xjybkpop" method="POST">
         <div style="display:flex;flex-direction:column;gap:20px">
           <label class="field"><span class="field__l">C'est à quel sujet&nbsp;?</span>
             <select class="select" name="sujet">
@@ -391,11 +391,11 @@
               <option>Autre</option>
             </select>
           </label>
-          <label class="field"><span class="field__l">Vous êtes</span><input class="input" name="nom" placeholder="Votre nom, et votre structure s'il y en a une"></label>
-          <label class="field"><span class="field__l">Votre e-mail</span><input class="input" type="email" name="email" placeholder="vous@exemple.fr"></label>
-          <label class="field"><span class="field__l">Le projet, en quelques lignes</span><textarea class="textarea" name="message" rows="5" placeholder="Ce que vous avez, ce qu'il vous manque, et pour quand."></textarea></label>
+          <label class="field"><span class="field__l">Vous êtes</span><input class="input" name="nom" required placeholder="Votre nom, et votre structure s'il y en a une"></label>
+          <label class="field"><span class="field__l">Votre e-mail</span><input class="input" type="email" name="email" required placeholder="vous@exemple.fr"></label>
+          <label class="field"><span class="field__l">Le projet, en quelques lignes</span><textarea class="textarea" name="message" rows="5" required placeholder="Ce que vous avez, ce qu'il vous manque, et pour quand."></textarea></label>
           <button class="btn" type="submit" style="justify-content:center">Envoyer</button>
-          <p class="small" style="text-align:center;font-size:12.5px">Aperçu — aucune donnée n'est envoyée.</p>
+          <p class="small" id="form-status" style="text-align:center;font-size:12.5px">Vos coordonnées ne servent qu'à vous répondre.</p>
         </div>
       </form>
     </div>
@@ -404,7 +404,7 @@
       <img src="images/marmite-green.svg" alt="" style="width:160px;margin:0 auto 30px">
       <p class="eyebrow eyebrow--green" style="margin-bottom:18px">C'est bien arrivé</p>
       <h1 style="font-size:clamp(32px,4vw,48px);max-width:18ch;margin:0 auto 18px">Je vous lis, et je vous réponds.</h1>
-      <p class="lede" style="max-width:34ch;margin:0 auto 36px">Sous deux jours ouvrés. En attendant, il y a du pain qui lève par ici.</p>
+      <p class="lede" style="max-width:34ch;margin:0 auto 36px">Sous deux jours ouvrés. J'ai du pain sur la planche.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a class="btn btn--ink" href="#/a-table">Lire une recette</a>
         <a class="btn btn--ghost" href="#/">Revenir à l'accueil</a>
@@ -420,7 +420,7 @@
   <div class="foot__in">
     <div style="max-width:300px">
       <a href="#/" aria-label="Retour à l'accueil"><img src="images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px"></a>
-      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent à table.</p>
+      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent.</p>
     </div>
     <div style="display:flex;gap:54px;flex-wrap:wrap">
       <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
@@ -431,9 +431,9 @@
       </nav>
       <div style="font-size:14px;color:rgba(248,245,244,.7);line-height:1.7">
         <div>mythesetmarmites.fr</div>
-        <div><a href="mailto:bonjour@mythesetmarmites.fr">bonjour@mythesetmarmites.fr</a></div>
-        <div style="margin-top:10px">Illustrations&nbsp;: Christelle Louiset</div>
-        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Le récit avant la norme. »</p>
+        <div><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></div>
+        <div style="margin-top:10px">Illustrations&nbsp;: © Christelle Louiset</div>
+        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Raconter de belles histoires. »</p>
       </div>
     </div>
   </div>
