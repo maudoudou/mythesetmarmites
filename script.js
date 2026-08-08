@@ -31,7 +31,7 @@ const ARTICLES = [
       "Le matin, façonnez une boule, laissez-la reprendre une heure sur un linge fariné.",
       "Four très chaud, 240 °C, avec un ramequin d'eau. 20 minutes, puis 20 minutes à 210 °C. Le pain doit sonner creux sous les doigts."
     ],
-    enfants: "Le repliage de l'étape 2 : six gestes, six tours de parole. À chaque pli, celui qui plie ajoute une phrase à l'histoire. Le pain lève, le récit aussi.",
+    enfants: "Le repliage de l'étape 2 : six gestes, six paroles. À chaque pli, celui qui plie ajoute une phrase à l'histoire. Le pain lève, le récit aussi.",
     recit: [
       "La poule trouve un grain de blé. Elle demande : qui veut m'aider à le semer ? Le chat dort, le rat bâille, le cochon a autre chose à faire. Elle sème seule, moud seule, pétrit seule. Puis le pain sort du four, et la cuisine se remplit.",
       "On lit souvent ce conte comme une leçon sur l'effort. Il dit surtout quelque chose du travail invisible : celui qu'on ne voit qu'au moment où il devient bon à manger. Dans les versions anglaises du XIX<sup>e</sup> siècle, la poule mange le pain seule ; dans beaucoup de rééditions françaises récentes, elle partage. Le conte a changé d'avis en cent ans — ça mérite qu'on en parle à table."
@@ -64,9 +64,9 @@ const ARTICLES = [
     lectures: ['« Roule galette », Natha Caputo &amp; Pierre Belvès, Père Castor.', 'Vladimir Propp, <em>Morphologie du conte</em>, Seuil.']
   },
   {
-    slug: 'soupe-trois-maisons', cat: 'contes', type: 'recette',
+    slug: 'soupe-trois-cochons', cat: 'contes', type: 'recette',
     kicker: 'CONTE · 1 H 30', source: 'Conte · Les Trois Petits Cochons',
-    title: 'La soupe des trois maisons',
+    title: 'La soupe des trois petits cochons',
     chapeau: "Un potage de légumes racines qui tient debout, même quand le loup souffle.",
     resume: "Un potage de légumes racines qui tient debout, même quand le loup souffle.",
     ill: 'trois-petits-cochons-green', date: '3 juin 2026', foot: '6 parts · 3 juin',
