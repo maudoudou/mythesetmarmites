@@ -79,9 +79,9 @@ const ARTICLES = [
       "Couvrez d'eau à hauteur, ajoutez le thym, laissez frémir une heure à découvert.",
       "Mixez à moitié seulement : il faut que ça résiste encore un peu sous la cuillère."
     ],
-    enfants: "Souffler sur sa cuillère, très fort, comme le loup. Celui qui souffle raconte comment sa maison est construite.",
+    enfants: "Souffler sur sa cuillère, très fort, comme le loup.",
     recit: [
-      "Trois maisons, trois façons de faire : vite, à peu près, ou pour longtemps. Le conte donne raison à la lenteur — et c'est une leçon qui vaut aussi pour un bouillon.",
+      "Trois maisons, trois façons de faire : vite, à peu près, ou pour longtemps. Le conte donne raison à la lenteur : et c'est une leçon qui vaut aussi pour un bouillon.",
       "Ce qui est plus étrange, c'est la fin des versions anciennes : le loup finit dans la marmite. Le prédateur devient repas. Toute une série de contes fonctionnent comme ça : on ne gagne pas contre le loup, on l'invite malgré lui à table."
     ],
     question: "« Qu'est-ce qu'on a construit ici pour que ça dure ? »",
@@ -103,7 +103,7 @@ const ARTICLES = [
       "Versez dans un moule à cake beurré, lissez la surface à la cuillère mouillée.",
       "50 minutes à 160 °C. Attendez le lendemain pour trancher : le pain d'épices ment quand il est chaud."
     ],
-    enfants: "Ils sèment des miettes sur la table pendant que ça cuit, et retracent le chemin du retour. Puis on les mange — les miettes, pas les enfants.",
+    enfants: "Ils sèment des miettes sur la table pendant que ça cuit, et retracent le chemin du retour. Puis on les mange : les miettes, pas les enfants.",
     recit: [
       "Deux enfants perdus, une maison en gâteau, une faim qui devient piège. C'est le conte le plus alimentaire du répertoire : on y mange la maison avant que la maison ne vous mange.",
       "La disette est le vrai moteur de l'histoire. Les versions de 1812 sont d'ailleurs plus dures que celles de 1857 : c'est la mère, et non une marâtre, qui décide d'abandonner. Grimm a adouci au fil des éditions ce que ses lecteurs supportaient de moins en moins."
@@ -129,10 +129,10 @@ const ARTICLES = [
       "Déglacez au cidre, badigeonnez de miel, couvrez.",
       "2 h à 150 °C, en arrosant toutes les 20 minutes. Servez à la table entière, dans le plat de cuisson."
     ],
-    enfants: "Ce sont eux qui arrosent, toutes les vingt minutes — et qui annoncent chaque fois, à voix haute, combien de temps il reste avant le banquet.",
+    enfants: "Ce sont eux qui arrosent, toutes les vingt minutes et qui annoncent chaque fois, à voix haute, combien de temps il reste avant le banquet.",
     recit: [
       "Dans presque tous les albums d'Astérix, la dernière case est un banquet. Le village se rassemble, on partage le sanglier, et le seul exclu est celui qui ne sait pas se taire.",
-      "Ce n'est pas un gag : c'est une structure de récit très ancienne. Le festin final scelle le retour à l'ordre, comme les noces à la fin des contes. On ne raconte pas que l'aventure est finie, on la mange."
+      "C'est une structure de récit très ancienne. Le festin final scelle le retour à l'ordre, comme les noces à la fin des contes. On ne raconte pas que l'aventure est finie, on la mange."
     ],
     question: "« Qu'est-ce qu'on fête, là, exactement ? »",
     lectures: ['René Goscinny &amp; Albert Uderzo, <em>Astérix le Gaulois</em>, Dargaud.', 'Florence Dupont, <em>Le Plaisir et la loi</em>, La Découverte.']
