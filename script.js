@@ -72,19 +72,20 @@ const ARTICLES = [
     ill: 'trois-petits-cochons-green', date: '3 juin 2026', foot: '6 parts · 3 juin',
     meta: ['20 min de travail', '1 h de cuisson', '6 parts'],
     photo: "La soupe en cocotte, trois bols dépareillés",
-    ing: ['3 carottes', '2 panais', '1 céleri-rave', '1 oignon jaune', '1 c. à s. de graisse de canard', 'Un bouquet de thym'],
+    img: 'images/photos/soupe-web.jpg',
+    ing: ['3 carottes', '1 panais', '1 céleri-rave', '1 oignon jaune', '2 belles tomates', 'Un bouquet de basilic'],
     steps: [
-      "Taillez tous les légumes en gros cubes. Les enfants comptent : de la paille, du bois, de la brique.",
+      "Taillez tous les légumes en gros cubes.",
       "Faites-les colorer dans la graisse chaude, sans les remuer trop souvent.",
-      "Couvrez d'eau à hauteur, ajoutez le thym, laissez frémir une heure à découvert.",
-      "Mixez à moitié seulement : il faut que ça résiste encore un peu sous la cuillère."
+      "Couvrez d'eau à hauteur, ajoutez le basilic, laissez frémir une heure à découvert.",
+      "Mixez : il faut que ça résiste encore un peu sous la cuillère."
     ],
     enfants: "Souffler sur sa cuillère, très fort, comme le loup.",
     recit: [
       "Trois maisons, trois façons de faire : vite, à peu près, ou pour longtemps. Le conte donne raison à la lenteur : et c'est une leçon qui vaut aussi pour un bouillon.",
       "Ce qui est plus étrange, c'est la fin des versions anciennes : le loup finit dans la marmite. Le prédateur devient repas. Toute une série de contes fonctionnent comme ça : on ne gagne pas contre le loup, on l'invite malgré lui à table."
     ],
-    question: "« Qu'est-ce qu'on a construit ici pour que ça dure ? »",
+    question: "« Est-ce la soupe fait réellement grandir ?»",
     lectures: ['« Les Trois Petits Cochons », Joseph Jacobs (version de 1890).', 'Bruno Bettelheim, <em>Psychanalyse des contes de fées</em>, Pocket.']
   },
   {
