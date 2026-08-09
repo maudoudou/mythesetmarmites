@@ -48,6 +48,7 @@ const ARTICLES = [
     ill: 'roule-galette-violet', date: '1er juillet 2026', foot: '4 parts · 1er juillet',
     meta: ['15 min de travail', '15 min de cuisson', '4 parts'],
     photo: "La galette dorée sur le rebord de la fenêtre",
+    img: 'images/photos/galette-web.jpg',
     ing: ['150 g de farine de sarrasin', '100 g de farine de froment', '80 g de beurre demi-sel', '1 œuf', '2 c. à s. de crème fraîche', 'Une pincée de sucre'],
     steps: [
       "Sablez les deux farines avec le beurre froid, du bout des doigts, jusqu'à obtenir un gros sable.",
@@ -60,7 +61,7 @@ const ARTICLES = [
       "La galette s'échappe pour ne pas être mangée. Elle chante sa chanson au lièvre, au loup, à l'ours — tous se laissent distraire. Le renard, lui, fait semblant d'être sourd, et demande qu'on chante plus près.",
       "Le conte tourne autour d'une même idée : celui qui écoute vraiment est aussi celui qui mange. La chanson est une monnaie, la vanité un piège. C'est un des rares contes où le héros se perd en se racontant trop bien."
     ],
-    question: "« À qui as-tu raconté ta journée aujourd'hui ? »",
+    question: "« Quel est le plus beau moment de ta journée ? »",
     lectures: ['« Roule galette », Natha Caputo &amp; Pierre Belvès, Père Castor.', 'Vladimir Propp, <em>Morphologie du conte</em>, Seuil.']
   },
   {
@@ -97,6 +98,7 @@ const ARTICLES = [
     ill: 'hansel-et-gretel-orange', date: '20 mai 2026', foot: '8 parts · 20 mai',
     meta: ['20 min de travail', '50 min de cuisson', '8 parts'],
     photo: "Le pain d'épices démoulé, encore chaud",
+    img: 'images/photos/pain-epices-web.jpg',
     ing: ['250 g de farine de seigle', '200 g de miel de sarrasin', '10 cl de lait', '2 c. à c. de cannelle', '1 c. à c. de gingembre moulu', '1 sachet de levure chimique'],
     steps: [
       "Faites tiédir le miel avec le lait, sans bouillir.",
