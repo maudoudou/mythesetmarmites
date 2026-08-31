@@ -565,7 +565,10 @@ function route() {
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
   else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition & de récits"; }
 
-  window.scrollTo(0, 0);
+  const anchor = params.get('goto');
+  const target = anchor && document.getElementById(anchor);
+  if (target) target.scrollIntoView({ block: 'start' });
+  else window.scrollTo(0, 0);
   observeRise();
 }
 
