@@ -22,7 +22,7 @@ const ARTICLES = [
     ill: 'poule-rousse-orange', date: '12 août 2026', foot: '4 à 6 parts · 12 août',
     meta: ['25 min de travail', '12 h de repos', '4 à 6 parts'],
     photo: 'Le pain de la poule rousse, encore chaud, sur un linge',
-    img: 'images/photos/pain-poule-rousse-web.jpg',
+    img: '/images/photos/pain-poule-rousse-web.jpg',
     ing: ['500 g de farine de blé T80', '10 g de sel fin', "350 g d'eau tiède", '1 c. à s. de miel', '100 g de levain liquide', 'Un peu de son pour le linge'],
     steps: [
       "Mélangez farine et eau du bout des doigts, sans travailler. Laissez reposer 30 minutes : la farine boit toute seule.",
@@ -48,7 +48,7 @@ const ARTICLES = [
     ill: 'roule-galette-violet', date: '1er juillet 2026', foot: '4 parts · 1er juillet',
     meta: ['15 min de travail', '15 min de cuisson', '4 parts'],
     photo: "La galette dorée sur le rebord de la fenêtre",
-    img: 'images/photos/galette-web.jpg',
+    img: '/images/photos/galette-web.jpg',
     ing: ['150 g de farine de sarrasin', '100 g de farine de froment', '80 g de beurre demi-sel', '1 œuf', '2 c. à s. de crème fraîche', 'Une pincée de sucre'],
     steps: [
       "Sablez les deux farines avec le beurre froid, du bout des doigts, jusqu'à obtenir un gros sable.",
@@ -73,7 +73,7 @@ const ARTICLES = [
     ill: 'trois-petits-cochons-green', date: '3 juin 2026', foot: '6 parts · 3 juin',
     meta: ['20 min de travail', '1 h de cuisson', '6 parts'],
     photo: "La soupe en cocotte, trois bols dépareillés",
-    img: 'images/photos/soupe-web.jpg',
+    img: '/images/photos/soupe-web.jpg',
     ing: ['3 carottes', '1 panais', '1 céleri-rave', '1 oignon jaune', '2 belles tomates', 'Un bouquet de basilic'],
     steps: [
       "Taillez tous les légumes en gros cubes.",
@@ -98,7 +98,7 @@ const ARTICLES = [
     ill: 'hansel-et-gretel-orange', date: '20 mai 2026', foot: '8 parts · 20 mai',
     meta: ['20 min de travail', '50 min de cuisson', '8 parts'],
     photo: "Le pain d'épices démoulé, encore chaud",
-    img: 'images/photos/pain-epices-web.jpg',
+    img: '/images/photos/pain-epices-web.jpg',
     ing: ['250 g de farine de seigle', '200 g de miel de sarrasin', '10 cl de lait', '2 c. à c. de cannelle', '1 c. à c. de gingembre moulu', '1 sachet de levure chimique'],
     steps: [
       "Faites tiédir le miel avec le lait, sans bouillir.",
@@ -391,7 +391,7 @@ const PER_PAGE = 3;
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
   return `<a class="card card--r16 card--link" href="#/a-table/${a.slug}">
-    <img class="card__ill" src="images/${a.ill}.svg" alt="" style="width:100%;height:120px;object-fit:contain">
+    <img class="card__ill" src="/images/${a.ill}.svg" alt="" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
     <p class="card__text" style="margin-bottom:14px">${a.resume}</p>
@@ -402,7 +402,7 @@ function cardHTML(a) {
 function tileHTML(a) {
   const cream = a.ill.replace(/-(orange|green|violet|brown)$/, '-cream');
   return `<a class="tile tile--link" href="#/a-table/${a.slug}" style="color:inherit;display:block">
-    <img class="card__ill" src="images/${cream}.svg" onerror="this.onerror=null;this.src='images/${a.ill}.svg'" alt="" style="width:100%;height:110px;object-fit:contain">
+    <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt="" style="width:100%;height:110px;object-fit:contain">
     <p class="card__kicker" style="color:var(--or);margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin-top:8px">${a.title}</h3>
     <p class="card__text" style="color:rgba(248,245,244,.72);margin-top:10px">${a.resume}</p>
@@ -502,7 +502,7 @@ function articleHTML(a) {
   <div class="row" style="gap:52px;align-items:flex-start;padding-top:44px">
     <div style="flex:1.5;min-width:330px">${recipe}</div>
     <div style="flex:1;min-width:280px">
-      <img class="card__ill" src="images/${a.ill}.svg" alt="" style="width:150px;margin-bottom:26px">
+      <img class="card__ill" src="/images/${a.ill}.svg" alt="" style="width:150px;margin-bottom:26px">
       ${aside}
       <div class="quote-mark" style="margin:26px 0">
         <p class="card__kicker card__kicker--green" style="margin-bottom:8px">LA QUESTION À POSER</p>
@@ -518,7 +518,7 @@ function articleHTML(a) {
   </div>
 
   <div class="panel panel--ink" style="margin:60px 0 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:26px;padding:52px">
-    <img class="panel__ill" src="images/livre-cream.svg" alt="" style="right:44px;bottom:-16px;width:150px;opacity:.14">
+    <img class="panel__ill" src="/images/livre-cream.svg" alt="" style="right:44px;bottom:-16px;width:150px;opacity:.14">
     <div style="position:relative;max-width:520px">
       <p class="eyebrow eyebrow--or" style="margin-bottom:14px">LA PROCHAINE FOIS</p>
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>

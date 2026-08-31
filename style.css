@@ -4,14 +4,14 @@
    ========================================================================== */
 
 /* ---------- Polices ---------- */
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Light.otf') format('opentype');font-weight:300;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Regular.otf') format('opentype');font-weight:400;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Medium.otf') format('opentype');font-weight:500;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Bold.otf') format('opentype');font-weight:700;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Black.otf') format('opentype');font-weight:800;font-display:swap}
-@font-face{font-family:'IM Fell English';src:url('fonts/IMFellEnglish-Regular.ttf') format('truetype');font-style:normal;font-display:swap}
-@font-face{font-family:'IM Fell English';src:url('fonts/IMFellEnglish-Italic.ttf') format('truetype');font-style:italic;font-display:swap}
-@font-face{font-family:'Homemade Apple';src:url('fonts/HomemadeApple-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Bold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Black.otf') format('opentype');font-weight:800;font-display:swap}
+@font-face{font-family:'IM Fell English';src:url('/fonts/IMFellEnglish-Regular.ttf') format('truetype');font-style:normal;font-display:swap}
+@font-face{font-family:'IM Fell English';src:url('/fonts/IMFellEnglish-Italic.ttf') format('truetype');font-style:italic;font-display:swap}
+@font-face{font-family:'Homemade Apple';src:url('/fonts/HomemadeApple-Regular.ttf') format('truetype');font-display:swap}
 
 /* ---------- Jetons ---------- */
 :root{
