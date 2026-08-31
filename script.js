@@ -408,7 +408,7 @@ function illAttrs(name) {
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
   const tint = a.cat === 'contes' ? ' card--pomme' : a.cat === 'mythes' ? ' card--vert' : ' card--violet';
-  return `<article class="contents"><a class="card card--r16 card--link${tint}" href="/#/a-table/${a.slug}">
+  return `<article class="contents"><a class="card card--r16 card--link${tint}" href="/a-table/${a.slug}">
     <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
@@ -537,15 +537,13 @@ function articleHTML(a) {
       <p class="eyebrow eyebrow--or" style="margin-bottom:14px">LA PROCHAINE FOIS</p>
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>
     </div>
-    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/#/a-table/${next.slug}">Lire <span class="ar">→</span></a>
+    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/a-table/${next.slug}">Lire <span class="ar">→</span></a>
   </div>`;
 }
 
-/* ---------------------------- Données structurées (article) ----------------------------
-   Chaque article n'a pas encore de page statique dédiée (voir le rapport de refonte) : les
-   données BlogPosting sont donc injectées côté client quand l'article est affiché, et
-   retirées dès qu'on le quitte. Un moteur qui ne rend pas le JavaScript sur l'URL exacte
-   #/a-table/<slug> ne les verra pas ; c'est une limite connue, pas un oubli. */
+/* Conversion « 12 août 2026 » -> « 2026-08-12 » pour datePublished.
+   Utilisée par scripts/generate-article-pages.py (extrait cette fonction
+   telle quelle pour poser le JSON-LD BlogPosting de chaque page d'article). */
 const MOIS_FR = { janvier: 1, février: 2, mars: 3, avril: 4, mai: 5, juin: 6, juillet: 7, août: 8, septembre: 9, octobre: 10, novembre: 11, décembre: 12 };
 function dateFrancaiseVersISO(str) {
   const m = str.match(/(\d+)(?:er)?\s+(\S+)\s+(\d{4})/);
@@ -553,34 +551,6 @@ function dateFrancaiseVersISO(str) {
   const jour = String(m[1]).padStart(2, '0');
   const mois = String(MOIS_FR[m[2].toLowerCase()] || 1).padStart(2, '0');
   return `${m[3]}-${mois}-${jour}`;
-}
-function setArticleJsonLd(a) {
-  removeArticleJsonLd();
-  const url = `https://mythesetmarmites.fr/#/a-table/${a.slug}`;
-  const ld = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: a.title,
-    description: a.chapeau,
-    image: a.img ? `https://mythesetmarmites.fr/${a.img.replace(/^\//, '')}` : 'https://mythesetmarmites.fr/images/og-share.png',
-    datePublished: dateFrancaiseVersISO(a.date) || undefined,
-    author: { '@type': 'Person', name: 'Maud Lenoir' },
-    publisher: {
-      '@type': 'Organization', name: 'Mythes & Marmites',
-      logo: { '@type': 'ImageObject', url: 'https://mythesetmarmites.fr/images/logo-orange.svg' }
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    url
-  };
-  const tag = document.createElement('script');
-  tag.type = 'application/ld+json';
-  tag.id = 'article-jsonld';
-  tag.textContent = JSON.stringify(ld);
-  document.head.appendChild(tag);
-}
-function removeArticleJsonLd() {
-  const tag = document.getElementById('article-jsonld');
-  if (tag) tag.remove();
 }
 
 /* ---------------------------- Apparitions ---------------------------- */
@@ -594,57 +564,30 @@ function observeRise() {
 }
 
 /* ---------------------------- Routage ---------------------------- */
-/* La page racine (/) contient encore toutes les sections et le routage
-   en #/ : c'est la coquille SPA. Les pages statiques générées
-   (/studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/)
-   n'en contiennent qu'une seule : le routage ne doit pas s'y exécuter. */
+/* index.html est la coquille : elle contient toutes les sections (source de
+   generate-static-pages.py) mais n'en affiche qu'une, l'accueil. Chaque
+   route a sa vraie page à sa propre URL — /studio, /a-table, /a-table/<slug>,
+   etc. Les anciens liens en #/ y sont renvoyés côté client (le serveur ne
+   voit jamais le fragment). */
 const IS_SPA_SHELL = $$('.page').length > 1;
-
-/* Ces six routes ont désormais une vraie page, à sa propre URL
-   (voir generate-static-pages.py). Un ancien lien en #/xxx est
-   redirigé côté client vers la nouvelle URL ; la requête entière
-   (avec ?cat=... par exemple) est conservée. */
 const MIGRATED_ROUTES = ['studio', 'correction', 'a-table', 'jeu', 'parcours', 'contact'];
 
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
-  $$('.nav__links .navlink').forEach(l => l.classList.toggle('is-on', l.dataset.route === page || (page === 'article' && l.dataset.route === 'a-table')));
 }
 
-function route() {
-  const raw = (location.hash || '#/').replace(/^#\/?/, '');
+/* Renvoie un ancien lien #/… vers sa vraie URL. true si une redirection
+   a été lancée (la requête ?cat=… est conservée). */
+function redirectLegacyHash() {
+  const raw = (location.hash || '').replace(/^#\/?/, '');
+  if (!raw) return false;
   const [path, query] = raw.split('?');
   const parts = path.split('/').filter(Boolean);
-  const params = new URLSearchParams(query || '');
-
-  /* Redirection des anciennes URL en #/xxx vers les nouvelles pages. */
-  if (parts.length === 1 && MIGRATED_ROUTES.includes(parts[0])) {
-    location.replace('/' + parts[0] + (query ? '?' + query : ''));
-    return;
-  }
-
-  if (parts[0] === 'a-table' && parts[1]) {
-    const a = ARTICLES.find(x => x.slug === parts[1]);
-    if (a) { $('#article').innerHTML = articleHTML(a); show('article'); document.title = a.title + ' — Mythes & Marmites'; setArticleJsonLd(a); window.scrollTo(0, 0); observeRise(); return; }
-  }
-  removeArticleJsonLd();
-  if (parts[0] === 'a-table') {
-    const cat = params.get('cat');
-    if (cat && CATS.some(c => c.id === cat)) { state.cat = cat; state.page = 1; }
-    renderFilters(); renderList(); show('a-table');
-    document.title = 'À table : contes, mythes et recettes — Mythes & Marmites';
-  } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio, maquette d'édition jeunesse — Mythes & Marmites"; }
-  else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture jeunesse — Mythes & Marmites'; }
-  else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
-  else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu Mythes & Marmites — récit coopératif'; }
-  else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
-  else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition jeunesse, Rouen"; }
-
-  const anchor = params.get('goto');
-  const target = anchor && document.getElementById(anchor);
-  if (target) target.scrollIntoView({ block: 'start' });
-  else window.scrollTo(0, 0);
-  observeRise();
+  const q = query ? '?' + query : '';
+  if (parts[0] === 'ateliers') { location.replace('/studio'); return true; }
+  if (parts[0] === 'a-table' && parts[1]) { location.replace('/a-table/' + parts[1] + q); return true; }
+  if (parts.length === 1 && MIGRATED_ROUTES.includes(parts[0])) { location.replace('/' + parts[0] + q); return true; }
+  return false;
 }
 
 /* ---------------------------- Menu mobile ---------------------------- */
@@ -702,20 +645,24 @@ if ($('#form')) $('#form').addEventListener('submit', async e => {
 
 /* ---------------------------- Démarrage ---------------------------- */
 if (IS_SPA_SHELL) {
-  /* Coquille SPA (/) : le routage en #/ gère l'affichage. */
-  renderFilters();
-  route();
-  window.addEventListener('hashchange', route);
+  /* Coquille (/). Servie par le repli _redirects pour une URL sans
+     fichier ? on renvoie à l'accueil. Sinon on redirige un éventuel
+     ancien lien #/… puis on affiche l'accueil. */
+  const p = location.pathname.replace(/\/index\.html$/, '').replace(/(.)\/+$/, '$1');
+  if (p && p !== '/') {
+    location.replace('/');
+  } else if (!redirectLegacyHash()) {
+    show('accueil');
+    window.addEventListener('hashchange', () => { redirectLegacyHash(); });
+    observeRise();
+  }
 } else if ($('#list')) {
-  /* Page statique /a-table/ : pas de hash à router, mais la même
-     recherche de catégorie fonctionne via la vraie chaîne de requête
-     (?cat=notes) plutôt que via le hash. */
+  /* Page /a-table/ : la recherche par catégorie passe par ?cat=… */
   const cat = new URLSearchParams(location.search).get('cat');
   if (cat && CATS.some(c => c.id === cat)) state.cat = cat;
   renderFilters();
   renderList();
 } else {
-  /* Autre page statique (studio, correction, jeu, parcours, contact) :
-     contenu déjà en place, il ne reste qu'à activer les apparitions. */
+  /* Autre page statique : le contenu est déjà en place. */
   observeRise();
 }
