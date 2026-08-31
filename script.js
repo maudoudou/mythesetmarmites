@@ -577,13 +577,13 @@ function route() {
     const cat = params.get('cat');
     if (cat && CATS.some(c => c.id === cat)) { state.cat = cat; state.page = 1; }
     renderFilters(); renderList(); show('a-table');
-    document.title = 'À table — Mythes & Marmites';
-  } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio — Mythes & Marmites"; }
-  else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture — Mythes & Marmites'; }
+    document.title = 'À table : contes, mythes et recettes — Mythes & Marmites';
+  } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio, maquette d'édition jeunesse — Mythes & Marmites"; }
+  else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture jeunesse — Mythes & Marmites'; }
   else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
-  else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu — Mythes & Marmites'; }
+  else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu Mythes & Marmites — récit coopératif'; }
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
-  else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition & de récits"; }
+  else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition jeunesse, Rouen"; }
 
   const anchor = params.get('goto');
   const target = anchor && document.getElementById(anchor);
