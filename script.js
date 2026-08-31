@@ -636,7 +636,7 @@ if ($('#form')) $('#form').addEventListener('submit', async e => {
     window.scrollTo(0, 0);
   } catch (err) {
     status.textContent = "L'envoi n'a pas abouti. Écrivez-moi directement à bonjour@mythesetmarmites.fr";
-    status.style.color = 'var(--pomme)';
+    status.style.color = 'var(--pomme-fonce)';
   } finally {
     btn.textContent = 'Envoyer';
     btn.disabled = false;
