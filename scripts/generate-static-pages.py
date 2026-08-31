@@ -24,9 +24,17 @@ statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
 dossiers /studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/.
 
-Les balises <head> (titre, meta description, canonical, Open Graph,
-JSON-LD...) de chaque page statique sont injectées séparément par
-scripts/inject-head-tags.py, à relancer aussi après une régénération.
+Pipeline complet, à relancer dans cet ordre après toute modification de
+contenu (index.html ou script.js) :
+
+    python3 scripts/generate-static-pages.py    # /studio, /correction, ...
+    python3 scripts/inject-head-tags.py         # <head> des 7 pages
+    python3 scripts/generate-article-pages.py   # /a-table/<slug>/ (macOS)
+    python3 scripts/generate-sitemap.py         # sitemap.xml
+    python3 scripts/generate-web-images.py      # .webp redimensionnés (si
+                                                # nouvelle photo)
+
+scripts/check-contrast.py vérifie les paires de couleurs de la charte.
 """
 import re
 import os
@@ -75,6 +83,14 @@ def main():
         # (masquées par défaut, affichées en JS selon le fragment d'URL).
         # Sur une page statique dédiée, le contenu doit être visible d'emblée.
         section = section.replace('class="page hide"', 'class="page"', 1)
+
+        # Sur la page autonome, le contenu est une composition complète et
+        # unique : <section> devient <article> (balise sémantique du brief).
+        # a-table reste une <section> : c'est une liste, et ses vignettes
+        # sont déjà des <article> (voir cardHTML dans script.js).
+        if route != 'a-table':
+            section = '<article' + section[len('<section'):]
+            section = section[:-len('</section>')] + '</article>'
 
         # Dans la coquille SPA, le titre de chaque section secondaire est un
         # <h2 class="page-title"> : ça garde un seul <h1> sur la page d'accueil.
