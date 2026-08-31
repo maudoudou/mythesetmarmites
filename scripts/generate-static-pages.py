@@ -22,12 +22,19 @@ Quand le relancer
 depuis la racine du dépôt pour répercuter le changement dans les pages
 statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
-dossiers /studio/, /correction/, /ateliers/, /a-table/, /jeu/, /parcours/,
-/contact/.
+dossiers /studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/.
 
-Les balises <head> (titre, meta description, canonical, Open Graph,
-JSON-LD...) de chaque page statique sont injectées séparément par
-scripts/inject-head-tags.py, à relancer aussi après une régénération.
+Pipeline complet, à relancer dans cet ordre après toute modification de
+contenu (index.html ou script.js) :
+
+    python3 scripts/generate-static-pages.py    # /studio, /correction, ...
+    python3 scripts/inject-head-tags.py         # <head> des 7 pages
+    python3 scripts/generate-article-pages.py   # /a-table/<slug>/ (macOS)
+    python3 scripts/generate-sitemap.py         # sitemap.xml
+    python3 scripts/generate-web-images.py      # .webp redimensionnés (si
+                                                # nouvelle photo)
+
+scripts/check-contrast.py vérifie les paires de couleurs de la charte.
 """
 import re
 import os
@@ -38,7 +45,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROUTES = {
     'studio':     'Le studio — Mythes & Marmites',
     'correction': 'Correction et relecture — Mythes & Marmites',
-    'ateliers':   'Ateliers lecture et cuisine — Mythes & Marmites',
     'a-table':    'À table — Mythes & Marmites',
     'jeu':        'Le jeu — Mythes & Marmites',
     'parcours':   'Mon parcours — Mythes & Marmites',
@@ -77,6 +83,22 @@ def main():
         # (masquées par défaut, affichées en JS selon le fragment d'URL).
         # Sur une page statique dédiée, le contenu doit être visible d'emblée.
         section = section.replace('class="page hide"', 'class="page"', 1)
+
+        # Sur la page autonome, le contenu est une composition complète et
+        # unique : <section> devient <article> (balise sémantique du brief).
+        # a-table reste une <section> : c'est une liste, et ses vignettes
+        # sont déjà des <article> (voir cardHTML dans script.js).
+        if route != 'a-table':
+            section = '<article' + section[len('<section'):]
+            section = section[:-len('</section>')] + '</article>'
+
+        # Dans la coquille SPA, le titre de chaque section secondaire est un
+        # <h2 class="page-title"> : ça garde un seul <h1> sur la page d'accueil.
+        # Sur la page autonome, ce titre redevient le <h1> du document.
+        section = section.replace(
+            '<h2 class="display page-title" ', '<h1 class="display" ', 1)
+        section = section.replace('<h2 class="page-title" ', '<h1 ', 1)
+        section = re.sub(r'(<h1[^>]*>[^<]*)</h2>', r'\1</h1>', section, count=1)
 
         # Marque le lien de nav correspondant comme actif (le JS de route()
         # ne s'exécute pas sur ces pages, voir IS_SPA_SHELL dans script.js).

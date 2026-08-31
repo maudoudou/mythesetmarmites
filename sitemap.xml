@@ -8,22 +8,17 @@
   <url>
     <loc>https://mythesetmarmites.fr/studio</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mythesetmarmites.fr/correction</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mythesetmarmites.fr/ateliers</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mythesetmarmites.fr/a-table</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mythesetmarmites.fr/jeu</loc>
@@ -37,6 +32,86 @@
   </url>
   <url>
     <loc>https://mythesetmarmites.fr/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/banquet-fin-heureuse</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/bouillie-ours</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/carottes-monsieur-lapin</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/epinards-popeye</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/faim-dans-les-contes</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/foret-pain-peur</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/fromage-corbeau</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/galette-sarrasin</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/gouter-des-albums</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/pain-epices-hansel</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/pain-poule-rousse</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/pommes-idunn</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/potion-panoramix</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/sanglier-gaulois</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/soupe-trois-cochons</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mythesetmarmites.fr/a-table/tartelettes-mange-moi</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

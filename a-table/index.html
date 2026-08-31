@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>À table : contes, mythes et recettes — Mythes &amp; Marmites</title>
-<meta name="description" content="Un blog qui associe une recette et le conte, le mythe ou l'album qui va avec, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
+<title>À table — une recette et le récit qui va avec</title>
+<meta name="description" content="Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
 <link rel="canonical" href="https://mythesetmarmites.fr/a-table">
-<meta property="og:title" content="À table : contes, mythes et recettes — Mythes & Marmites">
-<meta property="og:description" content="Un blog qui associe une recette et le conte, le mythe ou l'album qui va avec, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
+<meta property="og:title" content="À table — une recette et le récit qui va avec">
+<meta property="og:description" content="Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
 <meta property="og:image" content="https://mythesetmarmites.fr/images/og-share.png">
 <meta property="og:url" content="https://mythesetmarmites.fr/a-table">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="À table : contes, mythes et recettes — Mythes & Marmites">
-<meta name="twitter:description" content="Un blog qui associe une recette et le conte, le mythe ou l'album qui va avec, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
+<meta name="twitter:title" content="À table — une recette et le récit qui va avec">
+<meta name="twitter:description" content="Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.">
 <meta name="twitter:image" content="https://mythesetmarmites.fr/images/og-share.png">
 <link rel="icon" href="/images/favicon-orange.svg">
 <link rel="apple-touch-icon" href="/images/icon-192.png">
@@ -34,7 +34,6 @@
     <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
       <a class="navlink" href="/studio" data-route="studio">Le studio</a>
       <a class="navlink" href="/correction" data-route="correction">Correction &amp; relecture</a>
-      <a class="navlink" href="/ateliers" data-route="ateliers">Ateliers</a>
       <a class="navlink is-on" href="/a-table" data-route="a-table" aria-current="page">À table</a>
       <a class="navlink" href="/jeu" data-route="jeu">Le jeu</a>
       <a class="btn btn--sm" href="/contact">Parler d'un projet</a>
@@ -45,19 +44,25 @@
 <main id="main">
 
 <section class="page" data-page="a-table">
-  <div class="wrap" style="padding-top:78px">
-    <p class="eyebrow" style="margin-bottom:18px">À table · le blog</p>
-    <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et le récit qui va avec.</h1>
-    <p class="lede" style="max-width:48ch;margin:18px 0 40px">On cuisine d'abord et l'histoire se lit pendant que ça mijote.</p>
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:10px">
+      <img class="sec-anchor" src="/images/carotte-orange.svg" alt="" width="68" height="216" style="width:clamp(74px,8vw,104px);right:-30px;top:30px;opacity:.85" loading="lazy">
+      <p class="eyebrow" style="margin-bottom:18px">À table · le blog</p>
+      <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et le récit qui va avec.</h1>
+      <p class="lede" style="max-width:54ch;margin:18px 0 0">Deux fois par mois&nbsp;: un plat à faire ce soir, et le conte, le mythe ou l'album qui l'accompagne. Une catégorie Notes de lecture, où je publie ce que je trouve pendant mes recherches.</p>
+    </div>
+  </div>
 
-    <h2 class="sr-only">Liste des parutions</h2>
-    <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
-    <div class="dotted dotted--full" style="margin:34px 0 40px;opacity:.22"></div>
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <h2 class="sr-only">Liste des parutions</h2>
+      <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
+      <div class="dotted dotted--full" style="margin:30px 0 36px;opacity:.22"></div>
 
-    <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
-    <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
-    <nav class="pager" id="pager" aria-label="Pages"></nav>
-    <div style="height:40px"></div>
+      <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
+      <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
+      <nav class="pager" id="pager" aria-label="Pages"></nav>
+    </div>
   </div>
 </section>
 
@@ -67,13 +72,12 @@
   <div class="foot__in">
     <div style="max-width:300px">
       <a href="/" aria-label="Retour à l'accueil"><img src="/images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px" width="708" height="296" loading="lazy"></a>
-      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent.</p>
+      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Maud Lenoir, graphiste et maquettiste indépendante. Édition jeunesse, médiation culturelle, correction. Rouen et sa métropole.</p>
     </div>
     <div style="display:flex;gap:54px;flex-wrap:wrap">
       <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
         <a class="navlink" href="/studio">Le studio</a>
         <a class="navlink" href="/correction">Correction &amp; relecture</a>
-        <a class="navlink" href="/ateliers">Ateliers</a>
         <a class="navlink" href="/a-table">À table</a>
         <a class="navlink" href="/jeu">Le jeu</a>
         <a class="navlink" href="/contact">Parler d'un projet</a>

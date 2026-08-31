@@ -1,0 +1,12 @@
+# mythesetmarmites.fr — règles de redirection Netlify
+# (évaluées après la recherche d'un fichier statique : les vraies pages
+#  /studio, /a-table/<slug>, etc. sont servies directement.)
+
+# Rubrique « Ateliers » retirée : on renvoie vers Le studio.
+/ateliers        /studio        301
+/ateliers/*      /studio        301
+
+# Repli : une URL sans fichier correspondant est servie par la coquille
+# index.html (statut 200), qui renvoie ensuite un éventuel ancien lien
+# en #/ vers sa vraie page, ou l'accueil.
+/*               /index.html    200
