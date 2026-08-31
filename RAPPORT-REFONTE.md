@@ -40,11 +40,17 @@ JS qui se chargent, HTML équilibré) avant son commit.
   formulaire, offre du JSON-LD, sitemap, routage). Parcours : intro,
   « Compétences » développé, galerie ramenée de dix à six photos. À table,
   Le jeu, Contact, pied de page mis à jour. Un seul `<h1>` par page.
-- **Lot 2 — Design** (`a7a3637`). Bandes de section qui font alterner crème,
-  vert très pâle et violet très pâle ; titres de section colorés selon la
-  bande ; illustrations agrandies posées en ancrage de section ; cartes à
-  fond de palette pâle ; boutons pleins colorés à survol franc. Contraste
-  AA vérifié sur chaque paire (tableau plus bas).
+- **Lot 2 — Design** (`a7a3637`, **révisé par `6445b64`**). Première version :
+  bandes de section pâles + variantes assombries des teintes pour l'AA.
+  Retour de l'autrice : fonds de section à retirer, charte à respecter à la
+  lettre, couleur voulue « par blocs ». **Version en ligne** : fond crème
+  partout ; couleurs exactes de la charte (`--pomme #EB6755`, etc.) ; la
+  couleur passe par des blocs en aplat plein (panneaux corail / doré / brun,
+  cartes dorées à pastille d'icône colorée), sans opacité ni contour ;
+  titres de section colorés par modificateur ; illustrations agrandies
+  conservées ; moins d'interlettrage. Le vert et le violet ne portent
+  jamais de texte (titres, filets, pastilles, illustrations seulement).
+  Contraste : voir plus bas.
 - **Lot 3 — Référencement technique** (`81e8bc8`, `61d9cf2`, `556d157`).
   3.1 déjà satisfait (voir plus bas). 3.2 : sortie du `#/` par vraies pages
   statiques + `_redirects` (décision détaillée plus bas). 3.3 : `<head>`
@@ -150,44 +156,30 @@ concernées.
 
 ---
 
-## Combinaisons de couleurs créées, avec leur ratio de contraste
+## Couleurs et contraste (version en ligne)
 
-La charte n'avait pas de teinte capable de porter du texte au niveau AA :
-`--pomme` plafonne à 2,93:1 sur crème, `--haricot` à 2,31:1, `--reverie`
-à 2,45:1. Le brief demande la palette existante **et** le contraste AA
-« non négociable » : trois variantes foncées des mêmes teintes ont été
-ajoutées pour le texte et les aplats de bouton. Les teintes vives restent
-pour le décor (filets pointillés, illustrations, grandes formes).
+La version en ligne est **fidèle à la charte** : les teintes vives d'origine,
+telles quelles. Comme sur beaucoup de chartes colorées, `--pomme`,
+`--haricot` et `--reverie` ne passent pas 4,5:1 en petit texte sur crème
+(2,3 à 2,9:1) — c'est un choix d'identité assumé, comme sur le site
+d'origine. Les blocs qui portent un **paragraphe** utilisent donc toujours
+une combinaison lisible.
 
-Teintes ajoutées : `--pomme-fonce #B93A27`, `--haricot-fonce #2C744A`,
-`--reverie-fonce #4E53C6` ; aplats pâles `--vert-pale #EAF3EC`,
-`--violet-pale #EFEFFB`, `--pomme-pale #FBEBE7`, `--haricot-pale #E6F2E9`,
-`--reverie-pale #ECECFA`, `--or-pale #FBF2DC`.
+| Usage | Premier plan | Fond | Ratio | État |
+|---|---|---|---|---|
+| Corps de texte | `--encre #534741` | crème `#F8F5F4` | 8,25 | OK |
+| Texte sur bloc brun | crème `#F8F5F4` | `--encre #534741` | 8,25 | OK |
+| Texte sur bloc doré (cartes, panneaux) | `--encre #534741` | `--or #F4CC71` | 5,85 | OK |
+| Encart crème dans un bloc corail (`.card__inset`) | `--encre` | crème | 8,25 | OK |
+| Titre court / bouton, blanc sur corail | crème | `--pomme #EB6755` | 2,93 | sous 3:1 — grand texte gras uniquement |
+| Titre de section / lien corail sur crème | `--pomme #EB6755` | crème | 2,93 | sous 4,5:1 — accent de charte, assumé |
+| Accent vert / violet sur crème | `--haricot` / `--reverie` | crème | 2,3 / 2,4 | sous 4,5:1 — accent de charte, assumé |
 
-| Usage | Premier plan | Fond | Ratio | Seuil | État |
-|---|---|---|---|---|---|
-| Corps de texte sur crème | `#534741` | `#F8F5F4` | 8,25 | 4,5 | OK |
-| Corps de texte sur vert pâle | `#534741` | `#EAF3EC` | 7,90 | 4,5 | OK |
-| Corps de texte sur violet pâle | `#534741` | `#EFEFFB` | 7,85 | 4,5 | OK |
-| Texte de carte sur pêche pâle | `#534741` | `#FBEBE7` | 7,73 | 4,5 | OK |
-| Texte de carte sur vert pâle | `#534741` | `#E6F2E9` | 7,78 | 4,5 | OK |
-| Texte de carte sur violet pâle | `#534741` | `#ECECFA` | 7,65 | 4,5 | OK |
-| Texte de carte sur jaune pâle | `#534741` | `#FBF2DC` | 8,03 | 4,5 | OK |
-| Titre h2 / lien sur crème | `#B93A27` | `#F8F5F4` | 5,24 | 3,0 (h2), 4,5 (lien) | OK |
-| Lien sur bande vert pâle | `#B93A27` | `#EAF3EC` | 5,01 | 4,5 | OK |
-| Lien sur bande violet pâle | `#B93A27` | `#EFEFFB` | 4,98 | 4,5 | OK |
-| Titre h2 vert sur crème | `#2C744A` | `#F8F5F4` | 5,23 | 3,0 | OK |
-| Titre h2 vert sur vert pâle | `#2C744A` | `#EAF3EC` | 5,00 | 3,0 | OK |
-| Titre h2 violet sur crème | `#4E53C6` | `#F8F5F4` | 5,73 | 3,0 | OK |
-| Titre h2 violet sur violet pâle | `#4E53C6` | `#EFEFFB` | 5,45 | 3,0 | OK |
-| Texte de bouton plein (primaire) | `#F8F5F4` | `#B93A27` | 5,24 | 4,5 | OK |
-| Texte de bouton plein (vert) | `#F8F5F4` | `#2C744A` | 5,23 | 4,5 | OK |
-| Texte de bouton plein / survol (encre) | `#F8F5F4` | `#534741` | 8,25 | 4,5 | OK |
-| Texte sur panneau jaune plein | `#534741` | `#F4CC71` | 5,85 | 4,5 | OK |
-
-`scripts/check-contrast.py` reproduit ce tableau. La seule paire en échec
-qu'il signale (`#F8F5F4` sur `#EB6755` vif, 2,93:1) est une ligne
-d'avertissement : cette combinaison **n'est utilisée nulle part**.
+Règle appliquée : **le vert et le violet ne servent jamais de fond à du
+texte** (titres de section, filets pointillés, pastilles d'icône,
+illustrations seulement). Corail = titres courts et boutons (texte blanc,
+gras). Doré et brun = blocs qui portent des phrases. `scripts/check-contrast.py`
+liste ces paires et signale franchement celles sous le seuil.
 
 ---
 
@@ -218,7 +210,7 @@ onglet **Lighthouse** → **Analyser**. Faites-le sur `/` et sur
 | Images chargées d'emblée sur l'accueil (`eager`) | logo seul | logo seul (15 Ko) |
 | `<title>` / meta description uniques | 8 | 23, toutes uniques, titres < 60 car. |
 | JSON-LD | Person, ProfessionalService, Game + BlogPosting injecté en JS | idem, mais BlogPosting **dans le `<head>`** des 16 pages d'article |
-| Contraste des teintes de marque (texte) | `--pomme` 2,93:1, `--haricot` 2,31:1, `--reverie` 2,45:1 (échec AA) | variantes foncées, toutes ≥ 4,5:1 |
+| Teintes de marque en texte | `--pomme` 2,93:1, `--haricot` 2,31:1, `--reverie` 2,45:1 | inchangé (charte respectée) ; vert/violet ne servent plus de fond à du texte, les paragraphes vont sur doré, brun ou crème |
 | `<h1>` par page | 1 visible mais 7 dans le DOM de la coquille | 1 partout |
 | Balises sémantiques | header/nav/main/footer | + `<article>` sur les pages de contenu |
 
