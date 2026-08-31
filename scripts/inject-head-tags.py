@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 """Écrit les balises <head> propres à chaque page : <title> unique,
-meta description unique, canonical, Open Graph complet et Twitter
-Card. Lit et réécrit index.html et les six pages statiques générées
-par generate-static-pages.py.
+meta description unique, canonical, Open Graph complet, Twitter Card,
+et les données structurées JSON-LD (Person et ProfessionalService sur
+l'accueil, Game sur la page du jeu). Lit et réécrit index.html et les
+six pages statiques générées par generate-static-pages.py.
 
 Ce script est idempotent : il remplace les balises déjà posées plutôt
 que de les dupliquer, donc on peut le relancer sans risque après
-avoir modifié PAGES ci-dessous. Le contenu des pages elles-mêmes
-(dans index.html) n'est jamais touché : seul le <head> l'est.
+avoir modifié PAGES ou JSON_LD ci-dessous. Le contenu des pages
+elles-mêmes (dans index.html) n'est jamais touché : seul le <head>
+l'est. Les données BlogPosting (une par article du blog À table) ne
+sont pas ici : elles sont injectées côté client par script.js, voir
+setArticleJsonLd() — les articles n'ont pas encore de page statique
+dédiée (voir RAPPORT-REFONTE.md).
 
 À relancer avec `python3 scripts/inject-head-tags.py` après toute
-modification des titres/descriptions ci-dessous, ou après une
+modification des titres/descriptions/JSON-LD ci-dessous, ou après une
 régénération des pages statiques (generate-static-pages.py écrase le
 <head>, il faut donc toujours relancer ce script juste après).
 """
+import json
 import os
 import re
 import sys
@@ -68,6 +74,73 @@ PAGES = {
     ),
 }
 
+PERSON = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maud Lenoir",
+    "jobTitle": "Graphiste éditoriale et autrice, studio d'édition et de récits",
+    "url": DOMAIN + "/",
+    "workLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rouen",
+            "addressRegion": "Normandie",
+            "addressCountry": "FR",
+        },
+    },
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Master",
+        "name": "Master Littérature d'enfance et de jeunesse (en cours)",
+        "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Université d'Artois"},
+    },
+}
+
+PROFESSIONAL_SERVICE = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Mythes & Marmites",
+    "url": DOMAIN + "/",
+    "image": OG_IMAGE,
+    "founder": {"@type": "Person", "name": "Maud Lenoir"},
+    "areaServed": [
+        {"@type": "City", "name": "Rouen"},
+        {"@type": "AdministrativeArea", "name": "Métropole Rouen Normandie"},
+        {"@type": "AdministrativeArea", "name": "Normandie"},
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Prestations",
+        "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Correction et relecture de manuscrits jeunesse et scolaires"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages de livres et albums"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Identité visuelle et charte graphique"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets et panneaux d'exposition"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ateliers lecture et cuisine en médiathèque"}},
+        ],
+    },
+}
+
+GAME = {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    "name": "Mythes & Marmites",
+    "url": DOMAIN + "/jeu",
+    "image": OG_IMAGE,
+    "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes.",
+    "genre": "Jeu de récit coopératif",
+    "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6},
+    "typicalAgeRange": "6-",
+    "duration": "PT45M",
+}
+
+# fichier -> liste des objets JSON-LD à poser sur cette page
+JSON_LD = {
+    "index.html": [PERSON, PROFESSIONAL_SERVICE],
+    "jeu/index.html": [GAME],
+}
+
 
 def build_head_block(url_path, title, desc, og_type):
     url = DOMAIN + url_path
@@ -106,18 +179,26 @@ def main():
         head = re.sub(r'\n?<link rel="canonical"[^>]*>', '', head)
         head = re.sub(r'\n?<meta property="og:[^>]*>', '', head)
         head = re.sub(r'\n?<meta name="twitter:[^>]*>', '', head)
+        head = re.sub(r'\n?<script type="application/ld\+json">.*?</script>', '', head, flags=re.DOTALL)
         # nettoyage des lignes vides laissées par les retraits ci-dessus
         head = re.sub(r'\n{2,}', '\n', head).strip('\n')
 
         new_head_lines = build_head_block(url_path, title, desc, og_type)
 
         # ordre final : charset, viewport, PUIS le bloc ci-dessus, PUIS
-        # ce qui restait (favicon, stylesheet...)
+        # ce qui restait (favicon, stylesheet...), PUIS le JSON-LD
         remaining = [l for l in head.split('\n') if l.strip()]
         charset_lines = [l for l in remaining if 'charset' in l or 'viewport' in l]
         other_lines = [l for l in remaining if l not in charset_lines]
 
+        ld_blocks = '\n'.join(
+            f'<script type="application/ld+json">{json.dumps(obj, ensure_ascii=False)}</script>'
+            for obj in JSON_LD.get(rel_path, [])
+        )
+
         new_head = '\n'.join(charset_lines) + '\n' + new_head_lines + '\n' + '\n'.join(other_lines)
+        if ld_blocks:
+            new_head += '\n' + ld_blocks
         html = html[:head_start] + '\n' + new_head + '\n' + html[head_end:]
 
         with open(full, 'w', encoding='utf-8') as f:

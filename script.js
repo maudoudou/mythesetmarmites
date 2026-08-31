@@ -529,6 +529,48 @@ function articleHTML(a) {
   </div>`;
 }
 
+/* ---------------------------- Données structurées (article) ----------------------------
+   Chaque article n'a pas encore de page statique dédiée (voir le rapport de refonte) : les
+   données BlogPosting sont donc injectées côté client quand l'article est affiché, et
+   retirées dès qu'on le quitte. Un moteur qui ne rend pas le JavaScript sur l'URL exacte
+   #/a-table/<slug> ne les verra pas ; c'est une limite connue, pas un oubli. */
+const MOIS_FR = { janvier: 1, février: 2, mars: 3, avril: 4, mai: 5, juin: 6, juillet: 7, août: 8, septembre: 9, octobre: 10, novembre: 11, décembre: 12 };
+function dateFrancaiseVersISO(str) {
+  const m = str.match(/(\d+)(?:er)?\s+(\S+)\s+(\d{4})/);
+  if (!m) return null;
+  const jour = String(m[1]).padStart(2, '0');
+  const mois = String(MOIS_FR[m[2].toLowerCase()] || 1).padStart(2, '0');
+  return `${m[3]}-${mois}-${jour}`;
+}
+function setArticleJsonLd(a) {
+  removeArticleJsonLd();
+  const url = `https://mythesetmarmites.fr/#/a-table/${a.slug}`;
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: a.title,
+    description: a.chapeau,
+    image: a.img ? `https://mythesetmarmites.fr/${a.img.replace(/^\//, '')}` : 'https://mythesetmarmites.fr/images/og-share.png',
+    datePublished: dateFrancaiseVersISO(a.date) || undefined,
+    author: { '@type': 'Person', name: 'Maud Lenoir' },
+    publisher: {
+      '@type': 'Organization', name: 'Mythes & Marmites',
+      logo: { '@type': 'ImageObject', url: 'https://mythesetmarmites.fr/images/logo-orange.svg' }
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url
+  };
+  const tag = document.createElement('script');
+  tag.type = 'application/ld+json';
+  tag.id = 'article-jsonld';
+  tag.textContent = JSON.stringify(ld);
+  document.head.appendChild(tag);
+}
+function removeArticleJsonLd() {
+  const tag = document.getElementById('article-jsonld');
+  if (tag) tag.remove();
+}
+
 /* ---------------------------- Apparitions ---------------------------- */
 let io;
 function observeRise() {
@@ -571,8 +613,9 @@ function route() {
 
   if (parts[0] === 'a-table' && parts[1]) {
     const a = ARTICLES.find(x => x.slug === parts[1]);
-    if (a) { $('#article').innerHTML = articleHTML(a); show('article'); document.title = a.title + ' — Mythes & Marmites'; window.scrollTo(0, 0); observeRise(); return; }
+    if (a) { $('#article').innerHTML = articleHTML(a); show('article'); document.title = a.title + ' — Mythes & Marmites'; setArticleJsonLd(a); window.scrollTo(0, 0); observeRise(); return; }
   }
+  removeArticleJsonLd();
   if (parts[0] === 'a-table') {
     const cat = params.get('cat');
     if (cat && CATS.some(c => c.id === cat)) { state.cat = cat; state.page = 1; }
