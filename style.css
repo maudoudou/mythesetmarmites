@@ -4,14 +4,14 @@
    ========================================================================== */
 
 /* ---------- Polices ---------- */
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Light.otf') format('opentype');font-weight:300;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Regular.otf') format('opentype');font-weight:400;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Medium.otf') format('opentype');font-weight:500;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Bold.otf') format('opentype');font-weight:700;font-display:swap}
-@font-face{font-family:'Pacaembu';src:url('fonts/Pacaembu-Black.otf') format('opentype');font-weight:800;font-display:swap}
-@font-face{font-family:'IM Fell English';src:url('fonts/IMFellEnglish-Regular.ttf') format('truetype');font-style:normal;font-display:swap}
-@font-face{font-family:'IM Fell English';src:url('fonts/IMFellEnglish-Italic.ttf') format('truetype');font-style:italic;font-display:swap}
-@font-face{font-family:'Homemade Apple';src:url('fonts/HomemadeApple-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Bold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'Pacaembu';src:url('/fonts/Pacaembu-Black.otf') format('opentype');font-weight:800;font-display:swap}
+@font-face{font-family:'IM Fell English';src:url('/fonts/IMFellEnglish-Regular.ttf') format('truetype');font-style:normal;font-display:swap}
+@font-face{font-family:'IM Fell English';src:url('/fonts/IMFellEnglish-Italic.ttf') format('truetype');font-style:italic;font-display:swap}
+@font-face{font-family:'Homemade Apple';src:url('/fonts/HomemadeApple-Regular.ttf') format('truetype');font-display:swap}
 
 /* ---------- Jetons ---------- */
 :root{
@@ -23,7 +23,7 @@
   --or:#F4CC71;      /* la tablÃ©e */
   --encre-80:rgba(83,71,65,.82);
   --encre-70:rgba(83,71,65,.72);
-  --encre-55:rgba(83,71,65,.55);
+  --encre-55:rgba(83,71,65,.78); /* nom conservé (utilisé partout), opacité relevée de .55 à .78 : à .55 le texte .small ne passait pas 4,5:1 sur --lait (2,71:1 mesuré) */
   --hairline:rgba(83,71,65,.12);
   --hairline-soft:rgba(83,71,65,.08);
   --sans:'Pacaembu',system-ui,sans-serif;
@@ -41,15 +41,23 @@ body{
   -webkit-font-smoothing:antialiased;text-wrap:pretty;
 }
 img{max-width:100%;display:block}
+picture{display:contents} /* le <picture> des photos WebP+repli ne doit rien changer à la mise en page */
+.contents{display:contents} /* balise <article> sémantique autour d'une vignette, sans influer sur la grille */
 h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.04}
 p{margin:0}
 ul,ol{margin:0}
 a{color:var(--pomme);text-decoration:none;transition:color .15s ease}
 a:hover{color:var(--encre)}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
-:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(235,103,85,.45);border-radius:6px}
+/* Double anneau : quel que soit le fond (clair ou la bande sombre --encre),
+   l'un des deux anneaux reste visible. --pomme seul ne passe pas 3:1 sur
+   --lait (2,93:1 mesuré) même à pleine opacité : l'anneau extérieur encre
+   assure le contraste sur fond clair, l'anneau intérieur clair fait le
+   même travail sur fond sombre. */
+:focus-visible{outline:none;box-shadow:0 0 0 2px var(--lait),0 0 0 4.5px var(--encre);border-radius:6px}
 ::selection{background:var(--or);color:var(--encre)}
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .wrap{max-width:var(--main);margin:0 auto;padding:0 40px}
 .sec{padding-top:78px;padding-bottom:78px}
 .sec--tight{padding-top:0;padding-bottom:78px}
@@ -208,7 +216,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 /* Cadre contenant une vraie photo : le pointillÃ© et la trame disparaissent */
 .ph.has-img{border:0;padding:0;background:none}
 .ph.has-img::before{display:none}
-.ph>img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;display:block}
+.ph>img,.ph>picture>img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;display:block}
 /* Cadre pleine hauteur : occupe toute la carte, quelle que soit la hauteur du texte */
 /* Carte \u00e0 deux colonnes (portrait + texte) : grille pour \u00e9galiser les hauteurs */
 .card[style*="align-items:stretch"]{display:grid !important;grid-template-columns:1fr 1.25fr;align-items:stretch}

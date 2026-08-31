@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le jeu Mythes &amp; Marmites — récit coopératif</title>
+<meta name="description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour le jouer.">
+<link rel="canonical" href="https://mythesetmarmites.fr/jeu">
+<meta property="og:title" content="Le jeu Mythes & Marmites — récit coopératif">
+<meta property="og:description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour le jouer.">
+<meta property="og:image" content="https://mythesetmarmites.fr/images/og-share.png">
+<meta property="og:url" content="https://mythesetmarmites.fr/jeu">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le jeu Mythes & Marmites — récit coopératif">
+<meta name="twitter:description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour le jouer.">
+<meta name="twitter:image" content="https://mythesetmarmites.fr/images/og-share.png">
+<link rel="icon" href="/images/favicon-orange.svg">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/style.css?v=3">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Game", "name": "Mythes & Marmites", "url": "https://mythesetmarmites.fr/jeu", "image": "https://mythesetmarmites.fr/images/og-share.png", "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes.", "genre": "Jeu de récit coopératif", "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6}, "typicalAgeRange": "6-", "duration": "PT45M"}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="/" aria-label="Mythes &amp; Marmites — accueil">
+      <img src="/images/logo-orange.svg" alt="Mythes &amp; Marmites" style="height:45px;width:auto" width="708" height="296" loading="eager">
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
+      <a class="navlink" href="/studio" data-route="studio">Le studio</a>
+      <a class="navlink" href="/correction" data-route="correction">Correction &amp; relecture</a>
+      <a class="navlink" href="/ateliers" data-route="ateliers">Ateliers</a>
+      <a class="navlink" href="/a-table" data-route="a-table">À table</a>
+      <a class="navlink is-on" href="/jeu" data-route="jeu" aria-current="page">Le jeu</a>
+      <a class="btn btn--sm" href="/contact">Parler d'un projet</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page" data-page="jeu">
+  <div class="wrap" style="padding-top:78px">
+    <p class="eyebrow eyebrow--green" style="margin-bottom:18px">Le jeu · Mythes &amp; Marmites</p>
+    <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:18ch">Une marmite, des cartes, et toute une tablée.</h1>
+    <p class="lede" style="max-width:48ch;margin:18px 0 30px">Un jeu de récit coopératif&nbsp;: on cuisine des histoires autant qu'on les raconte. Aujourd'hui c'est un prototype.</p>
+    <p class="badge" style="margin-bottom:50px"><span class="badge__dot"></span> Prototype — pas encore en vente. Je cherche un éditeur et des tables pour le tester.</p>
+
+    <div class="grid grid-4" style="margin-bottom:56px">
+      <div class="stat"><p class="stat__n" style="color:var(--pomme)">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
+      <div class="stat"><p class="stat__n" style="color:var(--haricot)">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
+      <div class="stat"><p class="stat__n" style="color:var(--reverie)">45 min</p><p class="stat__l">plus ou moins long, on s'arrête quand on veut !</p></div>
+      <div class="stat"><p class="stat__n">48</p><p class="stat__l">cartes avec 3 niveaux de difficulté</p></div>
+    </div>
+
+    <div class="row" style="gap:48px;align-items:flex-start;margin-bottom:70px">
+      <div style="flex:1.4;min-width:320px">
+        <h2 class="sec-title" style="font-size:28px;margin-bottom:26px">Dans la boîte</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="112" height="169" loading="lazy">
+            <div><h3 style="font-size:17px;font-weight:700">48 cartes-contes</h3><p class="card__text">Un héros par carte, du conte populaire au mythe — et une amorce de recette.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="140" height="91" loading="lazy">
+            <div><h3 style="font-size:17px;font-weight:700">Le panier</h3><p class="card__text">On y mijote les histoires, on y dépose les ingrédients du récit.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <img class="card__ill" src="/images/poule-rousse-violet.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="87" height="125" loading="lazy">
+            <div><h3 style="font-size:17px;font-weight:700">Le carnet de recettes-récits</h3><p class="card__text">Pour garder une trace des histoires inventées et les rapporter chez soi.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel--or" style="flex:1;min-width:280px;align-self:stretch">
+        <h2 class="serif" style="font-size:26px;margin-bottom:20px">Le tour de jeu</h2>
+        <ol style="padding-left:22px;font-size:15.5px;line-height:1.9">
+          <li>On tire une carte.</li>
+          <li>On pose sa question à la tablée.</li>
+          <li>Chacun ajoute un ingrédient&nbsp;: un souvenir, un goût, une suite.</li>
+          <li>On mijote l'histoire ensemble…</li>
+          <li>…et on la note pour la rapporter.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Pourquoi ce jeu existe</h2>
+    <div class="dotted"></div>
+    <div class="row rise" style="margin-bottom:60px">
+      <div class="pillar">
+        <p class="eyebrow" style="letter-spacing:.14em;margin-bottom:12px">Le constat</p>
+        <p class="body" style="font-size:16px">Les écrans captent l'attention des plus jeunes, et les histoires que l'on se transmettait à table s'effacent. Le repas, lui, reste l'un des derniers moments où l'on se retrouve vraiment.</p>
+      </div>
+      <div class="pillar pillar--green">
+        <p class="eyebrow eyebrow--green" style="letter-spacing:.14em;margin-bottom:12px">Le pari</p>
+        <p class="body" style="font-size:16px">Mêler contes, mythes et cuisine pour redonner aux familles l'envie — et les mots — de se raconter, d'une génération à l'autre.</p>
+      </div>
+      <div class="pillar pillar--violet">
+        <p class="eyebrow eyebrow--violet" style="letter-spacing:.14em;margin-bottom:12px">Ce que ça change</p>
+        <p class="body" style="font-size:16px">Des moments de partage retrouvés, un lien intergénérationnel ravivé, et un rapport plus joyeux et plus conscient à l'alimentation.</p>
+      </div>
+    </div>
+
+    <!-- Carrousel photos -->
+    <div class="rail rise" style="margin-bottom:14px">
+      <div class="ph ph--r20 has-img" style="width:520px;height:360px"><img src="/images/photos/panier-web.jpg" alt="Le panier du jeu" width="5443" height="3629" loading="lazy"></div>
+      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/recettes-web.webp" type="image/webp"><img src="/images/photos/recettes-web.jpg" alt="Les recettes-récits" width="1574" height="1574" loading="lazy"></picture></div>
+      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><img src="/images/photos/jetons-web.jpg" alt="Les jetons du jeu" width="1395" height="1395" loading="lazy"></div>
+      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/cartes-web.webp" type="image/webp"><img src="/images/photos/cartes-web.jpg" alt="Les cartes-contes" width="1600" height="1200" loading="lazy"></picture></div>
+    </div>
+    <p class="small" style="margin-bottom:60px">Faites glisser pour voir la suite</p>
+
+    <div class="panel panel--ink rise" style="margin-bottom:56px">
+      <img class="panel__ill" src="/images/asterix-cream.svg" alt="" style="right:40px;bottom:-20px;width:180px;opacity:.12" width="88" height="164" loading="lazy">
+      <p class="eyebrow eyebrow--or" style="position:relative;margin-bottom:18px">Où en est le jeu ?</p>
+      <p class="serif" style="font-size:30px;line-height:1.35;max-width:26ch;margin-bottom:34px;position:relative">Il se construit avec celles et ceux qui le testent.</p>
+      <div class="grid grid-3" style="position:relative;gap:26px">
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Fait</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">48 cartes dessinées, règles écrites, prototype imprimé et joué en famille.</p></div>
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">En cours</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Séances de test devant du public, réglages du tour de jeu, carnet de recettes.</p></div>
+        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Cherche</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Un éditeur jeunesse, et des lieux prêts à accueillir une partie.</p></div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
+      <p class="serif" style="font-size:24px;max-width:34ch">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
+      <a class="btn btn--green" href="/contact">Tester le jeu avec moi</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div style="max-width:300px">
+      <a href="/" aria-label="Retour à l'accueil"><img src="/images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px" width="708" height="296" loading="lazy"></a>
+      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent.</p>
+    </div>
+    <div style="display:flex;gap:54px;flex-wrap:wrap">
+      <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
+        <a class="navlink" href="/studio">Le studio</a>
+        <a class="navlink" href="/correction">Correction &amp; relecture</a>
+        <a class="navlink" href="/ateliers">Ateliers</a>
+        <a class="navlink" href="/a-table">À table</a>
+        <a class="navlink" href="/jeu">Le jeu</a>
+        <a class="navlink" href="/contact">Parler d'un projet</a>
+      </nav>
+      <div style="font-size:14px;color:rgba(248,245,244,.7);line-height:1.7">
+        <div>mythesetmarmites.fr</div>
+        <div><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></div>
+        <div style="margin-top:10px">Illustrations&nbsp;: © Christelle Louiset</div>
+        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Raconter de belles histoires. »</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

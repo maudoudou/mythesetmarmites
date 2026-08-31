@@ -22,7 +22,7 @@ const ARTICLES = [
     ill: 'poule-rousse-orange', date: '12 août 2026', foot: '4 à 6 parts · 12 août',
     meta: ['25 min de travail', '12 h de repos', '4 à 6 parts'],
     photo: 'Le pain de la poule rousse, encore chaud, sur un linge',
-    img: 'images/photos/pain-poule-rousse-web.jpg',
+    img: '/images/photos/pain-poule-rousse-web.jpg',
     ing: ['500 g de farine de blé T80', '10 g de sel fin', "350 g d'eau tiède", '1 c. à s. de miel', '100 g de levain liquide', 'Un peu de son pour le linge'],
     steps: [
       "Mélangez farine et eau du bout des doigts, sans travailler. Laissez reposer 30 minutes : la farine boit toute seule.",
@@ -48,7 +48,7 @@ const ARTICLES = [
     ill: 'roule-galette-violet', date: '1er juillet 2026', foot: '4 parts · 1er juillet',
     meta: ['15 min de travail', '15 min de cuisson', '4 parts'],
     photo: "La galette dorée sur le rebord de la fenêtre",
-    img: 'images/photos/galette-web.jpg',
+    img: '/images/photos/galette-web.jpg',
     ing: ['150 g de farine de sarrasin', '100 g de farine de froment', '80 g de beurre demi-sel', '1 œuf', '2 c. à s. de crème fraîche', 'Une pincée de sucre'],
     steps: [
       "Sablez les deux farines avec le beurre froid, du bout des doigts, jusqu'à obtenir un gros sable.",
@@ -73,7 +73,7 @@ const ARTICLES = [
     ill: 'trois-petits-cochons-green', date: '3 juin 2026', foot: '6 parts · 3 juin',
     meta: ['20 min de travail', '1 h de cuisson', '6 parts'],
     photo: "La soupe en cocotte, trois bols dépareillés",
-    img: 'images/photos/soupe-web.jpg',
+    img: '/images/photos/soupe-web.jpg',
     ing: ['3 carottes', '1 panais', '1 céleri-rave', '1 oignon jaune', '2 belles tomates', 'Un bouquet de basilic'],
     steps: [
       "Taillez tous les légumes en gros cubes.",
@@ -98,7 +98,7 @@ const ARTICLES = [
     ill: 'hansel-et-gretel-orange', date: '20 mai 2026', foot: '8 parts · 20 mai',
     meta: ['20 min de travail', '50 min de cuisson', '8 parts'],
     photo: "Le pain d'épices démoulé, encore chaud",
-    img: 'images/photos/pain-epices-web.jpg',
+    img: '/images/photos/pain-epices-web.jpg',
     ing: ['250 g de farine de seigle', '200 g de miel de sarrasin', '10 cl de lait', '2 c. à c. de cannelle', '1 c. à c. de gingembre moulu', '1 sachet de levure chimique'],
     steps: [
       "Faites tiédir le miel avec le lait, sans bouillir.",
@@ -387,26 +387,43 @@ const countOf  = id => id === 'tout' ? ARTICLES.length : ARTICLES.filter(a => a.
 const listOf   = id => id === 'tout' ? ARTICLES.slice() : ARTICLES.filter(a => a.cat === id);
 const PER_PAGE = 3;
 
+/* Dimensions intrinsèques des illustrations (identiques pour une couleur et
+   sa variante -cream), pour poser des attributs width/height corrects et
+   éviter un saut de mise en page au chargement. */
+const ILL_DIMS = {
+  'poule-rousse-orange': [87, 125], 'roule-galette-violet': [241, 164],
+  'trois-petits-cochons-green': [262, 190], 'hansel-et-gretel-orange': [193, 139],
+  'asterix-orange': [88, 164], 'corbeau-renard-violet': [717, 1129],
+  'marmite-violet': [140, 91], 'alice-orange': [128, 203], 'alice-green': [128, 203],
+  'monsieur-lapin-orange': [95, 165], 'ours-boucle-dor-green': [251, 115],
+  'popeye-green': [188, 204], 'carotte-orange': [68, 216],
+  'chaperon-rouge-violet': [163, 143], 'livre-violet': [112, 169], 'souris-green': [102, 141]
+};
+function illAttrs(name) {
+  const d = ILL_DIMS[name];
+  return d ? ` width="${d[0]}" height="${d[1]}"` : '';
+}
+
 /* ---------------------------- Vignettes ---------------------------- */
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
-  return `<a class="card card--r16 card--link" href="#/a-table/${a.slug}">
-    <img class="card__ill" src="images/${a.ill}.svg" alt="" style="width:100%;height:120px;object-fit:contain">
+  return `<article class="contents"><a class="card card--r16 card--link" href="/#/a-table/${a.slug}">
+    <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
     <p class="card__text" style="margin-bottom:14px">${a.resume}</p>
     <p class="small" style="font-size:13px">${a.foot}</p>
-  </a>`;
+  </a></article>`;
 }
 
 function tileHTML(a) {
   const cream = a.ill.replace(/-(orange|green|violet|brown)$/, '-cream');
-  return `<a class="tile tile--link" href="#/a-table/${a.slug}" style="color:inherit;display:block">
-    <img class="card__ill" src="images/${cream}.svg" onerror="this.onerror=null;this.src='images/${a.ill}.svg'" alt="" style="width:100%;height:110px;object-fit:contain">
+  return `<article class="contents"><a class="tile tile--link" href="/#/a-table/${a.slug}" style="color:inherit;display:block">
+    <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:110px;object-fit:contain">
     <p class="card__kicker" style="color:var(--or);margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin-top:8px">${a.title}</h3>
     <p class="card__text" style="color:rgba(248,245,244,.72);margin-top:10px">${a.resume}</p>
-  </a>`;
+  </a></article>`;
 }
 
 /* ---------------------------- « À table » ---------------------------- */
@@ -438,7 +455,9 @@ function renderList() {
   observeRise();
 }
 
-$('#filters').addEventListener('click', e => {
+/* $('#filters') et $('#pager') n'existent que sur la page « À table »
+   (coquille SPA ou page statique /a-table/) : on protège l'écoute. */
+if ($('#filters')) $('#filters').addEventListener('click', e => {
   const b = e.target.closest('.chip');
   if (!b) return;
   state.cat = b.dataset.cat; state.page = 1;
@@ -446,7 +465,7 @@ $('#filters').addEventListener('click', e => {
   window.scrollTo({ top: 240, behavior: 'smooth' });
 });
 
-$('#pager').addEventListener('click', e => {
+if ($('#pager')) $('#pager').addEventListener('click', e => {
   const b = e.target.closest('.pager__b');
   if (!b || b.disabled) return;
   state.page = Number(b.dataset.page);
@@ -489,7 +508,8 @@ function articleHTML(a) {
     <p class="serif" style="font-size:19px;line-height:1.62;color:rgba(83,71,65,.86);margin-bottom:18px">${a.chapeau}</p>`;
 
   return `
-  <a class="back" href="#/a-table"><span class="ar">←</span> Retour à table</a>
+  <a class="back" href="/a-table"><span class="ar">←</span> Retour à table</a>
+  <article>
   <div class="article-lead" style="margin-top:34px">
     <p class="eyebrow" style="margin-bottom:18px">${a.source}</p>
     <h1 style="font-size:clamp(34px,4.6vw,54px);margin-bottom:18px">${a.title}</h1>
@@ -497,12 +517,14 @@ function articleHTML(a) {
     <div class="article-meta"><span>${a.date}</span>${a.meta.map(m => `<span>${m}</span>`).join('')}</div>
   </div>
 
-  <div class="ph ph--r20${a.img ? ' has-img' : ''}" style="height:400px;margin:34px 0 10px">${a.img ? `<img src="${a.img}" alt="${a.photo}">` : `<span>${a.photo}</span>`}</div>
+  <!-- Suppose qu'un .webp existe à côté de chaque a.img (voir scripts/generate-webp.py) :
+       générez-le avant de publier un article avec une nouvelle photo. -->
+  <div class="ph ph--r20${a.img ? ' has-img' : ''}" style="height:400px;margin:34px 0 10px">${a.img ? `<picture><source srcset="${a.img.replace(/\.(jpg|jpeg|png)$/i, '.webp')}" type="image/webp"><img src="${a.img}" alt="${a.photo}" width="800" height="400" loading="lazy"></picture>` : `<span>${a.photo}</span>`}</div>
 
   <div class="row" style="gap:52px;align-items:flex-start;padding-top:44px">
     <div style="flex:1.5;min-width:330px">${recipe}</div>
     <div style="flex:1;min-width:280px">
-      <img class="card__ill" src="images/${a.ill}.svg" alt="" style="width:150px;margin-bottom:26px">
+      <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:150px;margin-bottom:26px">
       ${aside}
       <div class="quote-mark" style="margin:26px 0">
         <p class="card__kicker card__kicker--green" style="margin-bottom:8px">LA QUESTION À POSER</p>
@@ -516,15 +538,58 @@ function articleHTML(a) {
       </div>
     </div>
   </div>
+  </article>
 
   <div class="panel panel--ink" style="margin:60px 0 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:26px;padding:52px">
-    <img class="panel__ill" src="images/livre-cream.svg" alt="" style="right:44px;bottom:-16px;width:150px;opacity:.14">
+    <img class="panel__ill" src="/images/livre-cream.svg" alt="" width="112" height="169" loading="lazy" style="right:44px;bottom:-16px;width:150px;opacity:.14">
     <div style="position:relative;max-width:520px">
       <p class="eyebrow eyebrow--or" style="margin-bottom:14px">LA PROCHAINE FOIS</p>
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>
     </div>
-    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="#/a-table/${next.slug}">Lire <span class="ar">→</span></a>
+    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/#/a-table/${next.slug}">Lire <span class="ar">→</span></a>
   </div>`;
+}
+
+/* ---------------------------- Données structurées (article) ----------------------------
+   Chaque article n'a pas encore de page statique dédiée (voir le rapport de refonte) : les
+   données BlogPosting sont donc injectées côté client quand l'article est affiché, et
+   retirées dès qu'on le quitte. Un moteur qui ne rend pas le JavaScript sur l'URL exacte
+   #/a-table/<slug> ne les verra pas ; c'est une limite connue, pas un oubli. */
+const MOIS_FR = { janvier: 1, février: 2, mars: 3, avril: 4, mai: 5, juin: 6, juillet: 7, août: 8, septembre: 9, octobre: 10, novembre: 11, décembre: 12 };
+function dateFrancaiseVersISO(str) {
+  const m = str.match(/(\d+)(?:er)?\s+(\S+)\s+(\d{4})/);
+  if (!m) return null;
+  const jour = String(m[1]).padStart(2, '0');
+  const mois = String(MOIS_FR[m[2].toLowerCase()] || 1).padStart(2, '0');
+  return `${m[3]}-${mois}-${jour}`;
+}
+function setArticleJsonLd(a) {
+  removeArticleJsonLd();
+  const url = `https://mythesetmarmites.fr/#/a-table/${a.slug}`;
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: a.title,
+    description: a.chapeau,
+    image: a.img ? `https://mythesetmarmites.fr/${a.img.replace(/^\//, '')}` : 'https://mythesetmarmites.fr/images/og-share.png',
+    datePublished: dateFrancaiseVersISO(a.date) || undefined,
+    author: { '@type': 'Person', name: 'Maud Lenoir' },
+    publisher: {
+      '@type': 'Organization', name: 'Mythes & Marmites',
+      logo: { '@type': 'ImageObject', url: 'https://mythesetmarmites.fr/images/logo-orange.svg' }
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url
+  };
+  const tag = document.createElement('script');
+  tag.type = 'application/ld+json';
+  tag.id = 'article-jsonld';
+  tag.textContent = JSON.stringify(ld);
+  document.head.appendChild(tag);
+}
+function removeArticleJsonLd() {
+  const tag = document.getElementById('article-jsonld');
+  if (tag) tag.remove();
 }
 
 /* ---------------------------- Apparitions ---------------------------- */
@@ -538,6 +603,18 @@ function observeRise() {
 }
 
 /* ---------------------------- Routage ---------------------------- */
+/* La page racine (/) contient encore toutes les sections et le routage
+   en #/ : c'est la coquille SPA. Les pages statiques générées
+   (/studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/)
+   n'en contiennent qu'une seule : le routage ne doit pas s'y exécuter. */
+const IS_SPA_SHELL = $$('.page').length > 1;
+
+/* Ces six routes ont désormais une vraie page, à sa propre URL
+   (voir generate-static-pages.py). Un ancien lien en #/xxx est
+   redirigé côté client vers la nouvelle URL ; la requête entière
+   (avec ?cat=... par exemple) est conservée. */
+const MIGRATED_ROUTES = ['studio', 'correction', 'ateliers', 'a-table', 'jeu', 'parcours', 'contact'];
+
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
   $$('.nav__links .navlink').forEach(l => l.classList.toggle('is-on', l.dataset.route === page || (page === 'article' && l.dataset.route === 'a-table')));
@@ -549,26 +626,36 @@ function route() {
   const parts = path.split('/').filter(Boolean);
   const params = new URLSearchParams(query || '');
 
+  /* Redirection des anciennes URL en #/xxx vers les nouvelles pages. */
+  if (parts.length === 1 && MIGRATED_ROUTES.includes(parts[0])) {
+    location.replace('/' + parts[0] + (query ? '?' + query : ''));
+    return;
+  }
+
   if (parts[0] === 'a-table' && parts[1]) {
     const a = ARTICLES.find(x => x.slug === parts[1]);
-    if (a) { $('#article').innerHTML = articleHTML(a); show('article'); document.title = a.title + ' — Mythes & Marmites'; window.scrollTo(0, 0); observeRise(); return; }
+    if (a) { $('#article').innerHTML = articleHTML(a); show('article'); document.title = a.title + ' — Mythes & Marmites'; setArticleJsonLd(a); window.scrollTo(0, 0); observeRise(); return; }
   }
+  removeArticleJsonLd();
   if (parts[0] === 'a-table') {
     const cat = params.get('cat');
     if (cat && CATS.some(c => c.id === cat)) { state.cat = cat; state.page = 1; }
     renderFilters(); renderList(); show('a-table');
-    document.title = 'À table — Mythes & Marmites';
-  } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio — Mythes & Marmites"; }
+    document.title = 'À table : contes, mythes et recettes — Mythes & Marmites';
+  } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio, maquette d'édition jeunesse — Mythes & Marmites"; }
+  else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture jeunesse — Mythes & Marmites'; }
+  else if (parts[0] === 'ateliers') { show('ateliers'); document.title = 'Ateliers lecture et cuisine — Mythes & Marmites'; }
   else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
-  else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu — Mythes & Marmites'; }
+  else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu Mythes & Marmites — récit coopératif'; }
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
-  else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition & de récits"; }
+  else { show('accueil'); document.title = "Mythes & Marmites — studio d'édition jeunesse, Rouen"; }
 
-  window.scrollTo(0, 0);
+  const anchor = params.get('goto');
+  const target = anchor && document.getElementById(anchor);
+  if (target) target.scrollIntoView({ block: 'start' });
+  else window.scrollTo(0, 0);
   observeRise();
 }
-
-window.addEventListener('hashchange', route);
 
 /* ---------------------------- Menu mobile ---------------------------- */
 const burger = $('#burger');
@@ -589,7 +676,9 @@ window.addEventListener('hashchange', closeMenu);
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
 /* ---------------------------- Formulaire ---------------------------- */
-$('#form').addEventListener('submit', async e => {
+/* #form n'existe que sur la page « Contact » (coquille SPA ou page
+   statique /contact/) : on protège l'écoute. */
+if ($('#form')) $('#form').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
   const status = $('#form-status');
@@ -622,6 +711,24 @@ $('#form').addEventListener('submit', async e => {
 });
 
 /* ---------------------------- Démarrage ---------------------------- */
-$('#home-latest').innerHTML = ARTICLES.slice(0, 3).map(tileHTML).join('');
-renderFilters();
-route();
+/* #home-latest n'existe que sur l'accueil (coquille SPA). */
+if ($('#home-latest')) $('#home-latest').innerHTML = ARTICLES.slice(0, 3).map(tileHTML).join('');
+
+if (IS_SPA_SHELL) {
+  /* Coquille SPA (/) : le routage en #/ gère l'affichage. */
+  renderFilters();
+  route();
+  window.addEventListener('hashchange', route);
+} else if ($('#list')) {
+  /* Page statique /a-table/ : pas de hash à router, mais la même
+     recherche de catégorie fonctionne via la vraie chaîne de requête
+     (?cat=notes) plutôt que via le hash. */
+  const cat = new URLSearchParams(location.search).get('cat');
+  if (cat && CATS.some(c => c.id === cat)) state.cat = cat;
+  renderFilters();
+  renderList();
+} else {
+  /* Autre page statique (studio, correction, jeu, parcours, contact) :
+     contenu déjà en place, il ne reste qu'à activer les apparitions. */
+  observeRise();
+}

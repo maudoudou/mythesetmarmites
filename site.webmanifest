@@ -1,0 +1,15 @@
+{
+  "name": "Mythes & Marmites",
+  "short_name": "Mythes & Marmites",
+  "description": "Studio d'édition et de récits de Maud Lenoir : maquette pour l'édition jeunesse, correction et relecture, ateliers, et un jeu de récit coopératif.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F5F4",
+  "theme_color": "#EB6755",
+  "lang": "fr",
+  "icons": [
+    { "src": "/images/favicon-orange.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
