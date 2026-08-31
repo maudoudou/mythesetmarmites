@@ -92,8 +92,8 @@ def build_page(art, header, footer):
     slug, title, chapeau = art["slug"], art["title"], art["chapeau"]
     url = f"{DOMAIN}/a-table/{slug}"
     full_title = f"{title} — Mythes &amp; Marmites"
-    if len(re.sub("&amp;", "&", full_title)) > 62:
-        full_title = title
+    if len(re.sub("&amp;", "&", full_title)) > 60:
+        full_title = title  # titre d'article long : on garde < 60 sans le suffixe
     title_plain = re.sub("&amp;", "&", full_title).replace('"', "&quot;")
 
     # meta description : le chapeau de l'article, complété si trop court

@@ -141,6 +141,11 @@ GAME = {
     "genre": "Jeu de récit coopératif",
     "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6},
     "typicalAgeRange": "6-",
+    "author": {"@type": "Person", "name": "Maud Lenoir"},
+    "additionalProperty": [
+        {"@type": "PropertyValue", "name": "Durée d'une partie", "value": "45 minutes"},
+        {"@type": "PropertyValue", "name": "Statut", "value": "Prototype en test, à la recherche d'un éditeur"},
+    ],
 }
 
 # fichier -> liste des objets JSON-LD à poser sur cette page
