@@ -387,26 +387,43 @@ const countOf  = id => id === 'tout' ? ARTICLES.length : ARTICLES.filter(a => a.
 const listOf   = id => id === 'tout' ? ARTICLES.slice() : ARTICLES.filter(a => a.cat === id);
 const PER_PAGE = 3;
 
+/* Dimensions intrinsèques des illustrations (identiques pour une couleur et
+   sa variante -cream), pour poser des attributs width/height corrects et
+   éviter un saut de mise en page au chargement. */
+const ILL_DIMS = {
+  'poule-rousse-orange': [87, 125], 'roule-galette-violet': [241, 164],
+  'trois-petits-cochons-green': [262, 190], 'hansel-et-gretel-orange': [193, 139],
+  'asterix-orange': [88, 164], 'corbeau-renard-violet': [717, 1129],
+  'marmite-violet': [140, 91], 'alice-orange': [128, 203], 'alice-green': [128, 203],
+  'monsieur-lapin-orange': [95, 165], 'ours-boucle-dor-green': [251, 115],
+  'popeye-green': [188, 204], 'carotte-orange': [68, 216],
+  'chaperon-rouge-violet': [163, 143], 'livre-violet': [112, 169], 'souris-green': [102, 141]
+};
+function illAttrs(name) {
+  const d = ILL_DIMS[name];
+  return d ? ` width="${d[0]}" height="${d[1]}"` : '';
+}
+
 /* ---------------------------- Vignettes ---------------------------- */
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
-  return `<a class="card card--r16 card--link" href="/#/a-table/${a.slug}">
-    <img class="card__ill" src="/images/${a.ill}.svg" alt="" style="width:100%;height:120px;object-fit:contain">
+  return `<article class="contents"><a class="card card--r16 card--link" href="/#/a-table/${a.slug}">
+    <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
     <p class="card__text" style="margin-bottom:14px">${a.resume}</p>
     <p class="small" style="font-size:13px">${a.foot}</p>
-  </a>`;
+  </a></article>`;
 }
 
 function tileHTML(a) {
   const cream = a.ill.replace(/-(orange|green|violet|brown)$/, '-cream');
-  return `<a class="tile tile--link" href="/#/a-table/${a.slug}" style="color:inherit;display:block">
-    <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt="" style="width:100%;height:110px;object-fit:contain">
+  return `<article class="contents"><a class="tile tile--link" href="/#/a-table/${a.slug}" style="color:inherit;display:block">
+    <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:110px;object-fit:contain">
     <p class="card__kicker" style="color:var(--or);margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin-top:8px">${a.title}</h3>
     <p class="card__text" style="color:rgba(248,245,244,.72);margin-top:10px">${a.resume}</p>
-  </a>`;
+  </a></article>`;
 }
 
 /* ---------------------------- « À table » ---------------------------- */
@@ -492,6 +509,7 @@ function articleHTML(a) {
 
   return `
   <a class="back" href="/a-table"><span class="ar">←</span> Retour à table</a>
+  <article>
   <div class="article-lead" style="margin-top:34px">
     <p class="eyebrow" style="margin-bottom:18px">${a.source}</p>
     <h1 style="font-size:clamp(34px,4.6vw,54px);margin-bottom:18px">${a.title}</h1>
@@ -499,12 +517,14 @@ function articleHTML(a) {
     <div class="article-meta"><span>${a.date}</span>${a.meta.map(m => `<span>${m}</span>`).join('')}</div>
   </div>
 
-  <div class="ph ph--r20${a.img ? ' has-img' : ''}" style="height:400px;margin:34px 0 10px">${a.img ? `<img src="${a.img}" alt="${a.photo}">` : `<span>${a.photo}</span>`}</div>
+  <!-- Suppose qu'un .webp existe à côté de chaque a.img (voir scripts/generate-webp.py) :
+       générez-le avant de publier un article avec une nouvelle photo. -->
+  <div class="ph ph--r20${a.img ? ' has-img' : ''}" style="height:400px;margin:34px 0 10px">${a.img ? `<picture><source srcset="${a.img.replace(/\.(jpg|jpeg|png)$/i, '.webp')}" type="image/webp"><img src="${a.img}" alt="${a.photo}" width="800" height="400" loading="lazy"></picture>` : `<span>${a.photo}</span>`}</div>
 
   <div class="row" style="gap:52px;align-items:flex-start;padding-top:44px">
     <div style="flex:1.5;min-width:330px">${recipe}</div>
     <div style="flex:1;min-width:280px">
-      <img class="card__ill" src="/images/${a.ill}.svg" alt="" style="width:150px;margin-bottom:26px">
+      <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:150px;margin-bottom:26px">
       ${aside}
       <div class="quote-mark" style="margin:26px 0">
         <p class="card__kicker card__kicker--green" style="margin-bottom:8px">LA QUESTION À POSER</p>
@@ -518,9 +538,10 @@ function articleHTML(a) {
       </div>
     </div>
   </div>
+  </article>
 
   <div class="panel panel--ink" style="margin:60px 0 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:26px;padding:52px">
-    <img class="panel__ill" src="/images/livre-cream.svg" alt="" style="right:44px;bottom:-16px;width:150px;opacity:.14">
+    <img class="panel__ill" src="/images/livre-cream.svg" alt="" width="112" height="169" loading="lazy" style="right:44px;bottom:-16px;width:150px;opacity:.14">
     <div style="position:relative;max-width:520px">
       <p class="eyebrow eyebrow--or" style="margin-bottom:14px">LA PROCHAINE FOIS</p>
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>
