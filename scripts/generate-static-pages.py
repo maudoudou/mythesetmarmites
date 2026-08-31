@@ -22,8 +22,7 @@ Quand le relancer
 depuis la racine du dépôt pour répercuter le changement dans les pages
 statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
-dossiers /studio/, /correction/, /ateliers/, /a-table/, /jeu/, /parcours/,
-/contact/.
+dossiers /studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/.
 
 Les balises <head> (titre, meta description, canonical, Open Graph,
 JSON-LD...) de chaque page statique sont injectées séparément par
@@ -38,7 +37,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROUTES = {
     'studio':     'Le studio — Mythes & Marmites',
     'correction': 'Correction et relecture — Mythes & Marmites',
-    'ateliers':   'Ateliers lecture et cuisine — Mythes & Marmites',
     'a-table':    'À table — Mythes & Marmites',
     'jeu':        'Le jeu — Mythes & Marmites',
     'parcours':   'Mon parcours — Mythes & Marmites',
@@ -77,6 +75,14 @@ def main():
         # (masquées par défaut, affichées en JS selon le fragment d'URL).
         # Sur une page statique dédiée, le contenu doit être visible d'emblée.
         section = section.replace('class="page hide"', 'class="page"', 1)
+
+        # Dans la coquille SPA, le titre de chaque section secondaire est un
+        # <h2 class="page-title"> : ça garde un seul <h1> sur la page d'accueil.
+        # Sur la page autonome, ce titre redevient le <h1> du document.
+        section = section.replace(
+            '<h2 class="display page-title" ', '<h1 class="display" ', 1)
+        section = section.replace('<h2 class="page-title" ', '<h1 ', 1)
+        section = re.sub(r'(<h1[^>]*>[^<]*)</h2>', r'\1</h1>', section, count=1)
 
         # Marque le lien de nav correspondant comme actif (le JS de route()
         # ne s'exécute pas sur ces pages, voir IS_SPA_SHELL dans script.js).

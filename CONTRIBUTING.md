@@ -1,5 +1,12 @@
 # Ajouter un projet au portfolio
 
-Le portfolio de la page Studio (section « Quelques projets ») affiche quatre emplacements « Projet à venir » dans le bloc dépliable en bas de la liste. Chacun suit le même gabarit : une image, un titre suivi du commanditaire, une description courte et un texte alternatif. Le gabarit complet, prêt à copier, se trouve en commentaire HTML juste au-dessus de ces emplacements dans [index.html](index.html), au niveau de `id="rail-projets"`. Pour ajouter un projet, déposez la photo dans `images/photos/` sans toucher aux fichiers existants, copiez le bloc `<div class="rise">` du commentaire, collez-le à la place d'un emplacement « Projet à venir », puis renseignez le chemin de l'image, son texte alternatif, ses dimensions réelles (`width`/`height`), le titre du projet suivi du commanditaire (« Titre du projet - Commanditaire ») et une description d'une ou deux phrases.
+Les projets réalisés apparaissent à deux endroits : la section « Projets récents » de la page d'accueil et la section « Quelques projets » de la page Studio (`id="projets"`). Les deux vivent dans [index.html](index.html), à l'intérieur des sections `data-page="accueil"` et `data-page="studio"`.
 
-Le texte alternatif décrit ce que montre la photo, pas son nom de fichier ni le titre du projet déjà donné par le `h3` : par exemple « Couverture et double page intérieure d'un livret jeunesse » plutôt que « projet-client-final.jpg ». S'il reste des emplacements « Projet à venir » une fois tous les projets ajoutés, laissez-les tels quels : ce sont des cases vides, pas des projets à inventer.
+Pour ajouter un projet :
+
+1. Déposez la photo dans `images/photos/` sans renommer, déplacer ni remplacer un fichier existant.
+2. Générez sa version WebP : `python3 scripts/generate-webp.py` (ajoutez d'abord le nom du fichier au jeu `REFERENCED` du script).
+3. Copiez un bloc `<article class="rise">` existant dans la section voulue, collez-le à la suite des autres, puis renseignez : le chemin de l'image et son `srcset` WebP, un texte alternatif qui décrit ce que montre la photo (pas son nom de fichier), les dimensions réelles `width`/`height`, le titre du projet, le commanditaire, la nature de la commande et les livrables.
+4. Répercutez le changement sur les pages statiques : `python3 scripts/generate-static-pages.py && python3 scripts/inject-head-tags.py`.
+
+Le texte alternatif décrit l'image pour les personnes qui utilisent un lecteur d'écran : « Couverture et double page intérieure d'un livret jeunesse », pas « projet-client-final.jpg » ni le titre déjà donné à côté.

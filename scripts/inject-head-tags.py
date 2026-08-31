@@ -33,49 +33,43 @@ PAGES = {
     "index.html": (
         "/",
         "Mythes &amp; Marmites — studio d'édition jeunesse, Rouen",
-        "Studio d'édition à Rouen : maquette pour l'édition jeunesse, correction de manuscrits, ateliers lecture et cuisine en médiathèque, et un jeu coopératif.",
+        "Maud Lenoir, graphiste et maquettiste indépendante à Rouen. Maquette et mise en pages pour l'édition jeunesse, correction de manuscrits, panneaux d'exposition.",
         "website",
     ),
     "studio/index.html": (
         "/studio",
-        "Le studio, maquette d'édition jeunesse — Mythes &amp; Marmites",
-        "Maquette et mise en pages pour l'édition jeunesse, identité visuelle, livrets et panneaux d'exposition. Studio basé à Rouen, pour la Normandie.",
+        "Le studio — maquette et mise en pages, édition jeunesse",
+        "Maquette et mise en pages pour l'édition jeunesse, livrets et panneaux d'exposition, identité visuelle. Studio de graphiste à Rouen, en Normandie.",
         "website",
     ),
     "correction/index.html": (
         "/correction",
-        "Correction et relecture jeunesse — Mythes &amp; Marmites",
-        "Préparation de copie, correction orthotypographique et relecture sur épreuves, pour l'édition jeunesse et scolaire. Test de correction sur demande.",
-        "website",
-    ),
-    "ateliers/index.html": (
-        "/ateliers",
-        "Ateliers lecture et cuisine — Mythes &amp; Marmites",
-        "Un atelier lecture et cuisine pour les scolaires, les médiathèques et les centres de loisirs. Publics visés, matériel fourni et zone de déplacement à Rouen.",
+        "Correction et relecture — manuscrit jeunesse et scolaire",
+        "Préparation de copie, correction orthotypographique et relecture sur épreuves pour l'édition jeunesse et scolaire. Test de correction sur un extrait.",
         "website",
     ),
     "a-table/index.html": (
         "/a-table",
-        "À table : contes, mythes et recettes — Mythes &amp; Marmites",
-        "Un blog qui associe une recette et le conte, le mythe ou l'album qui va avec, plus des notes de lecture sur la nourriture dans les livres pour enfants.",
+        "À table — une recette et le récit qui va avec",
+        "Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.",
         "website",
     ),
     "jeu/index.html": (
         "/jeu",
-        "Le jeu Mythes &amp; Marmites — récit coopératif",
-        "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour le jouer.",
+        "Mythes &amp; Marmites — le jeu de récit coopératif",
+        "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.",
         "website",
     ),
     "parcours/index.html": (
         "/parcours",
-        "Mon parcours — Mythes &amp; Marmites",
-        "Diplômes, formations et expériences de Maud Lenoir, entre design d'édition, communication et littérature d'enfance et de jeunesse, en master à Artois.",
+        "Parcours — Maud Lenoir, maquettiste indépendante",
+        "Le parcours de Maud Lenoir : design, communication, édition et recherche en littérature d'enfance et de jeunesse, en master à l'université d'Artois.",
         "website",
     ),
     "contact/index.html": (
         "/contact",
-        "Parler d'un projet — Mythes &amp; Marmites",
-        "Un manuscrit à corriger, un livre à mettre en pages, un atelier à monter en médiathèque ou à l'école : écrivez-moi, avec une réponse sous deux jours ouvrés.",
+        "Contact — un livre, un texte, une exposition",
+        "Un livre à mettre en pages, un manuscrit jeunesse à corriger, une exposition à habiller : écrivez-moi, réponse sous deux jours ouvrés, à Rouen.",
         "website",
     ),
 }
@@ -84,7 +78,8 @@ PERSON = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Maud Lenoir",
-    "jobTitle": "Graphiste éditoriale et autrice, studio d'édition et de récits",
+    "jobTitle": "Graphiste et maquettiste indépendante",
+    "description": "Graphiste et maquettiste indépendante, spécialisée en édition jeunesse et en médiation culturelle.",
     "url": DOMAIN + "/",
     "workLocation": {
         "@type": "Place",
@@ -95,6 +90,14 @@ PERSON = {
             "addressCountry": "FR",
         },
     },
+    "areaServed": ["Rouen", "Métropole Rouen Normandie", "Normandie"],
+    "knowsAbout": [
+        "Maquette et mise en pages",
+        "Édition jeunesse",
+        "Correction et relecture",
+        "Signalétique et panneaux d'exposition",
+        "Identité visuelle",
+    ],
     "hasCredential": {
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "Master",
@@ -109,6 +112,7 @@ PROFESSIONAL_SERVICE = {
     "name": "Mythes & Marmites",
     "url": DOMAIN + "/",
     "image": OG_IMAGE,
+    "description": "Studio d'édition et de récits : maquette et mise en pages pour l'édition jeunesse, correction et relecture, signalétique d'exposition.",
     "founder": {"@type": "Person", "name": "Maud Lenoir"},
     "areaServed": [
         {"@type": "City", "name": "Rouen"},
@@ -119,11 +123,10 @@ PROFESSIONAL_SERVICE = {
         "@type": "OfferCatalog",
         "name": "Prestations",
         "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages pour l'édition jeunesse"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Correction et relecture de manuscrits jeunesse et scolaires"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages de livres et albums"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets et panneaux d'exposition, signalétique"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Identité visuelle et charte graphique"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets et panneaux d'exposition"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ateliers lecture et cuisine en médiathèque"}},
         ],
     },
 }
@@ -134,11 +137,10 @@ GAME = {
     "name": "Mythes & Marmites",
     "url": DOMAIN + "/jeu",
     "image": OG_IMAGE,
-    "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes.",
+    "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie d'environ 45 minutes.",
     "genre": "Jeu de récit coopératif",
     "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6},
     "typicalAgeRange": "6-",
-    "duration": "PT45M",
 }
 
 # fichier -> liste des objets JSON-LD à poser sur cette page

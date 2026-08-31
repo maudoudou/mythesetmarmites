@@ -416,16 +416,6 @@ function cardHTML(a) {
   </a></article>`;
 }
 
-function tileHTML(a) {
-  const cream = a.ill.replace(/-(orange|green|violet|brown)$/, '-cream');
-  return `<article class="contents"><a class="tile tile--link" href="/#/a-table/${a.slug}" style="color:inherit;display:block">
-    <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:110px;object-fit:contain">
-    <p class="card__kicker" style="color:var(--or);margin-top:20px">${a.kicker}</p>
-    <h3 class="card__title" style="margin-top:8px">${a.title}</h3>
-    <p class="card__text" style="color:rgba(248,245,244,.72);margin-top:10px">${a.resume}</p>
-  </a></article>`;
-}
-
 /* ---------------------------- « À table » ---------------------------- */
 let state = { cat: 'tout', page: 1 };
 
@@ -613,7 +603,7 @@ const IS_SPA_SHELL = $$('.page').length > 1;
    (voir generate-static-pages.py). Un ancien lien en #/xxx est
    redirigé côté client vers la nouvelle URL ; la requête entière
    (avec ?cat=... par exemple) est conservée. */
-const MIGRATED_ROUTES = ['studio', 'correction', 'ateliers', 'a-table', 'jeu', 'parcours', 'contact'];
+const MIGRATED_ROUTES = ['studio', 'correction', 'a-table', 'jeu', 'parcours', 'contact'];
 
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
@@ -644,7 +634,6 @@ function route() {
     document.title = 'À table : contes, mythes et recettes — Mythes & Marmites';
   } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio, maquette d'édition jeunesse — Mythes & Marmites"; }
   else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture jeunesse — Mythes & Marmites'; }
-  else if (parts[0] === 'ateliers') { show('ateliers'); document.title = 'Ateliers lecture et cuisine — Mythes & Marmites'; }
   else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
   else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu Mythes & Marmites — récit coopératif'; }
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
@@ -711,9 +700,6 @@ if ($('#form')) $('#form').addEventListener('submit', async e => {
 });
 
 /* ---------------------------- Démarrage ---------------------------- */
-/* #home-latest n'existe que sur l'accueil (coquille SPA). */
-if ($('#home-latest')) $('#home-latest').innerHTML = ARTICLES.slice(0, 3).map(tileHTML).join('');
-
 if (IS_SPA_SHELL) {
   /* Coquille SPA (/) : le routage en #/ gère l'affichage. */
   renderFilters();
