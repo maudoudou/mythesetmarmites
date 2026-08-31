@@ -89,6 +89,8 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <link rel="icon" href="/images/favicon-orange.svg">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://mythesetmarmites.fr/{route}">
 <link rel="stylesheet" href="/style.css?v=3">
 </head>
