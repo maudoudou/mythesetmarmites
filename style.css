@@ -21,27 +21,6 @@
   --haricot:#62B47E; /* le partage */
   --reverie:#9599EA; /* on repart */
   --or:#F4CC71;      /* la tablÃ©e */
-
-  /* Variantes foncées : mêmes teintes que --pomme / --haricot / --reverie,
-     assombries pour porter du texte à ≥ 4,5:1 sur les fonds clairs et en
-     aplat de bouton avec du texte --lait. Le contraste AA est non négociable
-     dans le brief ; les teintes vives restent employées pour le décor
-     (filets pointillés, illustrations, grandes formes). Ratios dans
-     scripts/check-contrast.py. */
-  --pomme-fonce:#B93A27;
-  --haricot-fonce:#2C744A;
-  --reverie-fonce:#4E53C6;
-
-  /* Aplats de section : le corps de texte reste sur un fond très clair. */
-  --creme:#F8F5F4;
-  --vert-pale:#EAF3EC;
-  --violet-pale:#EFEFFB;
-  /* Fonds de carte (un par carte, pour remplacer la carte blanche bordée). */
-  --pomme-pale:#FBEBE7;
-  --haricot-pale:#E6F2E9;
-  --reverie-pale:#ECECFA;
-  --or-pale:#FBF2DC;
-
   --encre-80:rgba(83,71,65,.82);
   --encre-70:rgba(83,71,65,.72);
   --encre-55:rgba(83,71,65,.78); /* nom conservé (utilisé partout), opacité relevée de .55 à .78 : à .55 le texte .small ne passait pas 4,5:1 sur --lait (2,71:1 mesuré) */
@@ -67,7 +46,7 @@ picture{display:contents} /* le <picture> des photos WebP+repli ne doit rien cha
 h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.04}
 p{margin:0}
 ul,ol{margin:0}
-a{color:var(--pomme-fonce);text-decoration:none;transition:color .15s ease}
+a{color:var(--pomme);text-decoration:none;transition:color .15s ease}
 a:hover{color:var(--encre)}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 /* Double anneau : quel que soit le fond (clair ou la bande sombre --encre),
@@ -85,9 +64,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hide{display:none !important}
 
 /* ---------- Type ---------- */
-.eyebrow{font-weight:800;font-size:12.7px;letter-spacing:.22em;text-transform:uppercase;color:var(--pomme-fonce)}
-.eyebrow--green{color:var(--haricot-fonce)}
-.eyebrow--violet{color:var(--reverie-fonce)}
+.eyebrow{font-weight:800;font-size:12.7px;letter-spacing:.05em;text-transform:uppercase;color:var(--pomme)}
+.eyebrow--green{color:var(--haricot)}
+.eyebrow--violet{color:var(--reverie)}
 .eyebrow--or{color:var(--or)} /* uniquement sur panneau sombre */
 .eyebrow--mute{color:var(--encre-55)}
 .eyebrow--ink{color:var(--encre)}
@@ -99,15 +78,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .script{font-family:'Homemade Apple',cursive}
 .body{font-size:16.5px;line-height:1.7;color:rgba(83,71,65,.8)}
 .small{font-size:14px;color:var(--encre-55)}
-/* Titre de section coloré : la teinte suit le fond de la bande (voir .band-*). */
-.sec-title{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--pomme-fonce)}
-.band-vert .sec-title{color:var(--haricot-fonce)}
-.band-violet .sec-title{color:var(--reverie-fonce)}
+/* Titre de section coloré (charte). Couleur au choix par modificateur. */
+.sec-title{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--pomme)}
+.sec-title--vert{color:var(--haricot)}
+.sec-title--violet{color:var(--reverie)}
+.sec-title--ink{color:var(--encre)}
 .panel .sec-title,.panel--ink .sec-title{color:inherit}
-/* le filet pointillé sous un titre de section reprend la teinte vive de la bande */
-.sec-title + .dotted{background-image:radial-gradient(circle,var(--pomme) 1.4px,transparent 1.7px);opacity:.6}
-.band-vert .sec-title + .dotted{background-image:radial-gradient(circle,var(--haricot) 1.4px,transparent 1.7px)}
-.band-violet .sec-title + .dotted{background-image:radial-gradient(circle,var(--reverie) 1.4px,transparent 1.7px)}
+/* Filet pointillé sous le titre : reprend sa couleur. */
+.sec-title + .dotted{background-image:radial-gradient(circle,var(--pomme) 1.4px,transparent 1.7px);opacity:.75}
+.sec-title--vert + .dotted{background-image:radial-gradient(circle,var(--haricot) 1.4px,transparent 1.7px)}
+.sec-title--violet + .dotted{background-image:radial-gradient(circle,var(--reverie) 1.4px,transparent 1.7px)}
 
 /* ---------- Filet pointillÃ© (signature) ---------- */
 .dotted{
@@ -115,25 +95,26 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   background-image:radial-gradient(circle,var(--encre) 1.4px,transparent 1.7px);
   background-size:12px 3px;background-repeat:repeat-x;
 }
-.dotted--pomme{background-image:radial-gradient(circle,var(--pomme) 1.4px,transparent 1.7px);opacity:.7}
-.dotted--violet{background-image:radial-gradient(circle,var(--reverie) 1.4px,transparent 1.7px);opacity:.7}
+.dotted--pomme{background-image:radial-gradient(circle,var(--pomme) 1.4px,transparent 1.7px);opacity:1}
+.dotted--violet{background-image:radial-gradient(circle,var(--reverie) 1.4px,transparent 1.7px);opacity:1}
+.dotted--green{background-image:radial-gradient(circle,var(--haricot) 1.4px,transparent 1.7px);opacity:1}
 .dotted--full{max-width:none}
 
 /* ---------- Boutons ---------- */
 .btn{
   display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-  background:var(--pomme-fonce);color:var(--lait);font-weight:700;font-size:16px;
+  background:var(--pomme);color:var(--lait);font-weight:700;font-size:16px;
   padding:15px 28px;border-radius:999px;cursor:pointer;
   transition:background .15s ease,transform .12s ease,color .15s ease,border-color .15s ease;
 }
-.btn:hover{background:var(--encre);color:var(--lait)}
+.btn:hover{background:#d95745;color:var(--lait)}
 .btn:active{transform:translateY(1px)}
-.btn--green{background:var(--haricot-fonce)}
-.btn--green:hover{background:var(--encre)}
+.btn--green{background:var(--haricot)}
+.btn--green:hover{background:#4fa46f}
 .btn--ink{background:var(--encre)}
-.btn--ink:hover{background:#2f2926}
-.btn--light{background:var(--lait);color:var(--pomme-fonce)}
-.btn--light:hover{background:#fff;color:var(--encre)}
+.btn--ink:hover{background:#3f3631}
+.btn--light{background:var(--lait);color:var(--pomme)}
+.btn--light:hover{background:#fff;color:var(--pomme)}
 .btn--ghost{background:none;color:var(--encre);border:1.5px solid rgba(83,71,65,.25);padding:13.5px 28px}
 .btn--ghost:hover{background:var(--encre);border-color:var(--encre);color:var(--lait)}
 .btn--ghost-light{background:none;color:var(--lait);border:1.5px solid rgba(248,245,244,.4);padding:11px 22px;font-size:14.5px}
@@ -145,12 +126,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn:hover .ar{transform:translateX(4px)}
 
 /* Lien d'action Â« â€¦ â†’ Â» */
-.more{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14.5px;color:var(--pomme-fonce);cursor:pointer}
+.more{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14.5px;color:var(--pomme);cursor:pointer}
 .more .ar{transition:transform .18s var(--ease)}
 .more:hover{color:var(--encre)}
 .more:hover .ar{transform:translateX(5px)}
-.more--green{color:var(--haricot-fonce)}
-.more--violet{color:var(--reverie-fonce)}
+.more--green{color:var(--haricot)}
+.more--violet{color:var(--reverie)}
 
 /* ---------- En-tÃªte ---------- */
 .nav{
@@ -162,7 +143,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .nav__logo img{height:34px;width:auto;transition:transform .25s var(--ease)}
 .nav__logo:hover img{transform:rotate(-1.5deg) scale(1.02)}
 .nav__links{display:flex;align-items:center;gap:26px;font-size:14.5px;white-space:nowrap}
-.navlink{position:relative;padding-bottom:5px;color:rgba(83,71,65,.82);font-weight:500;cursor:pointer;transition:color .15s ease}
+.navlink{position:relative;padding-bottom:5px;color:rgba(83,71,65,.72);font-weight:500;cursor:pointer;transition:color .15s ease}
 .navlink:hover{color:var(--encre)}
 .navlink.is-on{color:var(--encre);font-weight:700}
 .navlink::after{
@@ -184,18 +165,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .card--link:hover{transform:translateY(-4px);border-color:rgba(235,103,85,.5)}
 .card--link:hover .card__ill{transform:rotate(-4deg) scale(1.05)}
-.card--link:hover .card__title{color:var(--pomme-fonce)}
+.card--link:hover .card__title{color:var(--pomme)}
 .card__title{font-weight:700;font-size:19px;line-height:1.25;transition:color .15s ease}
-.card__kicker{font-weight:800;font-size:11.5px;letter-spacing:.16em;color:var(--pomme-fonce)}
-.card__kicker--green{color:var(--haricot-fonce)}
-.card__kicker--violet{color:var(--reverie-fonce)}
+.card__kicker{font-weight:800;font-size:11.5px;letter-spacing:.03em;color:var(--pomme)}
+.card__kicker--green{color:var(--haricot)}
+.card__kicker--violet{color:var(--reverie)}
 .card__text{font-size:14.5px;line-height:1.55;color:var(--encre-70)}
 
 /* Portes de l'accueil */
 .door{display:block}
 .door .more{transition:color .15s ease}
 .door:hover .card__ill{transform:rotate(-4deg) scale(1.06)}
-.door:hover h3{color:var(--pomme-fonce)}
+.door:hover h3{color:var(--pomme)}
 .door h3{transition:color .15s ease}
 .door:hover .ar{transform:translateX(5px)}
 
@@ -204,7 +185,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
   border:1.5px solid rgba(83,71,65,.2);border-radius:999px;padding:10px 22px;
   font-weight:700;font-size:14.5px;color:var(--encre);background:var(--lait);
   transition:background .15s ease,border-color .15s ease,color .15s ease}
-.disclose:hover{background:var(--pomme-fonce);border-color:var(--pomme-fonce);color:var(--lait)}
+.disclose:hover{background:var(--pomme);border-color:var(--pomme);color:var(--lait)}
 .disclose:active{transform:translateY(1px)}
 .disclose__ar{transition:transform .25s var(--ease)}
 .disclose:hover .disclose__ar{transform:translateY(3px)}
@@ -239,7 +220,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
   transition:opacity .2s ease;opacity:.7;
 }
 .ph span{position:relative;max-width:24ch}
-.ph:hover{border-color:var(--pomme-fonce);color:var(--pomme-fonce)}
+.ph:hover{border-color:var(--pomme);color:var(--pomme)}
 .ph:hover::before{opacity:.35}
 .ph--r20{border-radius:20px}
 
@@ -269,8 +250,9 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 /* ---------- Panneaux ---------- */
 .panel{border-radius:24px;padding:56px;position:relative;overflow:hidden}
 .panel--ink{background:var(--encre);color:var(--lait)}
-.panel--pomme{background:var(--pomme-fonce);color:var(--lait)} /* --pomme vif ne porte pas de texte AA */
-.panel--haricot{background:var(--haricot-fonce);color:var(--lait)}
+.panel--pomme{background:var(--pomme);color:var(--lait)}
+.panel--haricot{background:var(--haricot);color:var(--lait)}
+.panel--reverie{background:var(--reverie);color:var(--lait)}
 .panel--jaune{background:var(--or);color:var(--encre)}
 .panel--or{background:var(--or);color:var(--encre);border-radius:20px;padding:34px 36px}
 .panel__ill{position:absolute;pointer-events:none;transition:transform .5s var(--ease)}
@@ -296,51 +278,63 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .stat__n{font-weight:800;font-size:30px}
 .stat__l{font-size:14px;color:var(--encre-70);margin-top:6px}
 
-/* ---------- Aplats de section ---------- */
-/* Une bande pleine largeur, d'une seule couleur pâle. On fait alterner
-   crème (fond du body, aucune classe), vert pâle et violet pâle, jamais
-   deux bandes fortes de suite. Le corps de texte reste sur fond clair. */
+/* ---------- Sections ---------- */
+/* Fond crème partout (celui du body). .band ne sert plus qu'à ancrer une
+   illustration : conteneur positionné, il rogne la part qui sort. */
 .band{position:relative;overflow:hidden}
 .band>.wrap{position:relative}
-.band-vert{background:var(--vert-pale)}
-.band-violet{background:var(--violet-pale)}
-.band-blanc{background:#fff}
-.band-vert,.band-violet,.band-blanc{border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)}
 
 /* Illustration en ancrage de section : grande, posée sur un bord, elle
-   déborde la colonne de contenu (la bande, en overflow:hidden, coupe la
-   part qui sort). Placée dans la marge, jamais derrière du texte ; masquée
-   sous 1000px pour laisser respirer la lecture sur petit écran. Le contenu
-   de la section garde une pile propre au-dessus (z-index). */
+   déborde la colonne de contenu (rognée par .band{overflow:hidden}).
+   Dans la marge, jamais derrière du texte ; masquée sous 1080px. */
 .has-anchor{position:relative}
 .has-anchor>:not(.sec-anchor){position:relative;z-index:1}
 .sec-anchor{position:absolute;pointer-events:none;z-index:0;height:auto;user-select:none}
-/* Masquée dès qu'il n'y a plus de marge sûre autour de la colonne de texte :
-   au-dessus de 1080px, l'illustration vit dans la marge extérieure + la part
-   qui sort de l'écran (coupée par .band{overflow:hidden}). */
 @media (max-width:1080px){.sec-anchor{display:none}}
 
-/* ---------- Cartes colorées ---------- */
-/* Un fond de palette différent d'une carte à l'autre, à la place de la
-   carte blanche bordée. Teintes pâles : le texte --encre passe AA. */
-.card--pomme{background:var(--pomme-pale);border-color:#E8CEC7}
-.card--vert{background:var(--haricot-pale);border-color:#CCE2D4}
-.card--violet{background:var(--reverie-pale);border-color:#D6D6F1}
-.card--or{background:var(--or-pale);border-color:#ECDCB4}
-.card--pomme.card--link:hover{border-color:var(--pomme-fonce)}
-.card--vert.card--link:hover{border-color:var(--haricot-fonce)}
-.card--violet.card--link:hover{border-color:var(--reverie-fonce)}
+/* ---------- Blocs en aplat de couleur ---------- */
+/* Couleur pleine de la charte, sans opacité, sans contour. Le corps de
+   texte long reste sur crème (dans .card__inset le cas échéant). */
+.card--pomme,.card--vert,.card--violet,.card--or,.card--ink{border:0}
+.card--pomme{background:var(--pomme);color:var(--lait)}
+.card--vert{background:var(--haricot);color:var(--lait)}
+.card--violet{background:var(--reverie);color:var(--lait)}
+.card--or{background:var(--or);color:var(--encre)}
+.card--ink{background:var(--encre);color:var(--lait)}
+.card--pomme .card__title,.card--vert .card__title,.card--violet .card__title,.card--ink .card__title,
+.card--pomme h3,.card--vert h3,.card--violet h3,.card--ink h3{color:var(--lait)}
+.card--pomme .card__kicker,.card--vert .card__kicker,.card--violet .card__kicker,.card--ink .card__kicker{color:var(--lait)}
+.card--pomme .card__text,.card--vert .card__text,.card--violet .card__text,.card--ink .card__text{color:var(--lait)}
+.card--or,.card--or .card__kicker,.card--or h3,.card--or .card__text,.card--or .small,.card--or p,.card--or strong{color:var(--encre)}
+.card--pomme .more,.card--vert .more,.card--violet .more,.card--ink .more{color:var(--lait)}
+.card--or .more{color:var(--encre)}
+.card--pomme.card--link:hover,.card--vert.card--link:hover,.card--violet.card--link:hover,.card--or.card--link:hover{transform:translateY(-4px)}
+.card--pomme.card--link:hover .card__title,.card--vert.card--link:hover .card__title,.card--violet.card--link:hover .card__title{color:var(--or)}
+.card--or.card--link:hover .card__title{color:var(--pomme)}
 
-/* Bloc projet pleine largeur, posé sur une teinte pâle */
-.projet{border-radius:20px;padding:28px;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
-.projet--pomme{background:var(--pomme-pale)}
-.projet--vert{background:var(--haricot-pale)}
-.projet--violet{background:var(--reverie-pale)}
-.projet--or{background:var(--or-pale)}
+/* Encart crème dans une carte de couleur : pour un paragraphe qui doit
+   rester lisible (texte --encre sur crème). */
+.card__inset{background:var(--lait);color:var(--encre);border-radius:14px;padding:16px 18px;margin-top:16px}
+.card__inset .card__text,.card__inset .small,.card__inset .body{color:var(--encre-70)}
+.card__inset strong{color:var(--encre)}
+
+/* Pastille de couleur pleine (icône ou numéro) sur une carte claire. */
+.card__disc{display:inline-grid;place-items:center;width:62px;height:62px;border-radius:18px}
+.card__disc--pomme{background:var(--pomme)}
+.card__disc--vert{background:var(--haricot)}
+.card__disc--violet{background:var(--reverie)}
+.card__disc--or{background:var(--or)}
+.card__num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:999px;
+  background:var(--pomme);color:var(--lait);font-weight:800;font-size:20px;font-style:normal}
+.card--or .card__num{background:var(--pomme);color:var(--lait)}
+
+/* Bloc projet pleine largeur : la photo apporte la couleur, le texte reste
+   sur crème, aucun aplat sous le paragraphe. */
+.projet{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
 .projet__media{flex:1.1;min-width:280px}
 .projet__body{flex:1;min-width:260px}
 @media (max-width:700px){
-  .projet{padding:18px;gap:20px}
+  .projet{gap:22px}
   .projet__media,.projet__body{flex:1 1 100%;min-width:0}
 }
 
@@ -365,7 +359,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
   transition:background .15s ease,color .15s ease,border-color .15s ease;
 }
 .pager__b:hover{background:#fff;border-color:var(--encre)}
-.pager__b.is-on{background:var(--pomme-fonce);border-color:var(--pomme-fonce);color:var(--lait)}
+.pager__b.is-on{background:var(--pomme);border-color:var(--pomme);color:var(--lait)}
 .pager__b[disabled]{opacity:.35;cursor:default}
 .pager__b[disabled]:hover{background:none;border-color:rgba(83,71,65,.2)}
 
@@ -378,7 +372,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .ing{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;font-size:15.5px;line-height:1.5}
 .quote-mark{border-left:3px solid var(--haricot);padding-left:18px}
 .back{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:rgba(83,71,65,.6);cursor:pointer}
-.back:hover{color:var(--pomme-fonce)}
+.back:hover{color:var(--pomme)}
 .back .ar{transition:transform .18s var(--ease)}
 .back:hover .ar{transform:translateX(-4px)}
 
@@ -391,7 +385,7 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
   background:var(--lait);transition:border-color .15s ease,background .15s ease;
 }
 .input:hover,.select:hover,.textarea:hover{border-color:rgba(83,71,65,.4)}
-.input:focus,.select:focus,.textarea:focus{border-color:var(--pomme-fonce);background:#fff}
+.input:focus,.select:focus,.textarea:focus{border-color:var(--pomme);background:#fff}
 .textarea{line-height:1.6;resize:vertical}
 .select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9'><path d='M1 1l6 6 6-6' fill='none' stroke='%23534741' stroke-width='1.6' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 16px center}
 

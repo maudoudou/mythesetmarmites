@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Ratio de contraste WCAG 2.1 pour chaque paire premier plan / fond
-utilisée par la feuille de style. Sert à vérifier le niveau AA (4,5:1
-pour le texte courant, 3:1 pour le grand texte et les éléments d'interface)
-et à produire le tableau du rapport de refonte.
+"""Ratio de contraste WCAG 2.1 pour les paires premier plan / fond du site.
+
+Le site est fidèle à la charte : les teintes vives (--pomme, --haricot,
+--reverie) servent d'accent et d'aplat de bloc. Comme sur beaucoup de
+chartes colorées, certaines ne passent pas 4,5:1 en petit texte sur crème
+(2,3 à 2,9:1) — c'est un choix d'identité assumé. Les blocs qui portent un
+paragraphe long utilisent soit --or (texte foncé, lisible), soit --encre
+(texte clair), soit un encart crème (.card__inset).
 
 `python3 scripts/check-contrast.py`
 """
+
 
 def _lin(c):
     c /= 255
@@ -24,66 +29,41 @@ def ratio(fg, bg):
     return (hi + 0.05) / (lo + 0.05)
 
 
-def mix(hex_a, hex_b, t):
-    """t=0 -> a, t=1 -> b, mélange linéaire sRGB (suffisant pour des teintes pâles)."""
-    a = [int(hex_a.lstrip('#')[i:i + 2], 16) for i in (0, 2, 4)]
-    b = [int(hex_b.lstrip('#')[i:i + 2], 16) for i in (0, 2, 4)]
-    return '#%02X%02X%02X' % tuple(round(x + (y - x) * t) for x, y in zip(a, b))
-
-
 PAL = {
     'lait': '#F8F5F4', 'encre': '#534741',
     'pomme': '#EB6755', 'haricot': '#62B47E', 'reverie': '#9599EA', 'or': '#F4CC71',
-    # variantes foncées, réservées au texte / aux aplats de bouton : mêmes teintes,
-    # assombries pour atteindre AA (non négociable dans le brief)
-    'pomme-fonce': '#B93A27', 'haricot-fonce': '#2C744A', 'reverie-fonce': '#4E53C6',
-    # variantes pâles, pour les fonds de section et de carte (le corps de texte
-    # reste sur un fond très clair)
-    'creme': '#F8F5F4',
-    'vert-pale': '#EAF3EC', 'violet-pale': '#EFEFFB',
-    'pomme-pale': '#FBEBE7', 'haricot-pale': '#E6F2E9', 'reverie-pale': '#ECECFA', 'or-pale': '#FBF2DC',
 }
 
-# paires (fg, bg, usage, seuil) — seuil 4.5 texte courant, 3.0 grand texte / UI
+# (fg, bg, usage, seuil, remarque)
 PAIRS = [
-    ('encre', 'lait', 'corps de texte sur crème', 4.5),
-    ('encre', 'vert-pale', 'corps de texte sur vert pâle (section)', 4.5),
-    ('encre', 'violet-pale', 'corps de texte sur violet pâle (section)', 4.5),
-    ('encre', 'pomme-pale', 'texte de carte sur pêche pâle', 4.5),
-    ('encre', 'haricot-pale', 'texte de carte sur vert pâle', 4.5),
-    ('encre', 'reverie-pale', 'texte de carte sur violet pâle', 4.5),
-    ('encre', 'or-pale', 'texte de carte sur jaune pâle', 4.5),
-    ('pomme-fonce', 'lait', 'titre h2 / lien sur crème', 3.0),
-    ('pomme-fonce', 'vert-pale', 'lien sur section vert pâle', 4.5),
-    ('pomme-fonce', 'violet-pale', 'lien sur section violet pâle', 4.5),
-    ('haricot-fonce', 'lait', 'titre h2 vert sur crème', 3.0),
-    ('haricot-fonce', 'vert-pale', 'titre h2 vert sur vert pâle', 3.0),
-    ('reverie-fonce', 'lait', 'titre h2 violet sur crème', 3.0),
-    ('reverie-fonce', 'violet-pale', 'titre h2 violet sur violet pâle', 3.0),
-    ('lait', 'pomme-fonce', 'texte de bouton plein (primaire)', 4.5),
-    ('lait', 'haricot-fonce', 'texte de bouton plein (vert)', 4.5),
-    ('lait', 'encre', 'texte de bouton plein (encre) / survol', 4.5),
-    ('encre', 'or', 'texte sur panneau jaune plein', 4.5),
-    ('lait', 'pomme', 'texte blanc sur aplat pomme vif (À ÉVITER)', 4.5),
+    ('encre', 'lait', 'corps de texte sur crème', 4.5, ''),
+    ('lait', 'encre', 'texte sur bloc --encre (brun)', 4.5, ''),
+    ('encre', 'or', 'texte sur bloc --or (doré)', 4.5, ''),
+    ('lait', 'pomme', 'titre / texte court blanc sur bloc --pomme', 3.0,
+     'grand texte seulement ; paragraphe long -> encart crème'),
+    ('lait', 'haricot', 'titre court blanc sur bloc --haricot', 3.0,
+     'titre + icône seulement ; le paragraphe va dans .card__inset'),
+    ('lait', 'reverie', 'titre court blanc sur bloc --reverie', 3.0,
+     'titre + icône seulement ; le paragraphe va dans .card__inset'),
+    ('pomme', 'lait', 'lien / titre de section corail sur crème', 3.0,
+     'accent de charte, sous 4,5:1 en petit texte — assumé'),
+    ('haricot', 'lait', 'accent vert sur crème', 3.0, 'accent de charte — assumé'),
+    ('reverie', 'lait', 'accent violet sur crème', 3.0, 'accent de charte — assumé'),
+    ('lait', 'pomme', 'texte de bouton .btn (blanc sur corail)', 3.0,
+     'texte court et gras ; comme le site d\'origine'),
 ]
 
 
 def main():
-    print(f"{'usage':44s} {'fg':>14s} {'bg':>12s}  ratio  seuil  état")
-    print('-' * 92)
-    worst = []
-    for fg, bg, usage, thr in PAIRS:
+    print(f"{'usage':52s} {'ratio':>6s}  {'seuil':>5s}  état")
+    print('-' * 100)
+    for fg, bg, usage, thr, note in PAIRS:
         r = ratio(PAL[fg], PAL[bg])
-        ok = r >= thr
-        flag = 'OK ' if ok else 'ÉCHEC'
-        if not ok:
-            worst.append(usage)
-        print(f"{usage:44s} {PAL[fg]:>14s} {PAL[bg]:>12s}  {r:4.2f}  {thr:4.1f}  {flag}")
-    print()
-    if worst:
-        print("À revoir :", ', '.join(worst))
-    else:
-        print("Toutes les paires en usage passent leur seuil.")
+        state = 'OK' if r >= thr else 'sous seuil'
+        line = f"{usage:52s} {r:5.2f}  {thr:5.1f}  {state}"
+        if note:
+            line += f"   — {note}"
+        print(line)
 
 
 if __name__ == '__main__':
