@@ -390,7 +390,7 @@ const PER_PAGE = 3;
 /* ---------------------------- Vignettes ---------------------------- */
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
-  return `<a class="card card--r16 card--link" href="#/a-table/${a.slug}">
+  return `<a class="card card--r16 card--link" href="/#/a-table/${a.slug}">
     <img class="card__ill" src="/images/${a.ill}.svg" alt="" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
@@ -401,7 +401,7 @@ function cardHTML(a) {
 
 function tileHTML(a) {
   const cream = a.ill.replace(/-(orange|green|violet|brown)$/, '-cream');
-  return `<a class="tile tile--link" href="#/a-table/${a.slug}" style="color:inherit;display:block">
+  return `<a class="tile tile--link" href="/#/a-table/${a.slug}" style="color:inherit;display:block">
     <img class="card__ill" src="/images/${cream}.svg" onerror="this.onerror=null;this.src='/images/${a.ill}.svg'" alt="" style="width:100%;height:110px;object-fit:contain">
     <p class="card__kicker" style="color:var(--or);margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin-top:8px">${a.title}</h3>
@@ -438,7 +438,9 @@ function renderList() {
   observeRise();
 }
 
-$('#filters').addEventListener('click', e => {
+/* $('#filters') et $('#pager') n'existent que sur la page « À table »
+   (coquille SPA ou page statique /a-table/) : on protège l'écoute. */
+if ($('#filters')) $('#filters').addEventListener('click', e => {
   const b = e.target.closest('.chip');
   if (!b) return;
   state.cat = b.dataset.cat; state.page = 1;
@@ -446,7 +448,7 @@ $('#filters').addEventListener('click', e => {
   window.scrollTo({ top: 240, behavior: 'smooth' });
 });
 
-$('#pager').addEventListener('click', e => {
+if ($('#pager')) $('#pager').addEventListener('click', e => {
   const b = e.target.closest('.pager__b');
   if (!b || b.disabled) return;
   state.page = Number(b.dataset.page);
@@ -489,7 +491,7 @@ function articleHTML(a) {
     <p class="serif" style="font-size:19px;line-height:1.62;color:rgba(83,71,65,.86);margin-bottom:18px">${a.chapeau}</p>`;
 
   return `
-  <a class="back" href="#/a-table"><span class="ar">←</span> Retour à table</a>
+  <a class="back" href="/a-table"><span class="ar">←</span> Retour à table</a>
   <div class="article-lead" style="margin-top:34px">
     <p class="eyebrow" style="margin-bottom:18px">${a.source}</p>
     <h1 style="font-size:clamp(34px,4.6vw,54px);margin-bottom:18px">${a.title}</h1>
@@ -523,7 +525,7 @@ function articleHTML(a) {
       <p class="eyebrow eyebrow--or" style="margin-bottom:14px">LA PROCHAINE FOIS</p>
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>
     </div>
-    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="#/a-table/${next.slug}">Lire <span class="ar">→</span></a>
+    <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/#/a-table/${next.slug}">Lire <span class="ar">→</span></a>
   </div>`;
 }
 
@@ -538,6 +540,18 @@ function observeRise() {
 }
 
 /* ---------------------------- Routage ---------------------------- */
+/* La page racine (/) contient encore toutes les sections et le routage
+   en #/ : c'est la coquille SPA. Les pages statiques générées
+   (/studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/)
+   n'en contiennent qu'une seule : le routage ne doit pas s'y exécuter. */
+const IS_SPA_SHELL = $$('.page').length > 1;
+
+/* Ces six routes ont désormais une vraie page, à sa propre URL
+   (voir generate-static-pages.py). Un ancien lien en #/xxx est
+   redirigé côté client vers la nouvelle URL ; la requête entière
+   (avec ?cat=... par exemple) est conservée. */
+const MIGRATED_ROUTES = ['studio', 'correction', 'a-table', 'jeu', 'parcours', 'contact'];
+
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
   $$('.nav__links .navlink').forEach(l => l.classList.toggle('is-on', l.dataset.route === page || (page === 'article' && l.dataset.route === 'a-table')));
@@ -548,6 +562,12 @@ function route() {
   const [path, query] = raw.split('?');
   const parts = path.split('/').filter(Boolean);
   const params = new URLSearchParams(query || '');
+
+  /* Redirection des anciennes URL en #/xxx vers les nouvelles pages. */
+  if (parts.length === 1 && MIGRATED_ROUTES.includes(parts[0])) {
+    location.replace('/' + parts[0] + (query ? '?' + query : ''));
+    return;
+  }
 
   if (parts[0] === 'a-table' && parts[1]) {
     const a = ARTICLES.find(x => x.slug === parts[1]);
@@ -572,8 +592,6 @@ function route() {
   observeRise();
 }
 
-window.addEventListener('hashchange', route);
-
 /* ---------------------------- Menu mobile ---------------------------- */
 const burger = $('#burger');
 const navLinks = $('#nav-links');
@@ -593,7 +611,9 @@ window.addEventListener('hashchange', closeMenu);
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
 /* ---------------------------- Formulaire ---------------------------- */
-$('#form').addEventListener('submit', async e => {
+/* #form n'existe que sur la page « Contact » (coquille SPA ou page
+   statique /contact/) : on protège l'écoute. */
+if ($('#form')) $('#form').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
   const status = $('#form-status');
@@ -626,6 +646,24 @@ $('#form').addEventListener('submit', async e => {
 });
 
 /* ---------------------------- Démarrage ---------------------------- */
-$('#home-latest').innerHTML = ARTICLES.slice(0, 3).map(tileHTML).join('');
-renderFilters();
-route();
+/* #home-latest n'existe que sur l'accueil (coquille SPA). */
+if ($('#home-latest')) $('#home-latest').innerHTML = ARTICLES.slice(0, 3).map(tileHTML).join('');
+
+if (IS_SPA_SHELL) {
+  /* Coquille SPA (/) : le routage en #/ gère l'affichage. */
+  renderFilters();
+  route();
+  window.addEventListener('hashchange', route);
+} else if ($('#list')) {
+  /* Page statique /a-table/ : pas de hash à router, mais la même
+     recherche de catégorie fonctionne via la vraie chaîne de requête
+     (?cat=notes) plutôt que via le hash. */
+  const cat = new URLSearchParams(location.search).get('cat');
+  if (cat && CATS.some(c => c.id === cat)) state.cat = cat;
+  renderFilters();
+  renderList();
+} else {
+  /* Autre page statique (studio, correction, jeu, parcours, contact) :
+     contenu déjà en place, il ne reste qu'à activer les apparitions. */
+  observeRise();
+}

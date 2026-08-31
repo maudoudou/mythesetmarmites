@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À table — Mythes & Marmites</title>
+<link rel="icon" href="/images/favicon-orange.svg">
+<link rel="canonical" href="https://mythesetmarmites.fr/a-table">
+<link rel="stylesheet" href="/style.css?v=3">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="/" aria-label="Mythes &amp; Marmites — accueil">
+      <img src="/images/logo-orange.svg" alt="Mythes &amp; Marmites" style="height:45px;width:auto">
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
+      <a class="navlink" href="/studio" data-route="studio">Le studio</a>
+      <a class="navlink" href="/correction" data-route="correction">Correction &amp; relecture</a>
+      <a class="navlink is-on" href="/a-table" data-route="a-table" aria-current="page">À table</a>
+      <a class="navlink" href="/jeu" data-route="jeu">Le jeu</a>
+      <a class="btn btn--sm" href="/contact">Parler d'un projet</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page" data-page="a-table">
+  <div class="wrap" style="padding-top:78px">
+    <p class="eyebrow" style="margin-bottom:18px">À table · le blog</p>
+    <h1 class="display" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et le récit qui va avec.</h1>
+    <p class="lede" style="max-width:48ch;margin:18px 0 40px">On cuisine d'abord et l'histoire se lit pendant que ça mijote.</p>
+
+    <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
+    <div class="dotted dotted--full" style="margin:34px 0 40px;opacity:.22"></div>
+
+    <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
+    <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
+    <nav class="pager" id="pager" aria-label="Pages"></nav>
+    <div style="height:40px"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div style="max-width:300px">
+      <a href="/" aria-label="Retour à l'accueil"><img src="/images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px"></a>
+      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Studio d'édition et de récits de Maud Lenoir. Des imprimés et des histoires qui se partagent.</p>
+    </div>
+    <div style="display:flex;gap:54px;flex-wrap:wrap">
+      <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
+        <a class="navlink" href="/studio">Le studio</a>
+        <a class="navlink" href="/correction">Correction &amp; relecture</a>
+        <a class="navlink" href="/a-table">À table</a>
+        <a class="navlink" href="/jeu">Le jeu</a>
+        <a class="navlink" href="/contact">Parler d'un projet</a>
+      </nav>
+      <div style="font-size:14px;color:rgba(248,245,244,.7);line-height:1.7">
+        <div>mythesetmarmites.fr</div>
+        <div><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></div>
+        <div style="margin-top:10px">Illustrations&nbsp;: © Christelle Louiset</div>
+        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Raconter de belles histoires. »</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
