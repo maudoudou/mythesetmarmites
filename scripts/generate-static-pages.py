@@ -22,7 +22,8 @@ Quand le relancer
 depuis la racine du dépôt pour répercuter le changement dans les pages
 statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
-dossiers /studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/.
+dossiers /studio/, /correction/, /ateliers/, /a-table/, /jeu/, /parcours/,
+/contact/.
 
 Les balises <head> (titre, meta description, canonical, Open Graph,
 JSON-LD...) de chaque page statique sont injectées séparément par
@@ -37,6 +38,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROUTES = {
     'studio':     'Le studio — Mythes & Marmites',
     'correction': 'Correction et relecture — Mythes & Marmites',
+    'ateliers':   'Ateliers lecture et cuisine — Mythes & Marmites',
     'a-table':    'À table — Mythes & Marmites',
     'jeu':        'Le jeu — Mythes & Marmites',
     'parcours':   'Mon parcours — Mythes & Marmites',

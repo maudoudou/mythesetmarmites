@@ -613,7 +613,7 @@ const IS_SPA_SHELL = $$('.page').length > 1;
    (voir generate-static-pages.py). Un ancien lien en #/xxx est
    redirigé côté client vers la nouvelle URL ; la requête entière
    (avec ?cat=... par exemple) est conservée. */
-const MIGRATED_ROUTES = ['studio', 'correction', 'a-table', 'jeu', 'parcours', 'contact'];
+const MIGRATED_ROUTES = ['studio', 'correction', 'ateliers', 'a-table', 'jeu', 'parcours', 'contact'];
 
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
@@ -644,6 +644,7 @@ function route() {
     document.title = 'À table : contes, mythes et recettes — Mythes & Marmites';
   } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio, maquette d'édition jeunesse — Mythes & Marmites"; }
   else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture jeunesse — Mythes & Marmites'; }
+  else if (parts[0] === 'ateliers') { show('ateliers'); document.title = 'Ateliers lecture et cuisine — Mythes & Marmites'; }
   else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
   else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu Mythes & Marmites — récit coopératif'; }
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }

@@ -48,6 +48,12 @@ PAGES = {
         "Préparation de copie, correction orthotypographique et relecture sur épreuves, pour l'édition jeunesse et scolaire. Test de correction sur demande.",
         "website",
     ),
+    "ateliers/index.html": (
+        "/ateliers",
+        "Ateliers lecture et cuisine — Mythes &amp; Marmites",
+        "Un atelier lecture et cuisine pour les scolaires, les médiathèques et les centres de loisirs. Publics visés, matériel fourni et zone de déplacement à Rouen.",
+        "website",
+    ),
     "a-table/index.html": (
         "/a-table",
         "À table : contes, mythes et recettes — Mythes &amp; Marmites",
