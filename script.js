@@ -559,6 +559,7 @@ function route() {
     renderFilters(); renderList(); show('a-table');
     document.title = 'À table — Mythes & Marmites';
   } else if (parts[0] === 'studio') { show('studio'); document.title = "Le studio — Mythes & Marmites"; }
+  else if (parts[0] === 'correction') { show('correction'); document.title = 'Correction et relecture — Mythes & Marmites'; }
   else if (parts[0] === 'parcours') { show('parcours'); document.title = 'Mon parcours — Mythes & Marmites'; }
   else if (parts[0] === 'jeu') { show('jeu'); document.title = 'Le jeu — Mythes & Marmites'; }
   else if (parts[0] === 'contact') { show('contact'); document.title = 'Parler d\'un projet — Mythes & Marmites'; }
