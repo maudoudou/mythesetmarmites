@@ -44,90 +44,112 @@
 <main id="main">
 
 <section class="page" data-page="studio">
-  <div style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
-      <img src="/images/candide-violet.svg" alt="" style="position:absolute;width:200px;top:24px;right:10px" width="1846" height="811" loading="eager">
-    </div>
-    <div class="wrap" style="padding-top:78px;position:relative">
+
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:16px">
+      <img class="sec-anchor" src="/images/candide-violet.svg" alt="" width="1846" height="811" style="width:clamp(240px,26vw,340px);right:-120px;bottom:20px;opacity:.8" loading="eager">
       <p class="eyebrow eyebrow--violet" style="margin-bottom:18px">Le studio</p>
-      <h1 style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:24ch">Maquette, mise en pages et direction artistique éditoriale.</h1>
-      <p class="lede" style="font-size:21px;margin:22px 0 0;max-width:56ch">Je travaille pour des maisons d'édition, des collectivités, des musées et des médiathèques. Terrain&nbsp;: la littérature jeunesse, la pédagogie, la cuisine et la transmission.</p>
+      <h1 style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:22ch">Maquette, mise en pages et direction artistique éditoriale.</h1>
+      <p class="lede" style="font-size:21px;margin:22px 0 0;max-width:54ch">Je travaille pour des maisons d'édition, des collectivités, des musées et des médiathèques. Terrain&nbsp;: la littérature jeunesse, la pédagogie, la cuisine et la transmission.</p>
     </div>
   </div>
 
+  <!-- Ce que je fais, en détail (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <h2 class="sec-title">Ce que je fais, en détail</h2>
+      <div class="dotted"></div>
+      <div class="grid grid-3 rise">
+        <div class="card card--pomme">
+          <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="112" height="169" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Livres et objets imprimés</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Albums, collections, couvertures, livrets, guides, brochures pédagogiques.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: maquette, gabarits réutilisables, fichiers d'impression avec fonds perdus, contrôle du BAT, suivi de tirage.</p>
+        </div>
+        <div class="card card--violet">
+          <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="140" height="91" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Exposition et signalétique</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Panneaux, cartels, livrets de visite, supports d'accompagnement.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: mise en pages aux formats grand format, fichiers vérifiés avec l'imprimeur, déclinaisons papier et écran.</p>
+        </div>
+        <div class="card card--or">
+          <img class="card__ill" src="/images/loup-violet.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="145" height="124" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Identité visuelle</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Logo, palette, typographies, affiches, programmes, gabarits.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: charte d'utilisation, fichiers vectoriels dans tous les formats, modèles modifiables. Deux à trois projets de ce type par trimestre, sur devis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quelques projets (crème) -->
+  <div class="band">
+    <div class="wrap sec has-anchor">
+      <img class="sec-anchor" src="/images/marmite-brown.svg" alt="" width="140" height="91" style="width:clamp(150px,15vw,200px);left:-66px;top:96px;opacity:.9" loading="lazy">
+      <h2 class="sec-title" id="projets">Quelques projets</h2>
+      <div class="dotted"></div>
+      <div class="rise" style="margin-bottom:34px">
+        <div class="ph ph--r20 has-img" style="aspect-ratio:1.91/1"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et pages intérieures" width="5906" height="3086" loading="lazy"></picture></div>
+        <h3 style="font-size:20px;font-weight:700;margin-top:18px">Guide de soins aux poules pondeuses — Agglomération Fécamp Caux Littoral</h3>
+        <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px;max-width:62ch">Un livret remis aux familles qui adoptent des poules. Écriture des textes, maquette et suivi d'impression.</p>
+      </div>
+      <div class="grid grid-3 rise" style="gap:22px">
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnet de voyage en leporello déplié, collection Scandinavan" width="2500" height="1429" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Collection de carnets de voyage — Scandinavan</p></div>
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/scandi-web.webp" type="image/webp"><img src="/images/photos/scandi-web.jpg" alt="Leporello Suède, pages intérieures" width="1196" height="746" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Suède</p></div>
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/europe-web.webp" type="image/webp"><img src="/images/photos/europe-web.jpg" alt="Leporello Europe centrale, pages intérieures" width="800" height="800" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Europe centrale · © Maud Lenoir</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compétences (violet très pâle) -->
+  <div class="band band-violet">
+    <div class="wrap sec">
+      <h2 class="sec-title">Compétences</h2>
+      <div class="dotted"></div>
+      <div class="grid grid-2 rise" style="margin-bottom:26px">
+        <div class="card card--pomme">
+          <p class="card__kicker">Maquette et mise en pages</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Chemin de fer, gabarits et feuilles de styles, grilles, hiérarchie typographique, mise en pages d'ouvrages longs et de collections.</p>
+        </div>
+        <div class="card card--vert">
+          <p class="card__kicker card__kicker--green">Chaîne graphique</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Préparation de fichiers d'impression, gestion colorimétrique, fonds perdus et repères, dialogue avec l'imprimeur, relecture de BAT.</p>
+        </div>
+        <div class="card card--or">
+          <p class="card__kicker">Rédaction et édition</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Rédaction de textes courts, réécriture, préparation de copie, correction orthotypographique.</p>
+        </div>
+        <div class="card card--vert">
+          <p class="card__kicker card__kicker--green">Logiciels</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">InDesign, Illustrator, Figma, WordPress, suite Microsoft 365.</p>
+        </div>
+      </div>
+      <p class="body" style="max-width:66ch">J'ai aussi travaillé la photographie, l'animation de réseaux sociaux, le web, la scénographie et la vidéo. <a class="more more--violet" href="/parcours">Voir mon parcours <span class="ar">→</span></a></p>
+    </div>
+  </div>
+
+  <!-- Comment ça se passe (crème) -->
+  <div class="band">
+    <div class="wrap sec">
+      <h2 class="sec-title">Comment ça se passe</h2>
+      <div class="dotted"></div>
+      <ol class="rise" style="list-style:none;padding:0;margin:0">
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">1</span><p class="body" style="margin:0">Vous m'écrivez, je réponds sous deux jours ouvrés.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">2</span><p class="body" style="margin:0">On cadre ensemble le format, le volume, le délai et le budget. Je vous envoie un devis.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">3</span><p class="body" style="margin:0">Je vous montre une première piste, puis deux séries de corrections sont comprises.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">4</span><p class="body" style="margin:0">Je livre les fichiers d'impression et je suis le tirage jusqu'au BAT.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Qui suis-je + Recherche + appel (crème) -->
   <div class="wrap sec">
-    <h2 class="sec-title">Ce que je fais, en détail</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="grid grid-3 rise" style="margin-bottom:70px">
-      <div class="card">
-        <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="112" height="169" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Livres et objets imprimés</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Albums, collections, couvertures, livrets, guides, brochures pédagogiques.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: maquette, gabarits réutilisables, fichiers d'impression avec fonds perdus, contrôle du BAT, suivi de tirage.</p>
-      </div>
-      <div class="card">
-        <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="140" height="91" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Exposition et signalétique</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Panneaux, cartels, livrets de visite, supports d'accompagnement.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: mise en pages aux formats grand format, fichiers vérifiés avec l'imprimeur, déclinaisons papier et écran.</p>
-      </div>
-      <div class="card">
-        <img class="card__ill" src="/images/loup-violet.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="145" height="124" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Identité visuelle</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Logo, palette, typographies, affiches, programmes, gabarits.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: charte d'utilisation, fichiers vectoriels dans tous les formats, modèles modifiables. Deux à trois projets de ce type par trimestre, sur devis.</p>
-      </div>
-    </div>
-
-    <h2 class="sec-title" id="projets">Quelques projets</h2>
-    <div class="dotted dotted--pomme"></div>
-    <div class="rise" style="margin-bottom:34px">
-      <div class="ph ph--r20 has-img" style="aspect-ratio:1.91/1"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et pages intérieures" width="5906" height="3086" loading="lazy"></picture></div>
-      <h3 style="font-size:20px;font-weight:700;margin-top:18px">Guide de soins aux poules pondeuses — Agglomération Fécamp Caux Littoral</h3>
-      <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px;max-width:62ch">Un livret remis aux familles qui adoptent des poules. Écriture des textes, maquette et suivi d'impression.</p>
-    </div>
-    <div class="grid grid-3 rise" style="gap:22px;margin-bottom:70px">
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnet de voyage en leporello déplié, collection Scandinavan" width="2500" height="1429" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Collection de carnets de voyage — Scandinavan</p></div>
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/scandi-web.webp" type="image/webp"><img src="/images/photos/scandi-web.jpg" alt="Leporello Suède, pages intérieures" width="1196" height="746" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Suède</p></div>
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/europe-web.webp" type="image/webp"><img src="/images/photos/europe-web.jpg" alt="Leporello Europe centrale, pages intérieures" width="800" height="800" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Europe centrale · © Maud Lenoir</p></div>
-    </div>
-
-    <h2 class="sec-title">Compétences</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="grid grid-2 rise" style="margin-bottom:26px">
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Maquette et mise en pages</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Chemin de fer, gabarits et feuilles de styles, grilles, hiérarchie typographique, mise en pages d'ouvrages longs et de collections.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Chaîne graphique</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Préparation de fichiers d'impression, gestion colorimétrique, fonds perdus et repères, dialogue avec l'imprimeur, relecture de BAT.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Rédaction et édition</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Rédaction de textes courts, réécriture, préparation de copie, correction orthotypographique.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Logiciels</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">InDesign, Illustrator, Figma, WordPress, suite Microsoft 365.</p>
-      </div>
-    </div>
-    <p class="body" style="max-width:66ch;margin-bottom:70px">J'ai aussi travaillé la photographie, l'animation de réseaux sociaux, le web, la scénographie et la vidéo. <a class="more" href="/parcours">Voir mon parcours <span class="ar">→</span></a></p>
-
-    <h2 class="sec-title">Comment ça se passe</h2>
-    <div class="dotted"></div>
-    <ol class="rise" style="list-style:none;padding:0;margin:0 0 70px">
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">1</span><p class="body" style="margin:0">Vous m'écrivez, je réponds sous deux jours ouvrés.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">2</span><p class="body" style="margin:0">On cadre ensemble le format, le volume, le délai et le budget. Je vous envoie un devis.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">3</span><p class="body" style="margin:0">Je vous montre une première piste, puis deux séries de corrections sont comprises.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">4</span><p class="body" style="margin:0">Je livre les fichiers d'impression et je suis le tirage jusqu'au BAT.</p></li>
-    </ol>
-
     <div class="card rise" style="padding:0;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden;margin-bottom:34px">
       <div style="flex:1;min-width:280px;min-height:420px;display:flex;position:relative">
         <div class="ph ph--fill has-img"><img src="/images/photos/portrait-maud-web.jpg" alt="Portrait de Maud Lenoir" style="object-position:center 60%" width="2268" height="2835" loading="lazy"></div>
       </div>
       <div style="flex:1.25;min-width:300px;padding:46px">
+        <h2 class="sr-only">Qui suis-je</h2>
         <p class="card__kicker">QUI SUIS-JE&nbsp;?</p>
         <p class="serif" style="font-size:28px;line-height:1.3;margin:14px 0 22px;max-width:26ch">J'ai grandi entre une bibliothèque et une cuisine, et je n'ai jamais vraiment choisi.</p>
         <p class="body" style="font-size:16px;margin-bottom:20px">Maud Lenoir. Je mets en pages les histoires des autres et j'écris les miennes. Diplômée en design d'innovation sociale et en commerce connecté, aujourd'hui en master de recherche en littérature d'enfance et de jeunesse à l'université d'Artois.</p>
@@ -137,7 +159,8 @@
     </div>
 
     <div class="panel panel--jaune rise" style="margin-bottom:34px">
-      <img class="panel__ill" src="/images/livre-orange.svg" alt="" style="right:44px;bottom:-18px;width:170px;opacity:.12" width="112" height="169" loading="lazy">
+      <img class="panel__ill" src="/images/livre-orange.svg" alt="" style="right:44px;bottom:-18px;width:180px;opacity:.14" width="112" height="169" loading="lazy">
+      <h2 class="sr-only">Recherche en cours</h2>
       <p class="eyebrow eyebrow--ink" style="position:relative;margin-bottom:18px">Recherche en cours</p>
       <p class="serif" style="font-size:28px;line-height:1.35;max-width:30ch;margin-bottom:24px;position:relative">Ce qu'on mange dans les livres pour enfants.</p>
       <p class="on-light" style="font-size:16px;line-height:1.7;max-width:64ch;margin-bottom:26px;position:relative">Master de recherche en littérature d'enfance et de jeunesse. Je suis la nourriture d'un livre à l'autre&nbsp;: la faim dans les contes, le banquet comme fin heureuse, le partage comme épreuve. Ce que j'y trouve part dans le blog, sous l'étiquette Notes de lecture.</p>

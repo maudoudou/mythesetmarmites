@@ -49,105 +49,106 @@
 <!-- ================= ACCUEIL ================= -->
 <section class="page" data-page="accueil">
 
-  <!-- Bloc 1 · Premier écran -->
-  <div style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
-      <img src="/images/loup-brown.svg" alt="" style="position:absolute;width:230px;top:60px;right:-10px" width="145" height="124" loading="eager">
-      <img src="/images/marmite-brown.svg" alt="" style="position:absolute;width:160px;bottom:30px;right:240px" width="140" height="91" loading="eager">
-    </div>
-    <div class="wrap" style="padding-top:84px;padding-bottom:74px;position:relative">
+  <!-- Bloc 1 · Premier écran (crème) -->
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:84px;padding-bottom:78px">
+      <img class="sec-anchor" src="/images/loup-brown.svg" alt="" width="145" height="124" style="width:clamp(240px,22vw,300px);right:-64px;top:66px;opacity:.9" loading="eager">
       <p class="eyebrow" style="margin-bottom:22px">Maud Lenoir · Studio d'édition et de récits</p>
-      <h1 class="display" style="max-width:24ch">Je mets en pages les livres, les expositions et les outils pédagogiques.</h1>
-      <p class="lede" style="margin:24px 0 34px;max-width:54ch">Graphiste et maquettiste indépendante, spécialisée en édition jeunesse et en médiation culturelle. Rouen et sa métropole, déplacements possibles.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a class="btn" href="/studio#projets">Voir mes projets</a>
-      </div>
+      <h1 class="display" style="max-width:20ch">Je mets en pages les livres, les expositions et les outils pédagogiques.</h1>
+      <p class="lede" style="margin:24px 0 34px;max-width:48ch">Graphiste et maquettiste indépendante, spécialisée en édition jeunesse et en médiation culturelle. Rouen et sa métropole, déplacements possibles.</p>
+      <a class="btn" href="/studio#projets">Voir mes projets</a>
     </div>
   </div>
 
-  <!-- Bloc 2 · Projets récents -->
-  <div style="background:#fff;border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
-    <div class="wrap sec">
+  <!-- Bloc 2 · Projets récents (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec has-anchor">
+      <img class="sec-anchor" src="/images/poule-rousse-orange.svg" alt="" width="87" height="125" style="width:clamp(120px,12vw,160px);left:-70px;bottom:60px;opacity:.9" loading="lazy">
       <h2 class="sec-title">Projets récents</h2>
       <div class="dotted"></div>
-      <div style="display:flex;flex-direction:column;gap:46px">
-        <article class="rise" style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
-          <div class="ph ph--r20 has-img" style="flex:1.15;min-width:300px;aspect-ratio:16/10"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et double page intérieure" width="5906" height="3086" loading="lazy"></picture></div>
-          <div style="flex:1;min-width:280px">
-            <h3 style="font-size:22px;font-weight:700;margin-bottom:14px">Guide de soins aux poules pondeuses</h3>
-            <p class="card__kicker" style="margin-bottom:6px">Commanditaire</p>
-            <p class="body" style="margin:0 0 14px">Agglomération Fécamp Caux Littoral.</p>
-            <p class="card__kicker" style="margin-bottom:6px">La commande</p>
-            <p class="body" style="margin:0 0 14px">Un livret remis aux familles de l'agglomération qui adoptent des poules pondeuses.</p>
-            <p class="card__kicker" style="margin-bottom:6px">Livrables</p>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <article class="projet projet--pomme rise">
+          <div class="projet__media ph ph--r20 has-img" style="aspect-ratio:16/10"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et double page intérieure" width="5906" height="3086" loading="lazy"></picture></div>
+          <div class="projet__body">
+            <h3 style="font-size:22px;font-weight:700;margin-bottom:16px">Guide de soins aux poules pondeuses</h3>
+            <p class="card__kicker" style="margin-bottom:5px">Commanditaire</p>
+            <p class="body" style="margin:0 0 13px">Agglomération Fécamp Caux Littoral.</p>
+            <p class="card__kicker" style="margin-bottom:5px">La commande</p>
+            <p class="body" style="margin:0 0 13px">Un livret remis aux familles de l'agglomération qui adoptent des poules pondeuses.</p>
+            <p class="card__kicker" style="margin-bottom:5px">Livrables</p>
             <p class="body" style="margin:0">Écriture des textes, maquette, fichiers d'impression, suivi du tirage.</p>
           </div>
         </article>
-        <article class="rise" style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
-          <div class="ph ph--r20 has-img" style="flex:1.15;min-width:300px;aspect-ratio:16/10"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnets de voyage en leporello de la collection Scandinavan, dépliés sur une table" width="2500" height="1429" loading="lazy"></picture></div>
-          <div style="flex:1;min-width:280px">
-            <h3 style="font-size:22px;font-weight:700;margin-bottom:14px">Collection de carnets de voyage — Scandinavan</h3>
-            <p class="card__kicker" style="margin-bottom:6px">Commanditaire</p>
-            <p class="body" style="margin:0 0 14px">Projet personnel.</p>
-            <p class="card__kicker" style="margin-bottom:6px">La commande</p>
-            <p class="body" style="margin:0 0 14px">Une collection de carnets de voyage en leporello, un dépliant continu par pays.</p>
-            <p class="card__kicker" style="margin-bottom:6px">Livrables</p>
+        <article class="projet projet--violet rise">
+          <div class="projet__media ph ph--r20 has-img" style="aspect-ratio:16/10"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnets de voyage en leporello de la collection Scandinavan, dépliés sur une table" width="2500" height="1429" loading="lazy"></picture></div>
+          <div class="projet__body">
+            <h3 style="font-size:22px;font-weight:700;margin-bottom:16px">Collection de carnets de voyage — Scandinavan</h3>
+            <p class="card__kicker" style="margin-bottom:5px">Commanditaire</p>
+            <p class="body" style="margin:0 0 13px">Projet personnel.</p>
+            <p class="card__kicker" style="margin-bottom:5px">La commande</p>
+            <p class="body" style="margin:0 0 13px">Une collection de carnets de voyage en leporello, un dépliant continu par pays.</p>
+            <p class="card__kicker" style="margin-bottom:5px">Livrables</p>
             <p class="body" style="margin:0">Conception de la collection, maquette, choix du façonnage.</p>
           </div>
         </article>
       </div>
-      <a class="more" style="margin-top:36px" href="/studio#projets">Tous les projets <span class="ar">→</span></a>
+      <a class="more" style="margin-top:34px" href="/studio#projets">Tous les projets <span class="ar">→</span></a>
     </div>
   </div>
 
-  <!-- Bloc 3 · Ce que je fais -->
-  <div class="wrap sec">
-    <h2 class="sec-title">Ce que je fais</h2>
-    <div class="dotted"></div>
-    <div>
-      <a href="/studio" class="door" style="display:block;color:inherit;padding:24px 0;border-bottom:1px solid var(--hairline-soft)">
-        <h3 style="font-size:21px;font-weight:700;margin-bottom:8px">Maquette et mise en pages</h3>
-        <p class="card__text" style="font-size:15.5px;max-width:72ch">Livres, albums, livrets, panneaux d'exposition, guides pédagogiques. Du texte brut aux fichiers prêts pour l'imprimeur, avec suivi du tirage.</p>
-      </a>
-      <a href="/correction" class="door" style="display:block;color:inherit;padding:24px 0">
-        <h3 style="font-size:21px;font-weight:700;margin-bottom:8px">Correction et relecture</h3>
-        <p class="card__text" style="font-size:15.5px;max-width:72ch">Préparation de copie, correction orthotypographique, relecture sur épreuves. Édition jeunesse et scolaire.</p>
-      </a>
-    </div>
-  </div>
-
-  <!-- Bloc 4 · Les deux autres portes -->
-  <div style="background:#fff;border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
-    <div class="wrap sec">
-      <div class="grid grid-2 rise">
-        <a href="/a-table" style="min-width:240px;color:inherit" class="door">
-          <img class="card__ill" src="/images/carotte-orange.svg" alt="" style="width:70px;height:96px;object-fit:contain;margin-bottom:18px" width="68" height="216" loading="lazy">
-          <h3 style="font-size:21px;font-weight:700;margin:8px 0">À table</h3>
-          <p class="card__text" style="font-size:15.5px;margin-bottom:12px">Une recette et le récit qui l'accompagne, deux fois par mois. Contes, mythes, albums, notes de lecture.</p>
-          <span class="more">Lire le blog <span class="ar">→</span></span>
+  <!-- Bloc 3 · Ce que je fais (violet très pâle) -->
+  <div class="band band-violet">
+    <div class="wrap sec has-anchor">
+      <img class="sec-anchor" src="/images/candide-violet.svg" alt="" width="1846" height="811" style="width:clamp(240px,26vw,340px);right:-120px;bottom:44px;opacity:.8" loading="lazy">
+      <h2 class="sec-title">Ce que je fais</h2>
+      <div class="dotted"></div>
+      <div>
+        <a href="/studio" class="door" style="display:block;color:inherit;padding:24px 0;border-bottom:1px solid var(--hairline-soft)">
+          <h3 style="font-size:21px;font-weight:700;margin-bottom:8px">Maquette et mise en pages</h3>
+          <p class="card__text" style="font-size:15.5px;max-width:66ch">Livres, albums, livrets, panneaux d'exposition, guides pédagogiques. Du texte brut aux fichiers prêts pour l'imprimeur, avec suivi du tirage.</p>
+          <span class="more more--violet" style="margin-top:12px">Voir le studio <span class="ar">→</span></span>
         </a>
-        <a href="/jeu" style="min-width:240px;color:inherit" class="door">
-          <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:96px;height:96px;object-fit:contain;margin-bottom:18px" width="140" height="91" loading="lazy">
-          <h3 style="font-size:21px;font-weight:700;margin:8px 0">Le jeu</h3>
-          <p class="card__text" style="font-size:15.5px;margin-bottom:12px">Mythes &amp; Marmites, jeu de récit coopératif à partir de 6 ans. Prototype en test, à la recherche d'un éditeur.</p>
-          <span class="more more--green">Voir le jeu <span class="ar">→</span></span>
+        <a href="/correction" class="door" style="display:block;color:inherit;padding:24px 0">
+          <h3 style="font-size:21px;font-weight:700;margin-bottom:8px">Correction et relecture</h3>
+          <p class="card__text" style="font-size:15.5px;max-width:66ch">Préparation de copie, correction orthotypographique, relecture sur épreuves. Édition jeunesse et scolaire.</p>
+          <span class="more more--violet" style="margin-top:12px">Voir la page <span class="ar">→</span></span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Bloc 5 · La phrase -->
-  <div class="wrap sec" style="text-align:center">
-    <p class="lede lede--big" style="max-width:20ch;margin:0 auto">« Que reste-t-il des histoires que l'on se racontait ? »</p>
+  <!-- Bloc 4 · Les deux autres portes (crème) -->
+  <div class="wrap sec">
+    <div class="grid grid-2 rise">
+      <a href="/a-table" class="card card--pomme card--link" style="min-width:240px">
+        <img class="card__ill" src="/images/carotte-orange.svg" alt="" style="width:84px;height:116px;object-fit:contain;margin-bottom:16px" width="68" height="216" loading="lazy">
+        <h3 class="card__title" style="font-size:21px;margin:8px 0 10px">À table</h3>
+        <p class="card__text" style="font-size:15.5px;margin-bottom:14px">Une recette et le récit qui l'accompagne, deux fois par mois. Contes, mythes, albums, notes de lecture.</p>
+        <span class="more">Lire le blog <span class="ar">→</span></span>
+      </a>
+      <a href="/jeu" class="card card--vert card--link" style="min-width:240px">
+        <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:116px;height:116px;object-fit:contain;margin-bottom:16px" width="140" height="91" loading="lazy">
+        <h3 class="card__title" style="font-size:21px;margin:8px 0 10px">Le jeu</h3>
+        <p class="card__text" style="font-size:15.5px;margin-bottom:14px">Mythes &amp; Marmites, jeu de récit coopératif à partir de 6 ans. Prototype en test, à la recherche d'un éditeur.</p>
+        <span class="more more--green">Voir le jeu <span class="ar">→</span></span>
+      </a>
+    </div>
   </div>
 
-  <!-- Bloc 6 · Appel à l'action -->
+  <!-- Bloc 5 · La phrase (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec" style="text-align:center">
+      <p class="lede lede--big" style="max-width:20ch;margin:0 auto">« Que reste-t-il des histoires que l'on se racontait ? »</p>
+    </div>
+  </div>
+
+  <!-- Bloc 6 · Appel à l'action (crème) -->
   <div class="wrap sec">
-    <div class="panel panel--pomme" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:30px;padding:64px 56px">
-      <img class="panel__ill" src="/images/marmite-cream.svg" alt="" style="right:34px;bottom:-10px;width:200px;opacity:.9" width="140" height="91" loading="lazy">
+    <div class="panel panel--pomme" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:30px;padding:60px 52px">
+      <img class="panel__ill" src="/images/marmite-cream.svg" alt="" style="right:34px;bottom:-10px;width:220px;opacity:.9" width="140" height="91" loading="lazy">
       <div style="position:relative;max-width:560px">
-        <h2 class="h2" style="color:var(--lait)">Un projet à mettre en pages ?</h2>
-        <p class="serif" style="font-size:20px;color:rgba(248,245,244,.92);margin-top:16px">Écrivez-moi en trois lignes, même si le projet est encore flou. Je réponds sous deux jours ouvrés.</p>
+        <h2 class="h2" style="color:var(--lait)">Un projet à mettre en pages ?</h2>
+        <p class="serif" style="font-size:20px;color:rgba(248,245,244,.95);margin-top:16px">Écrivez-moi en trois lignes, même si le projet est encore flou. Je réponds sous deux jours ouvrés.</p>
       </div>
       <a class="btn btn--light" style="position:relative;font-size:17px;padding:17px 32px" href="/contact">Parler d'un projet</a>
     </div>
@@ -156,90 +157,112 @@
 
 <!-- ================= LE STUDIO ================= -->
 <section class="page hide" data-page="studio">
-  <div style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
-      <img src="/images/candide-violet.svg" alt="" style="position:absolute;width:200px;top:24px;right:10px" width="1846" height="811" loading="eager">
-    </div>
-    <div class="wrap" style="padding-top:78px;position:relative">
+
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:16px">
+      <img class="sec-anchor" src="/images/candide-violet.svg" alt="" width="1846" height="811" style="width:clamp(240px,26vw,340px);right:-120px;bottom:20px;opacity:.8" loading="eager">
       <p class="eyebrow eyebrow--violet" style="margin-bottom:18px">Le studio</p>
-      <h2 class="page-title" style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:24ch">Maquette, mise en pages et direction artistique éditoriale.</h2>
-      <p class="lede" style="font-size:21px;margin:22px 0 0;max-width:56ch">Je travaille pour des maisons d'édition, des collectivités, des musées et des médiathèques. Terrain&nbsp;: la littérature jeunesse, la pédagogie, la cuisine et la transmission.</p>
+      <h2 class="page-title" style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:22ch">Maquette, mise en pages et direction artistique éditoriale.</h2>
+      <p class="lede" style="font-size:21px;margin:22px 0 0;max-width:54ch">Je travaille pour des maisons d'édition, des collectivités, des musées et des médiathèques. Terrain&nbsp;: la littérature jeunesse, la pédagogie, la cuisine et la transmission.</p>
     </div>
   </div>
 
+  <!-- Ce que je fais, en détail (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <h2 class="sec-title">Ce que je fais, en détail</h2>
+      <div class="dotted"></div>
+      <div class="grid grid-3 rise">
+        <div class="card card--pomme">
+          <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="112" height="169" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Livres et objets imprimés</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Albums, collections, couvertures, livrets, guides, brochures pédagogiques.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: maquette, gabarits réutilisables, fichiers d'impression avec fonds perdus, contrôle du BAT, suivi de tirage.</p>
+        </div>
+        <div class="card card--violet">
+          <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="140" height="91" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Exposition et signalétique</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Panneaux, cartels, livrets de visite, supports d'accompagnement.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: mise en pages aux formats grand format, fichiers vérifiés avec l'imprimeur, déclinaisons papier et écran.</p>
+        </div>
+        <div class="card card--or">
+          <img class="card__ill" src="/images/loup-violet.svg" alt="" style="width:76px;height:76px;object-fit:contain;margin-bottom:18px" width="145" height="124" loading="lazy">
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Identité visuelle</h3>
+          <p class="card__text" style="font-size:15px;line-height:1.65">Logo, palette, typographies, affiches, programmes, gabarits.</p>
+          <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: charte d'utilisation, fichiers vectoriels dans tous les formats, modèles modifiables. Deux à trois projets de ce type par trimestre, sur devis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quelques projets (crème) -->
+  <div class="band">
+    <div class="wrap sec has-anchor">
+      <img class="sec-anchor" src="/images/marmite-brown.svg" alt="" width="140" height="91" style="width:clamp(150px,15vw,200px);left:-66px;top:96px;opacity:.9" loading="lazy">
+      <h2 class="sec-title" id="projets">Quelques projets</h2>
+      <div class="dotted"></div>
+      <div class="rise" style="margin-bottom:34px">
+        <div class="ph ph--r20 has-img" style="aspect-ratio:1.91/1"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et pages intérieures" width="5906" height="3086" loading="lazy"></picture></div>
+        <h3 style="font-size:20px;font-weight:700;margin-top:18px">Guide de soins aux poules pondeuses — Agglomération Fécamp Caux Littoral</h3>
+        <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px;max-width:62ch">Un livret remis aux familles qui adoptent des poules. Écriture des textes, maquette et suivi d'impression.</p>
+      </div>
+      <div class="grid grid-3 rise" style="gap:22px">
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnet de voyage en leporello déplié, collection Scandinavan" width="2500" height="1429" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Collection de carnets de voyage — Scandinavan</p></div>
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/scandi-web.webp" type="image/webp"><img src="/images/photos/scandi-web.jpg" alt="Leporello Suède, pages intérieures" width="1196" height="746" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Suède</p></div>
+        <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/europe-web.webp" type="image/webp"><img src="/images/photos/europe-web.jpg" alt="Leporello Europe centrale, pages intérieures" width="800" height="800" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Europe centrale · © Maud Lenoir</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compétences (violet très pâle) -->
+  <div class="band band-violet">
+    <div class="wrap sec">
+      <h2 class="sec-title">Compétences</h2>
+      <div class="dotted"></div>
+      <div class="grid grid-2 rise" style="margin-bottom:26px">
+        <div class="card card--pomme">
+          <p class="card__kicker">Maquette et mise en pages</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Chemin de fer, gabarits et feuilles de styles, grilles, hiérarchie typographique, mise en pages d'ouvrages longs et de collections.</p>
+        </div>
+        <div class="card card--vert">
+          <p class="card__kicker card__kicker--green">Chaîne graphique</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Préparation de fichiers d'impression, gestion colorimétrique, fonds perdus et repères, dialogue avec l'imprimeur, relecture de BAT.</p>
+        </div>
+        <div class="card card--or">
+          <p class="card__kicker">Rédaction et édition</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Rédaction de textes courts, réécriture, préparation de copie, correction orthotypographique.</p>
+        </div>
+        <div class="card card--vert">
+          <p class="card__kicker card__kicker--green">Logiciels</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">InDesign, Illustrator, Figma, WordPress, suite Microsoft 365.</p>
+        </div>
+      </div>
+      <p class="body" style="max-width:66ch">J'ai aussi travaillé la photographie, l'animation de réseaux sociaux, le web, la scénographie et la vidéo. <a class="more more--violet" href="/parcours">Voir mon parcours <span class="ar">→</span></a></p>
+    </div>
+  </div>
+
+  <!-- Comment ça se passe (crème) -->
+  <div class="band">
+    <div class="wrap sec">
+      <h2 class="sec-title">Comment ça se passe</h2>
+      <div class="dotted"></div>
+      <ol class="rise" style="list-style:none;padding:0;margin:0">
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">1</span><p class="body" style="margin:0">Vous m'écrivez, je réponds sous deux jours ouvrés.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">2</span><p class="body" style="margin:0">On cadre ensemble le format, le volume, le délai et le budget. Je vous envoie un devis.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">3</span><p class="body" style="margin:0">Je vous montre une première piste, puis deux séries de corrections sont comprises.</p></li>
+        <li style="display:flex;gap:18px;padding:22px 0"><span style="font-weight:800;font-size:20px;color:var(--pomme-fonce);flex:none;width:26px">4</span><p class="body" style="margin:0">Je livre les fichiers d'impression et je suis le tirage jusqu'au BAT.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Qui suis-je + Recherche + appel (crème) -->
   <div class="wrap sec">
-    <h2 class="sec-title">Ce que je fais, en détail</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="grid grid-3 rise" style="margin-bottom:70px">
-      <div class="card">
-        <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="112" height="169" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Livres et objets imprimés</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Albums, collections, couvertures, livrets, guides, brochures pédagogiques.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: maquette, gabarits réutilisables, fichiers d'impression avec fonds perdus, contrôle du BAT, suivi de tirage.</p>
-      </div>
-      <div class="card">
-        <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="140" height="91" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Exposition et signalétique</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Panneaux, cartels, livrets de visite, supports d'accompagnement.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: mise en pages aux formats grand format, fichiers vérifiés avec l'imprimeur, déclinaisons papier et écran.</p>
-      </div>
-      <div class="card">
-        <img class="card__ill" src="/images/loup-violet.svg" alt="" style="width:60px;height:60px;object-fit:contain;margin-bottom:20px" width="145" height="124" loading="lazy">
-        <h3 style="font-size:20px;font-weight:700;margin:0 0 12px">Identité visuelle</h3>
-        <p class="card__text" style="font-size:15px;line-height:1.65">Logo, palette, typographies, affiches, programmes, gabarits.</p>
-        <p class="small" style="margin-top:14px"><strong style="color:var(--encre)">Livré</strong>&nbsp;: charte d'utilisation, fichiers vectoriels dans tous les formats, modèles modifiables. Deux à trois projets de ce type par trimestre, sur devis.</p>
-      </div>
-    </div>
-
-    <h2 class="sec-title" id="projets">Quelques projets</h2>
-    <div class="dotted dotted--pomme"></div>
-    <div class="rise" style="margin-bottom:34px">
-      <div class="ph ph--r20 has-img" style="aspect-ratio:1.91/1"><picture><source srcset="/images/photos/poules-web.webp" type="image/webp"><img src="/images/photos/poules-web.png" alt="Guide de soins aux poules pondeuses : couverture et pages intérieures" width="5906" height="3086" loading="lazy"></picture></div>
-      <h3 style="font-size:20px;font-weight:700;margin-top:18px">Guide de soins aux poules pondeuses — Agglomération Fécamp Caux Littoral</h3>
-      <p class="small" style="font-size:14.5px;line-height:1.6;margin-top:6px;max-width:62ch">Un livret remis aux familles qui adoptent des poules. Écriture des textes, maquette et suivi d'impression.</p>
-    </div>
-    <div class="grid grid-3 rise" style="gap:22px;margin-bottom:70px">
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/suede-web.webp" type="image/webp"><img src="/images/photos/suede-web.jpg" alt="Carnet de voyage en leporello déplié, collection Scandinavan" width="2500" height="1429" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Collection de carnets de voyage — Scandinavan</p></div>
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/scandi-web.webp" type="image/webp"><img src="/images/photos/scandi-web.jpg" alt="Leporello Suède, pages intérieures" width="1196" height="746" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Suède</p></div>
-      <div><div class="ph has-img" style="height:230px"><picture><source srcset="/images/photos/europe-web.webp" type="image/webp"><img src="/images/photos/europe-web.jpg" alt="Leporello Europe centrale, pages intérieures" width="800" height="800" loading="lazy"></picture></div><p class="small" style="margin-top:12px">Leporello Europe centrale · © Maud Lenoir</p></div>
-    </div>
-
-    <h2 class="sec-title">Compétences</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="grid grid-2 rise" style="margin-bottom:26px">
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Maquette et mise en pages</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Chemin de fer, gabarits et feuilles de styles, grilles, hiérarchie typographique, mise en pages d'ouvrages longs et de collections.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Chaîne graphique</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Préparation de fichiers d'impression, gestion colorimétrique, fonds perdus et repères, dialogue avec l'imprimeur, relecture de BAT.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Rédaction et édition</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">Rédaction de textes courts, réécriture, préparation de copie, correction orthotypographique.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Logiciels</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:10px">InDesign, Illustrator, Figma, WordPress, suite Microsoft 365.</p>
-      </div>
-    </div>
-    <p class="body" style="max-width:66ch;margin-bottom:70px">J'ai aussi travaillé la photographie, l'animation de réseaux sociaux, le web, la scénographie et la vidéo. <a class="more" href="/parcours">Voir mon parcours <span class="ar">→</span></a></p>
-
-    <h2 class="sec-title">Comment ça se passe</h2>
-    <div class="dotted"></div>
-    <ol class="rise" style="list-style:none;padding:0;margin:0 0 70px">
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">1</span><p class="body" style="margin:0">Vous m'écrivez, je réponds sous deux jours ouvrés.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">2</span><p class="body" style="margin:0">On cadre ensemble le format, le volume, le délai et le budget. Je vous envoie un devis.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--hairline-soft)"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">3</span><p class="body" style="margin:0">Je vous montre une première piste, puis deux séries de corrections sont comprises.</p></li>
-      <li style="display:flex;gap:18px;padding:22px 0"><span style="font-weight:800;font-size:20px;color:var(--reverie);flex:none;width:26px">4</span><p class="body" style="margin:0">Je livre les fichiers d'impression et je suis le tirage jusqu'au BAT.</p></li>
-    </ol>
-
     <div class="card rise" style="padding:0;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden;margin-bottom:34px">
       <div style="flex:1;min-width:280px;min-height:420px;display:flex;position:relative">
         <div class="ph ph--fill has-img"><img src="/images/photos/portrait-maud-web.jpg" alt="Portrait de Maud Lenoir" style="object-position:center 60%" width="2268" height="2835" loading="lazy"></div>
       </div>
       <div style="flex:1.25;min-width:300px;padding:46px">
+        <h2 class="sr-only">Qui suis-je</h2>
         <p class="card__kicker">QUI SUIS-JE&nbsp;?</p>
         <p class="serif" style="font-size:28px;line-height:1.3;margin:14px 0 22px;max-width:26ch">J'ai grandi entre une bibliothèque et une cuisine, et je n'ai jamais vraiment choisi.</p>
         <p class="body" style="font-size:16px;margin-bottom:20px">Maud Lenoir. Je mets en pages les histoires des autres et j'écris les miennes. Diplômée en design d'innovation sociale et en commerce connecté, aujourd'hui en master de recherche en littérature d'enfance et de jeunesse à l'université d'Artois.</p>
@@ -249,7 +272,8 @@
     </div>
 
     <div class="panel panel--jaune rise" style="margin-bottom:34px">
-      <img class="panel__ill" src="/images/livre-orange.svg" alt="" style="right:44px;bottom:-18px;width:170px;opacity:.12" width="112" height="169" loading="lazy">
+      <img class="panel__ill" src="/images/livre-orange.svg" alt="" style="right:44px;bottom:-18px;width:180px;opacity:.14" width="112" height="169" loading="lazy">
+      <h2 class="sr-only">Recherche en cours</h2>
       <p class="eyebrow eyebrow--ink" style="position:relative;margin-bottom:18px">Recherche en cours</p>
       <p class="serif" style="font-size:28px;line-height:1.35;max-width:30ch;margin-bottom:24px;position:relative">Ce qu'on mange dans les livres pour enfants.</p>
       <p class="on-light" style="font-size:16px;line-height:1.7;max-width:64ch;margin-bottom:26px;position:relative">Master de recherche en littérature d'enfance et de jeunesse. Je suis la nourriture d'un livre à l'autre&nbsp;: la faim dans les contes, le banquet comme fin heureuse, le partage comme épreuve. Ce que j'y trouve part dans le blog, sous l'étiquette Notes de lecture.</p>
@@ -265,57 +289,72 @@
 
 <!-- ================= CORRECTION ET RELECTURE ================= -->
 <section class="page hide" data-page="correction">
-  <div style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
-      <img src="/images/livre-violet.svg" alt="" style="position:absolute;width:190px;top:30px;right:0" width="112" height="169" loading="eager">
-    </div>
-    <div class="wrap" style="padding-top:78px;position:relative">
+
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:14px">
+      <img class="sec-anchor" src="/images/livre-violet.svg" alt="" width="112" height="169" style="width:clamp(140px,15vw,190px);right:-56px;top:28px;opacity:.85" loading="eager">
       <p class="eyebrow eyebrow--violet" style="margin-bottom:18px">Le studio</p>
       <h2 class="page-title" style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:22ch">Correction et relecture pour l'édition jeunesse et scolaire.</h2>
       <p class="lede" style="font-size:21px;margin:22px 0 0;max-width:54ch">Préparation de copie, correction orthotypographique, relecture sur épreuves. Je travaille sur manuscrit, sur épreuves papier ou en fichier annoté.</p>
     </div>
   </div>
 
-  <div class="wrap sec">
-    <h2 class="sec-title">Ce que je corrige</h2>
-    <div class="dotted dotted--violet"></div>
-    <ul class="rise" style="list-style:none;padding:0;margin:0 0 70px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 30px;font-size:16px;line-height:1.6;max-width:60ch">
-      <li style="display:flex;gap:10px"><span style="color:var(--reverie);font-weight:800">·</span>Albums et romans jeunesse</li>
-      <li style="display:flex;gap:10px"><span style="color:var(--reverie);font-weight:800">·</span>Manuels et cahiers scolaires</li>
-      <li style="display:flex;gap:10px"><span style="color:var(--reverie);font-weight:800">·</span>Documentaires pour enfants</li>
-      <li style="display:flex;gap:10px"><span style="color:var(--reverie);font-weight:800">·</span>Livrets pédagogiques et supports de médiation</li>
-    </ul>
-
-    <h2 class="sec-title">Trois niveaux d'intervention</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="grid grid-3 rise" style="margin-bottom:70px">
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Préparation de copie</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Uniformisation des styles, vérification de la cohérence, application des normes maison, signalement des passages à revoir.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Correction orthotypographique</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Orthographe, grammaire, syntaxe, typographie française, ponctuation, coupures.</p>
-      </div>
-      <div class="card">
-        <p class="card__kicker card__kicker--violet">Relecture sur épreuves</p>
-        <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Contrôle après mise en pages&nbsp;: veuves et orphelines, césures, lézardes, pagination, cohérence des titres courants.</p>
-      </div>
-    </div>
-
-    <h2 class="sec-title">Conditions</h2>
-    <div class="dotted dotted--violet"></div>
-    <div class="card rise" style="margin-bottom:56px">
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;font-size:15.5px;line-height:1.6">
-        <li>Préparation de copie&nbsp;: à partir de 5&nbsp;€ le feuillet de 1&nbsp;500 signes.</li>
-        <li>Correction orthotypographique&nbsp;: à partir de 3,50&nbsp;€ le feuillet.</li>
-        <li>Relecture sur épreuves&nbsp;: à partir de 2,50&nbsp;€ la page mise en pages.</li>
-        <li>À la journée&nbsp;: 200&nbsp;€.</li>
-        <li>Délais courants&nbsp;: 20 feuillets par jour en préparation de copie, 30 pages par jour en relecture sur épreuves.</li>
-        <li>Test de correction gratuit sur un extrait de cinq feuillets.</li>
+  <!-- Ce que je corrige (violet très pâle) -->
+  <div class="band band-violet">
+    <div class="wrap sec">
+      <h2 class="sec-title">Ce que je corrige</h2>
+      <div class="dotted"></div>
+      <ul class="rise" style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 30px;font-size:16px;line-height:1.6;max-width:60ch">
+        <li style="display:flex;gap:10px"><span style="color:var(--reverie-fonce);font-weight:800">·</span>Albums et romans jeunesse</li>
+        <li style="display:flex;gap:10px"><span style="color:var(--reverie-fonce);font-weight:800">·</span>Manuels et cahiers scolaires</li>
+        <li style="display:flex;gap:10px"><span style="color:var(--reverie-fonce);font-weight:800">·</span>Documentaires pour enfants</li>
+        <li style="display:flex;gap:10px"><span style="color:var(--reverie-fonce);font-weight:800">·</span>Livrets pédagogiques et supports de médiation</li>
       </ul>
     </div>
+  </div>
 
+  <!-- Trois niveaux d'intervention (crème) -->
+  <div class="band">
+    <div class="wrap sec">
+      <h2 class="sec-title">Trois niveaux d'intervention</h2>
+      <div class="dotted"></div>
+      <div class="grid grid-3 rise">
+        <div class="card card--pomme">
+          <p class="card__kicker">Préparation de copie</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Uniformisation des styles, vérification de la cohérence, application des normes maison, signalement des passages à revoir.</p>
+        </div>
+        <div class="card card--vert">
+          <p class="card__kicker card__kicker--green">Correction orthotypographique</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Orthographe, grammaire, syntaxe, typographie française, ponctuation, coupures.</p>
+        </div>
+        <div class="card card--or">
+          <p class="card__kicker">Relecture sur épreuves</p>
+          <p class="card__text" style="font-size:15px;line-height:1.65;margin-top:12px">Contrôle après mise en pages&nbsp;: veuves et orphelines, césures, lézardes, pagination, cohérence des titres courants.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conditions (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <h2 class="sec-title">Conditions</h2>
+      <div class="dotted"></div>
+      <div class="card rise">
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;font-size:15.5px;line-height:1.6">
+          <li>Préparation de copie&nbsp;: à partir de 5&nbsp;€ le feuillet de 1&nbsp;500 signes.</li>
+          <li>Correction orthotypographique&nbsp;: à partir de 3,50&nbsp;€ le feuillet.</li>
+          <li>Relecture sur épreuves&nbsp;: à partir de 2,50&nbsp;€ la page mise en pages.</li>
+          <li>À la journée&nbsp;: 200&nbsp;€.</li>
+          <li>Délais courants&nbsp;: 20 feuillets par jour en préparation de copie, 30 pages par jour en relecture sur épreuves.</li>
+          <li>Test de correction gratuit sur un extrait de cinq feuillets.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Appel (crème) -->
+  <div class="wrap sec">
     <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
       <p class="serif" style="font-size:24px;max-width:40ch">Envoyez-moi un extrait, je vous renvoie un test corrigé.</p>
       <a class="btn" href="/contact">Demander un test</a>
@@ -325,22 +364,20 @@
 
 <!-- ================= PARCOURS ================= -->
 <section class="page hide" data-page="parcours">
-  <div style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.07;pointer-events:none" aria-hidden="true">
-      <img src="/images/candide-violet.svg" alt="" style="position:absolute;width:190px;top:20px;right:20px" width="1846" height="811" loading="eager">
-    </div>
-    <div class="wrap" style="padding-top:78px;position:relative">
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:14px">
+      <img class="sec-anchor" src="/images/candide-violet.svg" alt="" width="1846" height="811" style="width:clamp(230px,25vw,330px);right:-120px;bottom:18px;opacity:.8" loading="eager">
       <p class="eyebrow eyebrow--violet" style="margin-bottom:18px">Le studio · Mon parcours</p>
       <h2 class="page-title" style="font-size:clamp(34px,4.4vw,50px);line-height:1.06;max-width:20ch">Mes diplômes et expériences</h2>
       <p class="lede" style="font-size:21px;margin:20px 0 0;max-width:52ch">Design, communication, édition, recherche. Un parcours qui va toujours vers le même endroit&nbsp;: mettre en pages ce qui doit se transmettre.</p>
     </div>
   </div>
 
-  <div class="wrap sec">
-
+  <div class="band">
+    <div class="wrap sec">
     <!-- ÉTUDES -->
     <h2 class="sec-title">Études</h2>
-    <div class="dotted dotted--violet"></div>
+    <div class="dotted"></div>
 
     <div class="rise" style="display:flex;flex-direction:column;gap:0;margin-bottom:40px">
       <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--hairline-soft)">
@@ -388,6 +425,11 @@
       </div>
     </div>
 
+    </div>
+  </div>
+
+  <div class="band band-vert">
+    <div class="wrap sec">
     <!-- FORMATION PRO -->
     <h2 class="sec-title">Formation professionnelle</h2>
     <div class="dotted"></div>
@@ -438,9 +480,14 @@
       </div>
     </div>
 
+    </div>
+  </div>
+
+  <div class="band band-violet">
+    <div class="wrap sec">
     <!-- COMPÉTENCES -->
     <h2 class="sec-title">Compétences</h2>
-    <div class="dotted dotted--violet"></div>
+    <div class="dotted"></div>
     <div class="rise" style="margin-bottom:70px">
       <div style="display:flex;flex-wrap:wrap;gap:22px 20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--hairline-soft)">
         <p class="card__kicker card__kicker--violet" style="flex:none;width:220px;padding-top:2px">Maquette et mise en pages</p>
@@ -480,6 +527,11 @@
       </div>
     </div>
 
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap sec">
     <!-- CARROUSEL PHOTOS -->
     <h2 class="sec-title">En images</h2>
     <div class="dotted"></div>
@@ -498,24 +550,31 @@
       <p class="serif" style="font-size:24px;max-width:34ch">Un projet à mettre en pages&nbsp;?</p>
       <a class="btn" href="/contact">Parler d'un projet</a>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ================= À TABLE ================= -->
 <section class="page hide" data-page="a-table">
-  <div class="wrap" style="padding-top:78px">
-    <p class="eyebrow" style="margin-bottom:18px">À table · le blog</p>
-    <h2 class="display page-title" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et le récit qui va avec.</h2>
-    <p class="lede" style="max-width:54ch;margin:18px 0 40px">Deux fois par mois&nbsp;: un plat à faire ce soir, et le conte, le mythe ou l'album qui l'accompagne. Une catégorie Notes de lecture, où je publie ce que je trouve pendant mes recherches.</p>
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:10px">
+      <img class="sec-anchor" src="/images/carotte-orange.svg" alt="" width="68" height="216" style="width:clamp(74px,8vw,104px);right:-30px;top:30px;opacity:.85" loading="eager">
+      <p class="eyebrow" style="margin-bottom:18px">À table · le blog</p>
+      <h2 class="display page-title" style="font-size:clamp(36px,4.8vw,56px);max-width:20ch">Une recette, et le récit qui va avec.</h2>
+      <p class="lede" style="max-width:54ch;margin:18px 0 0">Deux fois par mois&nbsp;: un plat à faire ce soir, et le conte, le mythe ou l'album qui l'accompagne. Une catégorie Notes de lecture, où je publie ce que je trouve pendant mes recherches.</p>
+    </div>
+  </div>
 
-    <h2 class="sr-only">Liste des parutions</h2>
-    <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
-    <div class="dotted dotted--full" style="margin:34px 0 40px;opacity:.22"></div>
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <h2 class="sr-only">Liste des parutions</h2>
+      <div class="chips" id="filters" role="tablist" aria-label="Filtrer les parutions"></div>
+      <div class="dotted dotted--full" style="margin:30px 0 36px;opacity:.22"></div>
 
-    <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
-    <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
-    <nav class="pager" id="pager" aria-label="Pages"></nav>
-    <div style="height:40px"></div>
+      <p class="small" id="results-count" aria-live="polite" style="margin-bottom:22px"></p>
+      <div class="grid grid-3" id="list" style="margin-bottom:40px"></div>
+      <nav class="pager" id="pager" aria-label="Pages"></nav>
+    </div>
   </div>
 </section>
 
@@ -526,76 +585,96 @@
 
 <!-- ================= LE JEU ================= -->
 <section class="page hide" data-page="jeu">
-  <div class="wrap" style="padding-top:78px">
-    <p class="eyebrow eyebrow--green" style="margin-bottom:18px">Le jeu · Mythes &amp; Marmites</p>
-    <h2 class="display page-title" style="font-size:clamp(36px,4.8vw,56px);max-width:18ch">Une marmite, des cartes, et toute une tablée.</h2>
-    <p class="lede" style="max-width:48ch;margin:18px 0 30px">Un jeu de récit coopératif&nbsp;: on cuisine des histoires autant qu'on les raconte. Aujourd'hui c'est un prototype.</p>
-    <p class="badge" style="margin-bottom:50px"><span class="badge__dot"></span> Prototype — pas encore en vente. Je cherche un éditeur et des tables pour le tester.</p>
 
-    <div class="grid grid-4" style="margin-bottom:56px">
-      <div class="stat"><p class="stat__n" style="color:var(--pomme)">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
-      <div class="stat"><p class="stat__n" style="color:var(--haricot)">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
-      <div class="stat"><p class="stat__n" style="color:var(--reverie)">45 min</p><p class="stat__l">plus ou moins long, on s'arrête quand on veut !</p></div>
-      <div class="stat"><p class="stat__n">48</p><p class="stat__l">cartes avec 3 niveaux de difficulté</p></div>
+  <div class="band">
+    <div class="wrap has-anchor" style="padding-top:78px;padding-bottom:8px">
+      <img class="sec-anchor" src="/images/marmite-brown.svg" alt="" width="140" height="91" style="width:clamp(180px,18vw,240px);right:-70px;top:54px;opacity:.9" loading="eager">
+      <p class="eyebrow eyebrow--green" style="margin-bottom:18px">Le jeu · Mythes &amp; Marmites</p>
+      <h2 class="display page-title" style="font-size:clamp(36px,4.8vw,56px);max-width:18ch">Une marmite, des cartes, et toute une tablée.</h2>
+      <p class="lede" style="max-width:48ch;margin:18px 0 30px">Un jeu de récit coopératif&nbsp;: on cuisine des histoires autant qu'on les raconte. Aujourd'hui c'est un prototype.</p>
+      <p class="badge" style="margin-bottom:50px"><span class="badge__dot"></span> Prototype — pas encore en vente. Je cherche un éditeur et des tables pour le tester.</p>
+
+      <div class="grid grid-4" style="margin-bottom:8px">
+        <div class="stat"><p class="stat__n" style="color:var(--pomme-fonce)">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
+        <div class="stat"><p class="stat__n" style="color:var(--haricot-fonce)">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
+        <div class="stat"><p class="stat__n" style="color:var(--reverie-fonce)">45 min</p><p class="stat__l">plus ou moins long, on s'arrête quand on veut&nbsp;!</p></div>
+        <div class="stat"><p class="stat__n">48</p><p class="stat__l">cartes avec 3 niveaux de difficulté</p></div>
+      </div>
     </div>
+  </div>
 
-    <div class="row" style="gap:48px;align-items:flex-start;margin-bottom:70px">
-      <div style="flex:1.4;min-width:320px">
-        <h2 class="sec-title" style="font-size:28px;margin-bottom:26px">Dans la boîte</h2>
-        <div style="display:flex;flex-direction:column;gap:20px">
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="112" height="169" loading="lazy">
-            <div><h3 style="font-size:17px;font-weight:700">48 cartes-contes</h3><p class="card__text">Un héros par carte, du conte populaire au mythe — et une amorce de recette.</p></div>
-          </div>
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="140" height="91" loading="lazy">
-            <div><h3 style="font-size:17px;font-weight:700">Le panier</h3><p class="card__text">On y mijote les histoires, on y dépose les ingrédients du récit.</p></div>
-          </div>
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <img class="card__ill" src="/images/poule-rousse-violet.svg" alt="" style="width:54px;height:54px;object-fit:contain;flex:none" width="87" height="125" loading="lazy">
-            <div><h3 style="font-size:17px;font-weight:700">Le carnet de recettes-récits</h3><p class="card__text">Pour garder une trace des histoires inventées et les rapporter chez soi.</p></div>
+  <!-- Dans la boîte / Le tour de jeu (vert très pâle) -->
+  <div class="band band-vert">
+    <div class="wrap sec">
+      <div class="row" style="gap:48px;align-items:flex-start">
+        <div style="flex:1.4;min-width:320px">
+          <h2 class="sec-title" style="margin-bottom:22px">Dans la boîte</h2>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:62px;height:62px;object-fit:contain;flex:none" width="112" height="169" loading="lazy">
+              <div><h3 style="font-size:17px;font-weight:700">48 cartes-contes</h3><p class="card__text">Un héros par carte, du conte populaire au mythe, et une amorce de recette.</p></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <img class="card__ill" src="/images/marmite-green.svg" alt="" style="width:62px;height:62px;object-fit:contain;flex:none" width="140" height="91" loading="lazy">
+              <div><h3 style="font-size:17px;font-weight:700">Le panier</h3><p class="card__text">On y mijote les histoires, on y dépose les ingrédients du récit.</p></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <img class="card__ill" src="/images/poule-rousse-violet.svg" alt="" style="width:62px;height:62px;object-fit:contain;flex:none" width="87" height="125" loading="lazy">
+              <div><h3 style="font-size:17px;font-weight:700">Le carnet de recettes-récits</h3><p class="card__text">Pour garder une trace des histoires inventées et les rapporter chez soi.</p></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel--or" style="flex:1;min-width:280px;align-self:stretch">
-        <h2 class="serif" style="font-size:26px;margin-bottom:20px">Le tour de jeu</h2>
-        <ol style="padding-left:22px;font-size:15.5px;line-height:1.9">
-          <li>On tire une carte.</li>
-          <li>On pose sa question à la tablée.</li>
-          <li>Chacun ajoute un ingrédient&nbsp;: un souvenir, un goût, une suite.</li>
-          <li>On mijote l'histoire ensemble…</li>
-          <li>…et on la note pour la rapporter.</li>
-        </ol>
-      </div>
-    </div>
-
-    <h2 class="sec-title">D'où vient ce jeu</h2>
-    <div class="dotted"></div>
-    <p class="body rise" style="font-size:17px;line-height:1.75;max-width:64ch;margin-bottom:60px">Le repas reste l'un des rares moments où une famille se retrouve vraiment, et c'est aussi là que les histoires qu'on se transmettait ont le plus reculé. Mythes &amp; Marmites remet des contes sur la table, avec de quoi les continuer soi-même.</p>
-
-    <!-- Carrousel photos -->
-    <div class="rail rise" style="margin-bottom:14px">
-      <div class="ph ph--r20 has-img" style="width:520px;height:360px"><img src="/images/photos/panier-web.jpg" alt="Le panier du jeu" width="5443" height="3629" loading="lazy"></div>
-      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/recettes-web.webp" type="image/webp"><img src="/images/photos/recettes-web.jpg" alt="Les recettes-récits" width="1574" height="1574" loading="lazy"></picture></div>
-      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><img src="/images/photos/jetons-web.jpg" alt="Les jetons du jeu" width="1395" height="1395" loading="lazy"></div>
-      <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/cartes-web.webp" type="image/webp"><img src="/images/photos/cartes-web.jpg" alt="Les cartes-contes" width="1600" height="1200" loading="lazy"></picture></div>
-    </div>
-    <p class="small" style="margin-bottom:60px">Faites glisser pour voir la suite</p>
-
-    <div class="panel panel--ink rise" style="margin-bottom:56px">
-      <img class="panel__ill" src="/images/asterix-cream.svg" alt="" style="right:40px;bottom:-20px;width:180px;opacity:.12" width="88" height="164" loading="lazy">
-      <p class="eyebrow eyebrow--or" style="position:relative;margin-bottom:18px">Où en est le jeu ?</p>
-      <p class="serif" style="font-size:30px;line-height:1.35;max-width:26ch;margin-bottom:34px;position:relative">Il se construit avec celles et ceux qui le testent.</p>
-      <div class="grid grid-3" style="position:relative;gap:26px">
-        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Fait</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">48 cartes dessinées, règles écrites, prototype imprimé et joué en famille.</p></div>
-        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">En cours</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Séances de test devant du public, réglages du tour de jeu, carnet de recettes.</p></div>
-        <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Cherche</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Un éditeur jeunesse, et des lieux prêts à accueillir une partie.</p></div>
+        <div class="panel--or" style="flex:1;min-width:280px;align-self:stretch">
+          <h2 class="serif" style="font-size:26px;margin-bottom:20px">Le tour de jeu</h2>
+          <ol style="padding-left:22px;font-size:15.5px;line-height:1.9">
+            <li>On tire une carte.</li>
+            <li>On pose sa question à la tablée.</li>
+            <li>Chacun ajoute un ingrédient&nbsp;: un souvenir, un goût, une suite.</li>
+            <li>On mijote l'histoire ensemble…</li>
+            <li>…et on la note pour la rapporter.</li>
+          </ol>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
-      <p class="serif" style="font-size:24px;max-width:34ch">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
-      <a class="btn btn--green" href="/contact">Tester le jeu avec moi</a>
+  <!-- D'où vient ce jeu (violet très pâle) -->
+  <div class="band band-violet">
+    <div class="wrap sec has-anchor">
+      <img class="sec-anchor" src="/images/asterix-orange.svg" alt="" width="88" height="164" style="width:clamp(120px,13vw,165px);left:-62px;top:64px;opacity:.9" loading="lazy">
+      <h2 class="sec-title">D'où vient ce jeu</h2>
+      <div class="dotted"></div>
+      <p class="body rise" style="font-size:17px;line-height:1.75;max-width:64ch">Le repas reste l'un des rares moments où une famille se retrouve vraiment, et c'est aussi là que les histoires qu'on se transmettait ont le plus reculé. Mythes &amp; Marmites remet des contes sur la table, avec de quoi les continuer soi-même.</p>
+    </div>
+  </div>
+
+  <!-- Photos + Où en est le jeu + appel (crème) -->
+  <div class="band">
+    <div class="wrap sec">
+      <div class="rail rise" style="margin-bottom:14px">
+        <div class="ph ph--r20 has-img" style="width:520px;height:360px"><img src="/images/photos/panier-web.jpg" alt="Le panier du jeu, posé sur une table" width="5443" height="3629" loading="lazy"></div>
+        <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/recettes-web.webp" type="image/webp"><img src="/images/photos/recettes-web.jpg" alt="Le carnet de recettes-récits, ouvert" width="1574" height="1574" loading="lazy"></picture></div>
+        <div class="ph ph--r20 has-img" style="width:340px;height:360px"><img src="/images/photos/jetons-web.jpg" alt="Les jetons du jeu" width="1395" height="1395" loading="lazy"></div>
+        <div class="ph ph--r20 has-img" style="width:340px;height:360px"><picture><source srcset="/images/photos/cartes-web.webp" type="image/webp"><img src="/images/photos/cartes-web.jpg" alt="Les cartes-contes, étalées" width="1600" height="1200" loading="lazy"></picture></div>
+      </div>
+      <p class="small" style="margin-bottom:60px">Faites glisser pour voir la suite</p>
+
+      <div class="panel panel--ink rise" style="margin-bottom:56px">
+        <img class="panel__ill" src="/images/asterix-cream.svg" alt="" style="right:40px;bottom:-20px;width:190px;opacity:.14" width="88" height="164" loading="lazy">
+        <h2 class="sr-only">Où en est le jeu</h2>
+        <p class="eyebrow eyebrow--or" style="position:relative;margin-bottom:18px">Où en est le jeu ?</p>
+        <p class="serif" style="font-size:30px;line-height:1.35;max-width:26ch;margin-bottom:34px;position:relative">Il se construit avec celles et ceux qui le testent.</p>
+        <div class="grid grid-3" style="position:relative;gap:26px">
+          <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Fait</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">48 cartes dessinées, règles écrites, prototype imprimé et joué en famille.</p></div>
+          <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">En cours</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Séances de test devant du public, réglages du tour de jeu, carnet de recettes.</p></div>
+          <div><h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Cherche</h3><p class="on-ink" style="font-size:14.5px;line-height:1.55">Un éditeur jeunesse, et des lieux prêts à accueillir une partie.</p></div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:44px;margin-bottom:30px">
+        <p class="serif" style="font-size:24px;max-width:36ch">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
+        <a class="btn btn--green" href="/contact">Tester le jeu avec moi</a>
+      </div>
     </div>
   </div>
 </section>
@@ -608,8 +687,8 @@
         <p class="eyebrow" style="margin-bottom:18px">Parler d'un projet</p>
         <h2 class="display page-title" style="font-size:clamp(34px,4.4vw,52px)">Racontez-moi.</h2>
         <p class="lede" style="font-size:22px;margin:18px 0 24px;max-width:40ch">Un livre à mettre en pages, un texte à corriger, une exposition à habiller, ou juste une envie d'essayer le jeu.</p>
-        <p class="body" style="font-size:15.5px;max-width:46ch;margin-bottom:30px">Je réponds sous deux jours ouvrés, et si le projet ne me correspond pas, je le dis franchement et j'essaie de vous orienter.</p>
-        <img class="card__ill" src="/images/ours-boucle-dor-green.svg" alt="" style="width:190px" width="251" height="115" loading="lazy">
+        <p class="body" style="font-size:15.5px;max-width:46ch;margin-bottom:34px">Je réponds sous deux jours ouvrés, et si le projet ne me correspond pas, je le dis franchement et j'essaie de vous orienter.</p>
+        <img class="card__ill" src="/images/ours-boucle-dor-green.svg" alt="" style="width:min(260px,60%)" width="251" height="115" loading="lazy">
       </div>
       <form class="card" style="flex:1;min-width:320px;padding:38px" id="form" action="https://formspree.io/f/xjybkpop" method="POST">
         <div style="display:flex;flex-direction:column;gap:20px">

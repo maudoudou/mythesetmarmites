@@ -407,7 +407,8 @@ function illAttrs(name) {
 /* ---------------------------- Vignettes ---------------------------- */
 function cardHTML(a) {
   const kick = a.cat === 'contes' ? '' : a.cat === 'mythes' ? ' card__kicker--green' : ' card__kicker--violet';
-  return `<article class="contents"><a class="card card--r16 card--link" href="/#/a-table/${a.slug}">
+  const tint = a.cat === 'contes' ? ' card--pomme' : a.cat === 'mythes' ? ' card--vert' : ' card--violet';
+  return `<article class="contents"><a class="card card--r16 card--link${tint}" href="/#/a-table/${a.slug}">
     <img class="card__ill" src="/images/${a.ill}.svg" alt=""${illAttrs(a.ill)} loading="lazy" style="width:100%;height:120px;object-fit:contain">
     <p class="card__kicker${kick}" style="margin-top:20px">${a.kicker}</p>
     <h3 class="card__title" style="margin:8px 0 10px">${a.title}</h3>
