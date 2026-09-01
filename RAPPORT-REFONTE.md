@@ -40,17 +40,26 @@ JS qui se chargent, HTML équilibré) avant son commit.
   formulaire, offre du JSON-LD, sitemap, routage). Parcours : intro,
   « Compétences » développé, galerie ramenée de dix à six photos. À table,
   Le jeu, Contact, pied de page mis à jour. Un seul `<h1>` par page.
-- **Lot 2 — Design** (`a7a3637`, **révisé par `6445b64`**). Première version :
-  bandes de section pâles + variantes assombries des teintes pour l'AA.
-  Retour de l'autrice : fonds de section à retirer, charte à respecter à la
-  lettre, couleur voulue « par blocs ». **Version en ligne** : fond crème
-  partout ; couleurs exactes de la charte (`--pomme #EB6755`, etc.) ; la
-  couleur passe par des blocs en aplat plein (panneaux corail / doré / brun,
-  cartes dorées à pastille d'icône colorée), sans opacité ni contour ;
-  titres de section colorés par modificateur ; illustrations agrandies
-  conservées ; moins d'interlettrage. Le vert et le violet ne portent
-  jamais de texte (titres, filets, pastilles, illustrations seulement).
-  Contraste : voir plus bas.
+- **Lot 2 — Design** (`a7a3637`, révisé par `6445b64` puis `<harmo>`). Le
+  design a été retravaillé deux fois sur retour de l'autrice.
+  - v1 : bandes de section pâles + teintes assombries pour l'AA. Rejeté
+    (fonds colorés, orange pas conforme à la charte).
+  - v2 : fond crème partout, charte exacte, couleur « par blocs » en aplat
+    plein. Trop de cartes dorées, petits carrés d'icône jugés peu jolis.
+  - **v3, en ligne.** Fond crème partout, couleurs exactes de la charte.
+    La couleur passe par : (a) quelques panneaux pleins aux moments forts
+    (corail pour les appels, doré pour « la phrase » / la recherche, brun
+    pour l'état du jeu) ; (b) les **titres** — chaque section a un `<h2>`
+    d'une couleur de la charte (corail / vert / violet) qui tourne au fil
+    de la page, avec son filet pointillé assorti ; (c) le jeu des
+    **graisses** — « Ce que je fais », « Compétences » et « Trois niveaux »
+    n'ont plus de bloc, juste un sous-titre `<h3>` coloré et gras, puis le
+    texte en graisse normale. Illustrations passées en **filigrane**
+    (opacité 6 %), toujours derrière le contenu. Échelle typographique
+    unifiée : un seul jeu `.page-title` / `.sec-title` / `.h3` réutilisé
+    partout, pour un plan de titres net (référencement). Interlettrage des
+    intitulés réduit. « Voir plus de projets » (dépliage) rétabli sur le
+    studio. Le vert et le violet ne servent jamais de fond à du texte.
 - **Lot 3 — Référencement technique** (`81e8bc8`, `61d9cf2`, `556d157`).
   3.1 déjà satisfait (voir plus bas). 3.2 : sortie du `#/` par vraies pages
   statiques + `_redirects` (décision détaillée plus bas). 3.3 : `<head>`

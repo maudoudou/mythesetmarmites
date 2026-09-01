@@ -42,6 +42,16 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Posé tôt dans le <head> : marque que le JS tourne (-> .js .rise animées).
+# Sans JS, ou si script.js échoue, le contenu reste visible (voir style.css)
+# et ce repli au chargement révèle toute .rise restée masquée.
+JS_MARK = (
+    "<script>document.documentElement.classList.add('js');"
+    "addEventListener('load',function(){setTimeout(function(){"
+    "var r=document.querySelectorAll('.rise:not(.in)');"
+    "for(var i=0;i<r.length;i++)r[i].classList.add('in')},500)})</script>"
+)
+
 ROUTES = {
     'studio':     'Le studio — Mythes & Marmites',
     'correction': 'Correction et relecture — Mythes & Marmites',
@@ -94,11 +104,9 @@ def main():
 
         # Dans la coquille SPA, le titre de chaque section secondaire est un
         # <h2 class="page-title"> : ça garde un seul <h1> sur la page d'accueil.
-        # Sur la page autonome, ce titre redevient le <h1> du document.
-        section = section.replace(
-            '<h2 class="display page-title" ', '<h1 class="display" ', 1)
-        section = section.replace('<h2 class="page-title" ', '<h1 ', 1)
-        section = re.sub(r'(<h1[^>]*>[^<]*)</h2>', r'\1</h1>', section, count=1)
+        # Sur la page autonome, ce titre redevient le <h1> (classe conservée).
+        section = section.replace('<h2 class="page-title"', '<h1 class="page-title"', 1)
+        section = re.sub(r'(<h1 class="page-title"[^>]*>[^<]*)</h2>', r'\1</h1>', section, count=1)
 
         # Marque le lien de nav correspondant comme actif (le JS de route()
         # ne s'exécute pas sur ces pages, voir IS_SPA_SHELL dans script.js).
@@ -111,6 +119,7 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{JS_MARK}
 <title>{title}</title>
 <link rel="icon" href="/images/favicon-orange.svg">
 <link rel="apple-touch-icon" href="/images/icon-192.png">
