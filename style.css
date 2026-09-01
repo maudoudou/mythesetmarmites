@@ -20,6 +20,7 @@
   --pomme:#EB6755;   /* le conte */
   --haricot:#62B47E; /* le partage */
   --reverie:#9599EA; /* on repart */
+  --haricot-fonce:#256B43; /* vert assombri : texte sur fond clair, ratio 5,9:1 (AA) */
   --or:#F4CC71;      /* la tablÃ©e */
   --encre-80:rgba(83,71,65,.82);
   --encre-70:rgba(83,71,65,.72);
@@ -142,6 +143,29 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn--sm{font-size:14.5px;padding:11px 22px}
 .btn .ar{transition:transform .18s var(--ease)}
 .btn:hover .ar{transform:translateX(4px)}
+
+/* ---------- Pastilles d'info · paire réutilisable ---------- */
+/* Deux badges non cliquables côte à côte (zone d'intervention, modalités…).
+   Générique : réutilisable partout via
+     <div class="badge-pair">
+       <span class="badge">…</span>
+       <span class="badge">…</span>
+     </div>
+   Pas de pastille : simple texte vert, léger, sans fond ni contour.
+   Contraste texte/fond ≥ 4,5:1 (WCAG AA).
+   Sous 480 px, les deux badges passent l'un sous l'autre. */
+.badge-pair{
+  display:flex;flex-wrap:wrap;gap:8px 22px;
+  margin:22px 0 30px;padding:0;list-style:none;
+}
+.badge{
+  color:var(--haricot-fonce);
+  font-size:12px;font-weight:500;letter-spacing:.07em;
+  text-transform:uppercase;line-height:1.3;
+}
+@media (max-width:480px){
+  .badge-pair{flex-direction:column;align-items:flex-start}
+}
 
 /* Lien d'action Â« â€¦ â†’ Â» */
 .more{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14.5px;color:var(--pomme);cursor:pointer}
