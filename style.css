@@ -63,27 +63,40 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .sec--tight{padding-top:0;padding-bottom:78px}
 .hide{display:none !important}
 
-/* ---------- Type ---------- */
-.eyebrow{font-weight:800;font-size:12.7px;letter-spacing:.05em;text-transform:uppercase;color:var(--pomme)}
-.eyebrow--green{color:var(--haricot)}
-.eyebrow--violet{color:var(--reverie)}
+/* ---------- Échelle typographique ----------
+   Une seule échelle, du plus grand au plus petit, réutilisée partout
+   (cohérence + plan de titres net pour le référencement) :
+     .page-title  -> le <h1> de chaque page
+     .sec-title   -> les <h2> de section (serif, coloré selon la charte)
+     .h3          -> les sous-titres (services, compétences, entrées…)
+     .eyebrow / .card__kicker -> intitulé court AU-DESSUS d'un titre
+*/
+.eyebrow,.card__kicker{font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--pomme);line-height:1.3}
+.eyebrow--green,.card__kicker--green{color:var(--haricot)}
+.eyebrow--violet,.card__kicker--violet{color:var(--reverie)}
 .eyebrow--or{color:var(--or)} /* uniquement sur panneau sombre */
 .eyebrow--mute{color:var(--encre-55)}
 .eyebrow--ink{color:var(--encre)}
-.display{font-size:clamp(38px,5.4vw,59px)}
-.h2{font-size:clamp(30px,3.6vw,42px)}
-.lede{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.5;color:var(--encre-80)}
-.lede--big{font-size:clamp(26px,3.4vw,40px);line-height:1.35;color:var(--encre)}
-.serif{font-family:var(--serif);font-style:italic}
-.script{font-family:'Homemade Apple',cursive}
-.body{font-size:16.5px;line-height:1.7;color:rgba(83,71,65,.8)}
-.small{font-size:14px;color:var(--encre-55)}
-/* Titre de section coloré (charte). Couleur au choix par modificateur. */
-.sec-title{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--pomme)}
+
+.page-title{font-size:clamp(32px,4.4vw,46px);line-height:1.07;font-weight:800;letter-spacing:-.02em}
+.display{font-size:clamp(32px,4.4vw,46px);line-height:1.07} /* alias historique */
+.h2{font-size:clamp(27px,3.1vw,36px);line-height:1.1}
+
+.sec-title{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(25px,2.7vw,32px);line-height:1.15;letter-spacing:0;color:var(--pomme)}
 .sec-title--vert{color:var(--haricot)}
 .sec-title--violet{color:var(--reverie)}
 .sec-title--ink{color:var(--encre)}
 .panel .sec-title,.panel--ink .sec-title{color:inherit}
+
+.h3,h3.card__title,.card--r16 .card__title{font-size:clamp(18px,1.5vw,20.5px);line-height:1.28;font-weight:700;letter-spacing:-.01em}
+.h3--lg{font-size:clamp(19px,1.8vw,22px)}
+
+.lede{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.9vw,22px);line-height:1.5;color:var(--encre-80)}
+.lede--big{font-size:clamp(24px,3.2vw,38px);line-height:1.35;color:var(--encre)}
+.serif{font-family:var(--serif);font-style:italic}
+.script{font-family:'Homemade Apple',cursive}
+.body{font-size:16.5px;line-height:1.7;color:rgba(83,71,65,.86)}
+.small{font-size:14px;color:var(--encre-55)}
 /* Filet pointillé sous le titre : reprend sa couleur. */
 .sec-title + .dotted{background-image:radial-gradient(circle,var(--pomme) 1.4px,transparent 1.7px);opacity:.75}
 .sec-title--vert + .dotted{background-image:radial-gradient(circle,var(--haricot) 1.4px,transparent 1.7px)}
@@ -284,13 +297,19 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .band{position:relative;overflow:hidden}
 .band>.wrap{position:relative}
 
-/* Illustration en ancrage de section : grande, posée sur un bord, elle
-   déborde la colonne de contenu (rognée par .band{overflow:hidden}).
-   Dans la marge, jamais derrière du texte ; masquée sous 1080px. */
+/* Illustration en filigrane de section : grande, posée sur un bord, très
+   discrète (filigrane), toujours derrière le contenu, jamais un obstacle
+   à la lecture. Masquée sous 1080px. */
 .has-anchor{position:relative}
 .has-anchor>:not(.sec-anchor){position:relative;z-index:1}
-.sec-anchor{position:absolute;pointer-events:none;z-index:0;height:auto;user-select:none}
+.sec-anchor{position:absolute;pointer-events:none;z-index:0;height:auto;user-select:none;opacity:.06}
 @media (max-width:1080px){.sec-anchor{display:none}}
+
+/* Logo d'établissement (page Parcours) : cadre clair uni, sans contour,
+   assez grand pour que le logo respire. */
+.logo-box{flex:none;width:96px;height:96px;background:#fff;border-radius:16px;display:grid;place-items:center;padding:14px}
+.logo-box img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+@media (max-width:600px){.logo-box{width:76px;height:76px;padding:11px}}
 
 /* ---------- Blocs en aplat de couleur ---------- */
 /* Couleur pleine de la charte, sans opacité, sans contour. Le corps de
@@ -318,15 +337,25 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .card__inset .card__text,.card__inset .small,.card__inset .body{color:var(--encre-70)}
 .card__inset strong{color:var(--encre)}
 
-/* Pastille de couleur pleine (icône ou numéro) sur une carte claire. */
-.card__disc{display:inline-grid;place-items:center;width:62px;height:62px;border-radius:18px}
-.card__disc--pomme{background:var(--pomme)}
-.card__disc--vert{background:var(--haricot)}
-.card__disc--violet{background:var(--reverie)}
-.card__disc--or{background:var(--or)}
-.card__num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:999px;
-  background:var(--pomme);color:var(--lait);font-weight:800;font-size:20px;font-style:normal}
-.card--or .card__num{background:var(--pomme);color:var(--lait)}
+/* Numéro d'étape : pastille de couleur pleine. */
+.card__num{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;
+  background:var(--pomme);color:var(--lait);font-weight:800;font-size:19px;font-style:normal}
+
+/* ---------- « Ce que je fais » ---------- */
+/* Hiérarchie par la couleur et la graisse, sans bloc de fond. Même motif
+   sur l'accueil et sur le studio. */
+.svc__item{padding:26px 0;border-bottom:2px solid var(--hairline)}
+.svc__item:last-child{border-bottom:0}
+/* En grille (2 colonnes), pas de filet : l'espacement suffit. */
+.svc.grid .svc__item{border-bottom:0;padding:16px 0}
+.svc.grid{gap:10px 44px}
+.svc__h{font-size:clamp(19px,1.9vw,23px);font-weight:800;line-height:1.22;letter-spacing:-.01em;margin:0 0 9px}
+.svc__h--pomme{color:var(--pomme)}
+.svc__h--vert{color:var(--haricot)}
+.svc__h--violet{color:var(--reverie)}
+.svc__item .body{max-width:64ch}
+.svc__note{margin-top:8px;font-size:13.5px;line-height:1.6;color:var(--encre-55);max-width:64ch}
+.svc__more{display:inline-block;margin-top:12px}
 
 /* Bloc projet pleine largeur : la photo apporte la couleur, le texte reste
    sur crème, aucun aplat sous le paragraphe. */
@@ -398,10 +427,14 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .foot .navlink:hover{color:#fff}
 
 /* ---------- Apparitions ---------- */
-.rise{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s var(--ease)}
-.rise.in{opacity:1;transform:none}
+/* Apparition au défilement : le contenu est visible par défaut ; il n'est
+   masqué (puis animé) que si le JS a posé .js sur <html>. Sans JS, ou si
+   le script échoue, rien ne disparaît. */
+.rise{opacity:1;transform:none}
+.js .rise{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .rise{opacity:1;transform:none;transition:none}
+  .rise,.js .rise{opacity:1;transform:none;transition:none}
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
   html{scroll-behavior:auto}
 }

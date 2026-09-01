@@ -27,6 +27,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://mythesetmarmites.fr"
 OG_FALLBACK = f"{DOMAIN}/images/og-share.png"
 
+JS_MARK = (
+    "<script>document.documentElement.classList.add('js');"
+    "addEventListener('load',function(){setTimeout(function(){"
+    "var r=document.querySelectorAll('.rise:not(.in)');"
+    "for(var i=0;i<r.length;i++)r[i].classList.add('in')},500)})</script>"
+)
+
 
 def slice_between(src, start_marker, end_marker, inclusive_end=True):
     i = src.index(start_marker)
@@ -130,6 +137,7 @@ def build_page(art, header, footer):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{JS_MARK}
 <title>{full_title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
