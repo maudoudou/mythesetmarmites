@@ -59,8 +59,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .wrap{max-width:var(--main);margin:0 auto;padding:0 40px}
-.sec{padding-top:78px;padding-bottom:78px}
-.sec--tight{padding-top:0;padding-bottom:78px}
+.sec{padding-top:56px;padding-bottom:56px}
+.sec--tight{padding-top:0;padding-bottom:56px}
+/* Deux sections qui se suivent : on ne cumule pas complètement les marges. */
+.band + .band > .wrap.sec{padding-top:26px}
+/* Sous-section à l'intérieur d'un même bloc (page Parcours). */
+.subsec{margin-top:44px}
+.subsec:first-child{margin-top:0}
 .hide{display:none !important}
 
 /* ---------- Échelle typographique ----------

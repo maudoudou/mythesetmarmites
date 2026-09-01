@@ -40,26 +40,26 @@ JS qui se chargent, HTML équilibré) avant son commit.
   formulaire, offre du JSON-LD, sitemap, routage). Parcours : intro,
   « Compétences » développé, galerie ramenée de dix à six photos. À table,
   Le jeu, Contact, pied de page mis à jour. Un seul `<h1>` par page.
-- **Lot 2 — Design** (`a7a3637`, révisé par `6445b64` puis `<harmo>`). Le
-  design a été retravaillé deux fois sur retour de l'autrice.
+- **Lot 2 — Design** (repris quatre fois sur retour de l'autrice).
   - v1 : bandes de section pâles + teintes assombries pour l'AA. Rejeté
     (fonds colorés, orange pas conforme à la charte).
-  - v2 : fond crème partout, charte exacte, couleur « par blocs » en aplat
-    plein. Trop de cartes dorées, petits carrés d'icône jugés peu jolis.
-  - **v3, en ligne.** Fond crème partout, couleurs exactes de la charte.
-    La couleur passe par : (a) quelques panneaux pleins aux moments forts
-    (corail pour les appels, doré pour « la phrase » / la recherche, brun
-    pour l'état du jeu) ; (b) les **titres** — chaque section a un `<h2>`
-    d'une couleur de la charte (corail / vert / violet) qui tourne au fil
-    de la page, avec son filet pointillé assorti ; (c) le jeu des
-    **graisses** — « Ce que je fais », « Compétences » et « Trois niveaux »
-    n'ont plus de bloc, juste un sous-titre `<h3>` coloré et gras, puis le
-    texte en graisse normale. Illustrations passées en **filigrane**
-    (opacité 6 %), toujours derrière le contenu. Échelle typographique
-    unifiée : un seul jeu `.page-title` / `.sec-title` / `.h3` réutilisé
-    partout, pour un plan de titres net (référencement). Interlettrage des
-    intitulés réduit. « Voir plus de projets » (dépliage) rétabli sur le
-    studio. Le vert et le violet ne servent jamais de fond à du texte.
+  - v2 : fond crème, charte exacte, couleur « par blocs » en aplat plein.
+    Trop de cartes dorées, carrés d'icône jugés peu jolis.
+  - v3 : harmonisation typo (échelle unique `.page-title` / `.sec-title` /
+    `.h3`), illustrations en filigrane (6 %), sous-titres colorés + jeu de
+    graisses au lieu des blocs, dépliage projets rétabli.
+  - **v4, en ligne.** Réglages : accueil réordonné (« Ce que je fais »
+    avant « Projets récents » ; la phrase « Que reste-t-il… » en simple
+    texte marron sur crème, plus de panneau ; nouvelle section « Mes
+    projets de recherche » regroupant À table et Le jeu en **deux blocs
+    verts identiques**, titre crème + paragraphe sur encart crème lisible).
+    Studio : le guide des poules **et** la collection Scandinavan sont
+    montrés d'emblée, le dépliage révèle trois emplacements vides à
+    pointillés avec la mention « Site en cours de mise à jour ».
+    Correction : « Conditions » sans fond. **Espacements resserrés**
+    (`.sec` 78 → 56 px, pas de cumul entre deux bandes).
+    Le vert et le violet ne servent jamais de fond à un paragraphe (le
+    texte long va sur doré, brun, ou un encart crème).
 - **Lot 3 — Référencement technique** (`81e8bc8`, `61d9cf2`, `556d157`).
   3.1 déjà satisfait (voir plus bas). 3.2 : sortie du `#/` par vraies pages
   statiques + `_redirects` (décision détaillée plus bas). 3.3 : `<head>`
