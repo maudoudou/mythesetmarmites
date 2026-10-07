@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest" version="1.1" viewBox="0 0 1120 1130"><metadata><?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 6.0.0"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmpMM:DocumentID="xmp.did:cb9f5498-bb58-4572-8043-8c369e6bfb9b" xmpMM:InstanceID="xmp.iid:cb9f5498-bb58-4572-8043-8c369e6bfb9b" dcterms:provenance="https://cai-manifests.adobe.com/manifests/urn-c2pa-bccbb69f-7ad6-4f51-a148-4b43b856e221-adobe"> </rdf:Description></rdf:RDF></x:xmpmeta>
+<?xpacket end="w"?></metadata>
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #55a270;
+      }
+
+      .st1 {
+        fill: #f8f5f4;
+        font-family: Pacaembu-Extrabold, Pacaembu;
+        font-size: 120px;
+        font-weight: 700;
+      }
+
+      .st1, .st2 {
+        isolation: isolate;
+      }
+
+      .st3 {
+        fill: #ebbe5c;
+      }
+
+      .st4 {
+        fill: #62b47e;
+      }
+
+      .st5 {
+        fill: #a9acef;
+      }
+
+      .st2 {
+        fill: #534741;
+        font-family: 'IM_FELL_English_Roman', 'IM FELL English';
+        font-size: 320px;
+        letter-spacing: 0em;
+      }
+
+      .st6 {
+        fill: #f4cc71;
+      }
+
+      .st7 {
+        fill: #9599ea;
+      }
+    </style>
+  </defs>
+  <text class="st2" transform="translate(212.7 300)"><tspan x="0" y="0">Mille</tspan></text>
+  <g>
+    <polygon class="st4" points="50 400 220 430 220 670 50 640 50 400"/>
+    <polygon class="st0" points="220 430 390 400 390 640 220 670 220 430"/>
+    <polygon class="st6" points="390 400 560 430 560 670 390 640 390 400"/>
+    <polygon class="st3" points="560 430 730 400 730 640 560 670 560 430"/>
+    <polygon class="st7" points="730 400 900 430 900 670 730 640 730 400"/>
+    <polygon class="st5" points="900 430 1070 400 1070 640 900 670 900 430"/>
+    <text class="st1" transform="translate(91.2 572.3) rotate(10) scale(1 1) skewX(9.7)"><tspan x="0" y="0">S</tspan></text>
+    <text class="st1" transform="translate(262.4 587.5) rotate(-10) scale(1 1) skewX(-9.7)"><tspan x="0" y="0">T</tspan></text>
+    <text class="st1" transform="translate(430.1 572.1) rotate(10) scale(1 1) skewX(9.7)"><tspan x="0" y="0">U</tspan></text>
+    <text class="st1" transform="translate(597.6 588.4) rotate(-10) scale(1 1) skewX(-9.7)"><tspan x="0" y="0">D</tspan></text>
+    <text class="st1" transform="translate(793.4 576.2) rotate(10) scale(1 1) skewX(9.7)"><tspan x="0" y="0">I</tspan></text>
+    <text class="st1" transform="translate(936.6 588.5) rotate(-10) scale(1 1) skewX(-9.7)"><tspan x="0" y="0">O</tspan></text>
+  </g>
+  <text class="st2" transform="translate(189.1 970)"><tspan x="0" y="0">Pages</tspan></text>
+</svg>
