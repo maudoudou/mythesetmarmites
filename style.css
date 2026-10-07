@@ -629,8 +629,19 @@ main:focus{outline:none;box-shadow:none}
 
 /* ---------- Accueil ---------- */
 .hero{position:relative;overflow:hidden}
-.hero__in{text-align:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(36px,5vw,64px);max-width:1000px}
-.hero__title{font-size:clamp(28px,3.6vw,44px);line-height:1.12;letter-spacing:-.022em;font-weight:800;max-width:30ch;margin:0 auto;text-wrap:balance}
+.hero__in{text-align:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(36px,5vw,64px);max-width:1160px}
+/* Titre d'accueil : deux lignes au plus sur ordinateur, coupées après
+   « papeterie, » (le <br class="hero__br"> n'existe qu'au-delà de 820px).
+   La première ligne mesure 24,8em en Pacaembu 800 : le bloc fait 25,6em,
+   et la taille suit la largeur d'écran ((100vw - 80px) / 25,6, arrondi
+   par défaut) pour que cette ligne tienne toujours dans le contenu de
+   .hero__in (1080px au plus). Sous 820px, le titre s'écoule librement
+   sur trois ou quatre lignes équilibrées. La poule décorative est posée
+   à hauteur du sous-titre (top:270px) pour ne pas passer sous le titre. */
+.hero__title{font-size:clamp(28px,calc(3.9vw - 4px),42px);line-height:1.12;letter-spacing:-.022em;font-weight:800;max-width:25.6em;margin:0 auto;text-wrap:balance}
+.hero__br{display:none}
+@media (min-width:821px){.hero__br{display:inline}}
+.hero__sub{font-weight:400;font-size:clamp(18px,2vw,24px);color:var(--encre-80);margin-top:16px;text-wrap:balance}
 .hero__place{font-weight:300;font-size:clamp(18px,1.9vw,22px);margin-top:26px}
 .hero__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
 
@@ -761,12 +772,15 @@ main:focus{outline:none;box-shadow:none}
   .t-sec{margin-bottom:28px}
 }
 @media (max-width:600px){
-  .hero__title{font-size:25px;line-height:1.16}
+  .hero__title{font-size:clamp(23px,6.4vw,26px);line-height:1.16}
+  .hero__sub{font-size:18px;margin-top:12px}
   .hero__actions{width:100%}
   .entry__head{gap:14px}
   .foot__colophon,.foot__id{max-width:none}
 }
 @media (max-width:370px){
+  .hero__title{font-size:21.5px}
+  .hero__sub{font-size:17px}
   .mast{gap:14px}
   .mast .navlink{font-size:13.5px}
 }
