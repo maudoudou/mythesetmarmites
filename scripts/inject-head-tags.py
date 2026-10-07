@@ -26,13 +26,17 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://mythesetmarmites.fr"
-OG_IMAGE = f"{DOMAIN}/images/og-share.png"
+# Image de partage du studio (logo carré sur Pot au Lait). Le jeu et le
+# blog À table, projets Mythes & Marmites, gardent l'image d'origine.
+OG_IMAGE = f"{DOMAIN}/images/og-studio-mille-pages.png"
+OG_IMAGE_MM = f"{DOMAIN}/images/og-share.png"
+OG_BY_PAGE = {"a-table/index.html": OG_IMAGE_MM, "jeu/index.html": OG_IMAGE_MM}
 
 # path relatif du fichier -> (URL absolue, title, description, og:type)
 PAGES = {
     "index.html": (
         "/",
-        "Mythes &amp; Marmites · designer éditoriale à Rouen",
+        "Studio Mille Pages · designer éditoriale à Rouen",
         "Maud Lenoir, designer éditoriale et maquettiste : livrets pédagogiques, livres et faire-part, pour les collectivités, les lieux culturels, les associations et les familles.",
         "website",
     ),
@@ -62,7 +66,7 @@ PAGES = {
     ),
     "contact/index.html": (
         "/contact",
-        "Contact · Mythes &amp; Marmites",
+        "Contact · Studio Mille Pages",
         "Un livret, un livre, un faire-part : écrivez-moi quelques lignes. Réponse sous deux jours ouvrés. Basée à Rouen, disponible partout en France.",
         "website",
     ),
@@ -103,7 +107,7 @@ PERSON = {
 PROFESSIONAL_SERVICE = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Mythes & Marmites",
+    "name": "Studio Mille Pages",
     "url": DOMAIN + "/",
     "image": OG_IMAGE,
     "description": "Studio de design éditorial : mise en pages de supports pédagogiques et de médiation, de livres et ouvrages, et de papeterie personnalisée.",
@@ -129,7 +133,7 @@ GAME = {
     "@type": "Game",
     "name": "Mythes & Marmites",
     "url": DOMAIN + "/jeu",
-    "image": OG_IMAGE,
+    "image": OG_IMAGE_MM,
     "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie d'environ 45 minutes.",
     "genre": "Jeu de récit coopératif",
     "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6},
@@ -148,7 +152,7 @@ JSON_LD = {
 }
 
 
-def build_head_block(url_path, title, desc, og_type):
+def build_head_block(url_path, title, desc, og_type, og_image=OG_IMAGE):
     url = DOMAIN + url_path
     title_plain = re.sub(r"&amp;", "&", title)
     return (
@@ -157,14 +161,14 @@ def build_head_block(url_path, title, desc, og_type):
         f'<link rel="canonical" href="{url}">\n'
         f'<meta property="og:title" content="{title_plain}">\n'
         f'<meta property="og:description" content="{desc}">\n'
-        f'<meta property="og:image" content="{OG_IMAGE}">\n'
+        f'<meta property="og:image" content="{og_image}">\n'
         f'<meta property="og:url" content="{url}">\n'
         f'<meta property="og:type" content="{og_type}">\n'
         f'<meta property="og:locale" content="fr_FR">\n'
         f'<meta name="twitter:card" content="summary_large_image">\n'
         f'<meta name="twitter:title" content="{title_plain}">\n'
         f'<meta name="twitter:description" content="{desc}">\n'
-        f'<meta name="twitter:image" content="{OG_IMAGE}">'
+        f'<meta name="twitter:image" content="{og_image}">'
     )
 
 
@@ -189,7 +193,8 @@ def main():
         # nettoyage des lignes vides laissées par les retraits ci-dessus
         head = re.sub(r'\n{2,}', '\n', head).strip('\n')
 
-        new_head_lines = build_head_block(url_path, title, desc, og_type)
+        new_head_lines = build_head_block(url_path, title, desc, og_type,
+                                          OG_BY_PAGE.get(rel_path, OG_IMAGE))
 
         # ordre final : charset, viewport, PUIS le bloc ci-dessus, PUIS
         # ce qui restait (favicon, stylesheet...), PUIS le JSON-LD

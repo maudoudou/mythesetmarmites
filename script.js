@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mythes & Marmites — routage, filtres, parutions
+   Studio Mille Pages — routage, filtres, parutions
    ========================================================================== */
 
 /* ---------------------------- Les parutions ---------------------------- */
@@ -471,7 +471,7 @@ function articleHTML(a) {
   const recipe = a.type === 'recette' ? `
     <div class="card" style="padding:40px">
       <h2 class="serif" style="font-size:28px">La recette</h2>
-      <div class="dotted dotted--pomme" style="max-width:150px;margin:12px 0 30px"></div>
+      <span class="plis" aria-hidden="true" style="margin:12px 0 30px"></span>
       <p class="card__kicker" style="margin-bottom:16px">CE QU'IL FAUT</p>
       <div class="ing" style="margin-bottom:34px">${a.ing.map(i => `<div>${i}</div>`).join('')}</div>
       <p class="card__kicker" style="margin-bottom:16px">ON Y VA</p>
@@ -485,7 +485,7 @@ function articleHTML(a) {
     </div>` : `
     <div class="card" style="padding:40px">
       <h2 class="serif" style="font-size:28px">Les notes</h2>
-      <div class="dotted dotted--pomme" style="max-width:150px;margin:12px 0 30px"></div>
+      <span class="plis" aria-hidden="true" style="margin:12px 0 30px"></span>
       ${a.corps.map(p => `<p class="body" style="margin-bottom:20px">${p}</p>`).join('')}
     </div>`;
 
@@ -553,13 +553,16 @@ function dateFrancaiseVersISO(str) {
 }
 
 /* ---------------------------- Apparitions ---------------------------- */
+/* Blocs .rise, et grands titres de section dont la bande de plis se
+   déplie à l'apparition (voir « Plis du leporello » dans style.css). */
+const APPEAR = '.rise:not(.in), .t-sec:not(.in), .sec-title:not(.in), .plis:not(.in)';
 let io;
 function observeRise() {
-  if (!('IntersectionObserver' in window)) { $$('.rise').forEach(e => e.classList.add('in')); return; }
+  if (!('IntersectionObserver' in window)) { $$(APPEAR).forEach(e => e.classList.add('in')); return; }
   io = io || new IntersectionObserver(entries => {
     entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.rise:not(.in)').forEach(e => io.observe(e));
+  $$(APPEAR).forEach(e => io.observe(e));
 }
 
 /* ---------------------------- Routage ---------------------------- */
@@ -641,7 +644,7 @@ if ($('#form')) $('#form').addEventListener('submit', async e => {
     window.scrollTo(0, 0);
   } catch (err) {
     status.textContent = "L'envoi n'a pas abouti. Écrivez-moi directement à bonjour@mythesetmarmites.fr";
-    status.style.color = 'var(--pomme)';
+    status.style.color = 'var(--encre)';
   } finally {
     btn.textContent = 'Envoyer';
     btn.disabled = false;

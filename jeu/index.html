@@ -17,10 +17,12 @@
 <meta name="twitter:description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.">
 <meta name="twitter:image" content="https://mythesetmarmites.fr/images/og-share.png">
 <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){var r=document.querySelectorAll('.rise:not(.in)');for(var i=0;i<r.length;i++)r[i].classList.add('in')},500)})</script>
-<link rel="icon" href="/images/favicon-orange.svg">
-<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=8">
+<link rel="stylesheet" href="/style.css?v=9">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Game", "name": "Mythes & Marmites", "url": "https://mythesetmarmites.fr/jeu", "image": "https://mythesetmarmites.fr/images/og-share.png", "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie d'environ 45 minutes.", "genre": "Jeu de récit coopératif", "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6}, "typicalAgeRange": "6-", "author": {"@type": "Person", "name": "Maud Lenoir"}, "additionalProperty": [{"@type": "PropertyValue", "name": "Durée d'une partie", "value": "45 minutes"}, {"@type": "PropertyValue", "name": "Statut", "value": "Prototype en test, à la recherche d'un éditeur"}]}</script>
 </head>
 <body>
@@ -29,7 +31,7 @@
   <a class="skip" href="#main">Aller au contenu</a>
   <nav class="mast" aria-label="Navigation principale">
     <a class="navlink" href="/studio" data-route="studio">Le studio</a>
-    <a class="mast__logo" href="/" aria-label="Mythes &amp; Marmites, accueil"><img src="/images/logo-orange.svg" alt="Mythes &amp; Marmites" width="708" height="296" loading="eager"></a>
+    <a class="mast__logo" href="/" aria-label="Studio Mille Pages, accueil"><img src="/images/charte/web/smp-horizontal-couleur.svg" alt="Studio Mille Pages" width="1470" height="234" loading="eager"></a>
     <a class="navlink" href="/contact" data-route="contact">Contact</a>
   </nav>
 </header>
@@ -47,10 +49,10 @@
       <p class="badge" style="margin-bottom:50px"><span class="badge__dot"></span> Prototype, pas encore en vente. Je cherche un éditeur et des tables pour le tester.</p>
 
       <div class="grid grid-4" style="margin-bottom:8px">
-        <div class="stat"><p class="stat__n" style="color:var(--pomme)">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
-        <div class="stat"><p class="stat__n" style="color:var(--haricot)">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
-        <div class="stat"><p class="stat__n" style="color:var(--reverie)">45 min</p><p class="stat__l">plus ou moins long, on s'arrête quand on veut&nbsp;!</p></div>
-        <div class="stat"><p class="stat__n">48</p><p class="stat__l">cartes avec 3 niveaux de difficulté</p></div>
+        <div class="stat stat--haricot"><p class="stat__n">6+</p><p class="stat__l">à partir de 6 ans, en famille</p></div>
+        <div class="stat stat--boucle-dor"><p class="stat__n">2–6</p><p class="stat__l">joueurs autour de la table</p></div>
+        <div class="stat stat--violet"><p class="stat__n">45 min</p><p class="stat__l">plus ou moins long, on s'arrête quand on veut&nbsp;!</p></div>
+        <div class="stat stat--violet-2"><p class="stat__n">48</p><p class="stat__l">cartes avec 3 niveaux de difficulté</p></div>
       </div>
     </div>
   </div>
@@ -60,8 +62,7 @@
     <div class="wrap sec">
       <div class="row" style="gap:48px;align-items:flex-start">
         <div style="flex:1.4;min-width:320px">
-          <h2 class="sec-title sec-title--vert">Dans la boîte</h2>
-          <div class="dotted dotted--green"></div>
+          <h2 class="sec-title">Dans la boîte</h2>
           <div style="display:flex;flex-direction:column;gap:20px">
             <div style="display:flex;gap:16px;align-items:flex-start">
               <img class="card__ill" src="/images/livre-orange.svg" alt="" style="width:62px;height:62px;object-fit:contain;flex:none" width="112" height="169" loading="lazy">
@@ -96,8 +97,7 @@
   <div class="band">
     <div class="wrap sec has-anchor">
       <img class="sec-anchor" src="/images/asterix-orange.svg" alt="" width="88" height="164" style="width:clamp(120px,13vw,165px);left:-56px;top:62px" loading="lazy">
-      <h2 class="sec-title sec-title--violet">D'où vient ce jeu</h2>
-      <div class="dotted dotted--violet"></div>
+      <h2 class="sec-title">D'où vient ce jeu</h2>
       <p class="body rise" style="font-size:17px;line-height:1.75;max-width:64ch">Le repas reste l'un des rares moments où une famille se retrouve vraiment, et c'est aussi là que les histoires qu'on se transmettait ont le plus reculé. Mythes &amp; Marmites remet des contes sur la table, avec de quoi les continuer soi-même.</p>
     </div>
   </div>
@@ -125,9 +125,9 @@
         </div>
       </div>
 
-      <div class="panel panel--pomme" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:48px 44px;margin-bottom:30px">
-        <p class="serif" style="font-size:clamp(21px,2.3vw,25px);max-width:36ch;color:var(--lait)">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
-        <a class="btn btn--light" href="/contact">Tester le jeu avec moi</a>
+      <div class="panel panel--violet" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:48px 44px;margin-bottom:30px">
+        <p class="serif panel__appel" style="max-width:36ch">Vous éditez, vous programmez, ou vous avez juste une table libre&nbsp;?</p>
+        <a class="btn btn--ink" href="/contact">Tester le jeu avec moi</a>
       </div>
     </div>
   </div>
@@ -138,9 +138,9 @@
 <footer class="foot">
   <div class="foot__in">
     <div class="foot__id">
-      <a href="/" aria-label="Retour à l'accueil"><img src="/images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px" width="708" height="296" loading="lazy"></a>
+      <a href="/" aria-label="Studio Mille Pages, retour à l'accueil"><img class="foot__logo" src="/images/charte/web/smp-horizontal-lait.svg" alt="Studio Mille Pages" width="1470" height="234" loading="lazy"></a>
       <p>Le studio de Maud Lenoir, designer éditoriale et maquettiste.</p>
-      <p style="margin-top:10px"><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></p>
+      <p style="margin-top:10px"><a href="mailto:bonjour@mythesetmarmites.fr">bonjour@mythesetmarmites.fr</a></p>
     </div>
     <nav class="foot__col" aria-label="Navigation du pied de page">
       <p class="foot__h">Le site</p>

@@ -1,15 +1,15 @@
 {
-  "name": "Mythes & Marmites",
-  "short_name": "Mythes & Marmites",
+  "name": "Studio Mille Pages",
+  "short_name": "Mille Pages",
   "description": "Le studio de Maud Lenoir, designer éditoriale et maquettiste : supports pédagogiques, livres et ouvrages, papeterie personnalisée.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F8F5F4",
-  "theme_color": "#EB6755",
+  "theme_color": "#F8F5F4",
   "lang": "fr",
   "icons": [
-    { "src": "/images/favicon-orange.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/images/charte/web/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/images/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }

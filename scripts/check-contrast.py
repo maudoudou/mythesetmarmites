@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Ratio de contraste WCAG 2.1 pour les paires premier plan / fond du site.
 
-Le site est fidèle à la charte : les teintes vives (--pomme, --haricot,
---reverie) servent d'accent et d'aplat de bloc. Comme sur beaucoup de
-chartes colorées, certaines ne passent pas 4,5:1 en petit texte sur crème
-(2,3 à 2,9:1) — c'est un choix d'identité assumé. Les blocs qui portent un
-paragraphe long utilisent soit --or (texte foncé, lisible), soit --encre
-(texte clair), soit un encart crème (.card__inset).
+Charte Studio Mille Pages : fonds Pot au Lait, texte Encre ; accents vert,
+jaune et violet des plis, Pomme d'Amour en accent secondaire. Aucune
+couleur d'accent ne passe 3:1 sur Pot au Lait : elles servent d'aplats et
+de petits éléments graphiques, jamais de couleur de texte sur fond clair.
+Sur un aplat de couleur, le texte est en Encre ; sur vert et violet,
+seulement en grand corps (24 px, ou 18,66 px gras).
 
 `python3 scripts/check-contrast.py`
 """
@@ -30,27 +30,28 @@ def ratio(fg, bg):
 
 
 PAL = {
-    'lait': '#F8F5F4', 'encre': '#534741',
-    'pomme': '#EB6755', 'haricot': '#62B47E', 'reverie': '#9599EA', 'or': '#F4CC71',
+    'pot-au-lait': '#F8F5F4', 'encre': '#534741', 'blanc': '#FFFFFF',
+    'haricot': '#62B47E', 'haricot-2': '#55A270',
+    'boucle-dor': '#F4CC71', 'boucle-dor-2': '#EBBE5C',
+    'violet': '#9599EA', 'violet-2': '#A9ACEF', 'pomme': '#EB6755',
 }
 
 # (fg, bg, usage, seuil, remarque)
 PAIRS = [
-    ('encre', 'lait', 'corps de texte sur crème', 4.5, ''),
-    ('lait', 'encre', 'texte sur bloc --encre (brun)', 4.5, ''),
-    ('encre', 'or', 'texte sur bloc --or (doré)', 4.5, ''),
-    ('lait', 'pomme', 'titre / texte court blanc sur bloc --pomme', 3.0,
-     'grand texte seulement ; paragraphe long -> encart crème'),
-    ('lait', 'haricot', 'titre court blanc sur bloc --haricot', 3.0,
-     'titre + icône seulement ; le paragraphe va dans .card__inset'),
-    ('lait', 'reverie', 'titre court blanc sur bloc --reverie', 3.0,
-     'titre + icône seulement ; le paragraphe va dans .card__inset'),
-    ('pomme', 'lait', 'lien / titre de section corail sur crème', 3.0,
-     'accent de charte, sous 4,5:1 en petit texte — assumé'),
-    ('haricot', 'lait', 'accent vert sur crème', 3.0, 'accent de charte — assumé'),
-    ('reverie', 'lait', 'accent violet sur crème', 3.0, 'accent de charte — assumé'),
-    ('lait', 'pomme', 'texte de bouton .btn (blanc sur corail)', 3.0,
-     'texte court et gras ; comme le site d\'origine'),
+    ('encre', 'pot-au-lait', 'texte courant et liens', 4.5, ''),
+    ('encre', 'blanc', 'texte sur carte blanche', 4.5, ''),
+    ('pot-au-lait', 'encre', 'texte du pied de page, panneaux Encre', 4.5, ''),
+    ('boucle-dor', 'encre', 'intitulés jaunes sur Encre', 4.5, ''),
+    ('encre', 'boucle-dor', 'boutons, badges, panneaux jaunes', 4.5, ''),
+    ('encre', 'boucle-dor-2', 'bouton au survol', 4.5, ''),
+    ('encre', 'haricot', 'pastille d\'étape, surlignage du titre d\'accueil', 3.0, 'grand texte seulement'),
+    ('encre', 'violet', 'pastille d\'étape', 3.0, 'grand texte seulement'),
+    ('encre', 'violet-2', 'pastille d\'étape, appel de la page du jeu', 3.0, 'grand texte seulement (24 px minimum)'),
+    ('haricot', 'pot-au-lait', 'vert sur fond clair', 3.0, 'jamais pour du texte'),
+    ('violet', 'pot-au-lait', 'violet sur fond clair', 3.0, 'jamais pour du texte'),
+    ('boucle-dor', 'pot-au-lait', 'jaune sur fond clair', 3.0, 'jamais pour du texte'),
+    ('pomme', 'pot-au-lait', 'pomme sur fond clair', 3.0, 'jamais pour du texte'),
+    ('pot-au-lait', 'boucle-dor', 'texte clair sur jaune', 3.0, 'interdit'),
 ]
 
 

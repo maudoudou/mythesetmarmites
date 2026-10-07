@@ -80,6 +80,9 @@ def header_footer():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     header = slice_between(html, '<header class="nav">', "</header>")
     footer = slice_between(html, '<footer class="foot">', "</footer>")
+    # Le blog À table reste un projet Mythes & Marmites : titres, éditeur
+    # (BlogPosting) et image de partage par défaut gardent ce nom ; seuls
+    # l'en-tête et le pied (Studio Mille Pages) viennent de index.html.
     # « À table » ne figure plus dans le menu principal (lien discret dans
     # « Qui suis-je » et dans le pied de page) : aucune rubrique active.
     return header, footer
@@ -147,10 +150,12 @@ def build_page(art, header, footer):
 <meta name="twitter:title" content="{title_plain}">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{img}">
-<link rel="icon" href="/images/favicon-orange.svg">
-<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=8">
+<link rel="stylesheet" href="/style.css?v=9">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>

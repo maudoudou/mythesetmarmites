@@ -54,15 +54,15 @@ JS_MARK = (
 
 # Version de la feuille de style : à incrémenter quand style.css change,
 # pour que les navigateurs ne gardent pas l'ancienne en cache.
-CSS_VERSION = '8'
+CSS_VERSION = '9'
 
 # Titres provisoires : inject-head-tags.py pose ensuite les titres définitifs.
 ROUTES = {
-    'studio':   'Le studio · Mythes & Marmites',
+    'studio':   'Le studio · Studio Mille Pages',
     'a-table':  'À table · Mythes & Marmites',
     'jeu':      'Le jeu · Mythes & Marmites',
-    'parcours': 'Parcours · Mythes & Marmites',
-    'contact':  'Contact · Mythes & Marmites',
+    'parcours': 'Parcours · Studio Mille Pages',
+    'contact':  'Contact · Studio Mille Pages',
 }
 
 
@@ -137,8 +137,10 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {JS_MARK}
 <title>{title}</title>
-<link rel="icon" href="/images/favicon-orange.svg">
-<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://mythesetmarmites.fr/{route}">
 <link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
