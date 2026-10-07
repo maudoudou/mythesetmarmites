@@ -1,4 +1,8 @@
-# mythesetmarmites.fr — règles de redirection Netlify
+# mythesetmarmites.fr · règles de redirection au format Netlify
+# Le site est servi par GitHub Pages, qui ignore ce fichier : les anciennes
+# rubriques /correction et /ateliers ont donc chacune une petite page
+# index.html qui renvoie vers /studio. Ce fichier ne sert qu'en cas de
+# passage sur Netlify.
 # (évaluées après la recherche d'un fichier statique : les vraies pages
 #  /studio, /a-table/<slug>, etc. sont servies directement.)
 
