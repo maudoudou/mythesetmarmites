@@ -54,7 +54,7 @@ JS_MARK = (
 
 # Version de la feuille de style : à incrémenter quand style.css change,
 # pour que les navigateurs ne gardent pas l'ancienne en cache.
-CSS_VERSION = '7'
+CSS_VERSION = '8'
 
 # Titres provisoires : inject-head-tags.py pose ensuite les titres définitifs.
 ROUTES = {

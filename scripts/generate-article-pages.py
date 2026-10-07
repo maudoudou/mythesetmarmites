@@ -150,7 +150,7 @@ def build_page(art, header, footer):
 <link rel="icon" href="/images/favicon-orange.svg">
 <link rel="apple-touch-icon" href="/images/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=7">
+<link rel="stylesheet" href="/style.css?v=8">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>

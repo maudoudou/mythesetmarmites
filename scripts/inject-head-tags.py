@@ -32,14 +32,14 @@ OG_IMAGE = f"{DOMAIN}/images/og-share.png"
 PAGES = {
     "index.html": (
         "/",
-        "Mythes &amp; Marmites · graphiste et maquettiste à Rouen",
-        "Maud Lenoir conçoit et met en pages des livrets pédagogiques, guides, panneaux d'exposition et livres jeunesse, pour les collectivités, les lieux culturels et l'édition.",
+        "Mythes &amp; Marmites · designer éditoriale à Rouen",
+        "Maud Lenoir, designer éditoriale et maquettiste : livrets pédagogiques, livres et faire-part, pour les collectivités, les lieux culturels, les associations et les familles.",
         "website",
     ),
     "studio/index.html": (
         "/studio",
-        "Le studio · supports pédagogiques et édition jeunesse",
-        "Livrets pédagogiques, guides pour les familles, livrets de visite et panneaux d'exposition, maquette de livres jeunesse : formules, méthode et projets réalisés.",
+        "Le studio · supports pédagogiques, livres, papeterie",
+        "Supports pédagogiques et médiation, livres et ouvrages, papeterie personnalisée : mise en pages à partir de votre charte ou d'une direction typographique.",
         "website",
     ),
     "a-table/index.html": (
@@ -56,14 +56,14 @@ PAGES = {
     ),
     "parcours/index.html": (
         "/parcours",
-        "Parcours · Maud Lenoir, graphiste et maquettiste",
+        "Parcours · Maud Lenoir, designer éditoriale",
         "Deux fois majore de promotion en design et en communication, un an chargée de communication en collectivité, master de littérature jeunesse en cours.",
         "website",
     ),
     "contact/index.html": (
         "/contact",
         "Contact · Mythes &amp; Marmites",
-        "Un livret, un guide, une exposition, un livre jeunesse : écrivez-moi quelques lignes. Réponse sous deux jours ouvrés. Studio à Rouen, missions partout en France.",
+        "Un livret, un livre, un faire-part : écrivez-moi quelques lignes. Réponse sous deux jours ouvrés. Basée à Rouen, disponible partout en France.",
         "website",
     ),
 }
@@ -72,8 +72,8 @@ PERSON = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Maud Lenoir",
-    "jobTitle": "Graphiste et maquettiste indépendante",
-    "description": "Graphiste et maquettiste indépendante : supports pédagogiques et culturels, mise en pages pour l'édition jeunesse.",
+    "jobTitle": "Designer éditoriale et maquettiste",
+    "description": "Designer éditoriale et maquettiste : supports pédagogiques et de médiation, livres et ouvrages, papeterie personnalisée.",
     "url": DOMAIN + "/",
     "workLocation": {
         "@type": "Place",
@@ -87,10 +87,10 @@ PERSON = {
     "areaServed": ["Rouen", "Métropole Rouen Normandie", "Normandie"],
     "knowsAbout": [
         "Maquette et mise en pages",
+        "Design éditorial",
+        "Direction typographique",
         "Supports pédagogiques et de médiation",
-        "Panneaux d'exposition",
-        "Édition jeunesse",
-        "Identité visuelle",
+        "Papeterie personnalisée",
     ],
     "hasCredential": {
         "@type": "EducationalOccupationalCredential",
@@ -106,7 +106,7 @@ PROFESSIONAL_SERVICE = {
     "name": "Mythes & Marmites",
     "url": DOMAIN + "/",
     "image": OG_IMAGE,
-    "description": "Studio graphique : conception et mise en pages de supports pédagogiques et culturels, maquette pour l'édition jeunesse.",
+    "description": "Studio de design éditorial : mise en pages de supports pédagogiques et de médiation, de livres et ouvrages, et de papeterie personnalisée.",
     "founder": {"@type": "Person", "name": "Maud Lenoir"},
     "areaServed": [
         {"@type": "City", "name": "Rouen"},
@@ -118,8 +118,8 @@ PROFESSIONAL_SERVICE = {
         "name": "Prestations",
         "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets pédagogiques, guides pour les familles, fiches d'activité, livrets de visite et panneaux d'exposition"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages d'albums, de livres et de collections jeunesse"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Identité visuelle"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en pages de livres et d'ouvrages : livres de famille, ouvrages d'associations, catalogues, recueils"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Papeterie personnalisée : faire-part de naissance et de mariage, cartes"}},
         ],
     },
 }

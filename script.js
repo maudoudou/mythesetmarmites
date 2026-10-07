@@ -599,15 +599,19 @@ function closeMenu() {
   burger.setAttribute('aria-expanded', 'false');
   burger.setAttribute('aria-label', 'Ouvrir le menu');
 }
-burger.addEventListener('click', () => {
-  const open = !document.body.classList.contains('menu-open');
-  document.body.classList.toggle('menu-open', open);
-  burger.setAttribute('aria-expanded', String(open));
-  burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-});
-navLinks.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
-window.addEventListener('hashchange', closeMenu);
-window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+/* L'en-tête actuel (logo centré, deux liens) n'a plus de menu repliable :
+   ce code ne s'active que si un bouton #burger est présent. */
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const open = !document.body.classList.contains('menu-open');
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  navLinks.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  window.addEventListener('hashchange', closeMenu);
+  window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+}
 
 /* ---------------------------- Formulaire ---------------------------- */
 /* #form n'existe que sur la page « Contact » (coquille SPA ou page
