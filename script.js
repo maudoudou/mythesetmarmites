@@ -569,7 +569,9 @@ function observeRise() {
    etc. Les anciens liens en #/ y sont renvoyés côté client (le serveur ne
    voit jamais le fragment). */
 const IS_SPA_SHELL = $$('.page').length > 1;
-const MIGRATED_ROUTES = ['studio', 'correction', 'a-table', 'jeu', 'parcours', 'contact'];
+const MIGRATED_ROUTES = ['studio', 'a-table', 'jeu', 'parcours', 'contact'];
+/* Rubriques retirées : leurs anciens liens mènent au studio. */
+const RETIRED_ROUTES = ['ateliers', 'correction'];
 
 function show(page) {
   $$('.page').forEach(s => s.classList.toggle('hide', s.dataset.page !== page));
@@ -583,7 +585,7 @@ function redirectLegacyHash() {
   const [path, query] = raw.split('?');
   const parts = path.split('/').filter(Boolean);
   const q = query ? '?' + query : '';
-  if (parts[0] === 'ateliers') { location.replace('/studio'); return true; }
+  if (RETIRED_ROUTES.includes(parts[0])) { location.replace('/studio'); return true; }
   if (parts[0] === 'a-table' && parts[1]) { location.replace('/a-table/' + parts[1] + q); return true; }
   if (parts.length === 1 && MIGRATED_ROUTES.includes(parts[0])) { location.replace('/' + parts[0] + q); return true; }
   return false;

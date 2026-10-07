@@ -3,7 +3,7 @@
 meta description unique, canonical, Open Graph complet, Twitter Card,
 et les données structurées JSON-LD (Person et ProfessionalService sur
 l'accueil, Game sur la page du jeu). Lit et réécrit index.html et les
-six pages statiques générées par generate-static-pages.py.
+cinq pages statiques générées par generate-static-pages.py.
 
 Ce script est idempotent : il remplace les balises déjà posées plutôt
 que de les dupliquer, donc on peut le relancer sans risque après
@@ -32,44 +32,38 @@ OG_IMAGE = f"{DOMAIN}/images/og-share.png"
 PAGES = {
     "index.html": (
         "/",
-        "Mythes &amp; Marmites — studio d'édition jeunesse, Rouen",
-        "Maud Lenoir, graphiste et maquettiste indépendante à Rouen. Maquette et mise en pages pour l'édition jeunesse, correction de manuscrits, panneaux d'exposition.",
+        "Mythes &amp; Marmites · graphiste et maquettiste à Rouen",
+        "Maud Lenoir conçoit et met en pages des livrets pédagogiques, guides, panneaux d'exposition et livres jeunesse, pour les collectivités, les lieux culturels et l'édition.",
         "website",
     ),
     "studio/index.html": (
         "/studio",
-        "Le studio — maquette et mise en pages, édition jeunesse",
-        "Maquette et mise en pages pour l'édition jeunesse, livrets et panneaux d'exposition, identité visuelle. Studio de graphiste à Rouen, en Normandie.",
-        "website",
-    ),
-    "correction/index.html": (
-        "/correction",
-        "Correction et relecture — manuscrit jeunesse et scolaire",
-        "Préparation de copie, correction orthotypographique et relecture sur épreuves pour l'édition jeunesse et scolaire. Test de correction sur un extrait.",
+        "Le studio · supports pédagogiques et édition jeunesse",
+        "Livrets pédagogiques, guides pour les familles, livrets de visite et panneaux d'exposition, maquette de livres jeunesse : formules, méthode et projets réalisés.",
         "website",
     ),
     "a-table/index.html": (
         "/a-table",
-        "À table — une recette et le récit qui va avec",
+        "À table · une recette et le récit qui va avec",
         "Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.",
         "website",
     ),
     "jeu/index.html": (
         "/jeu",
-        "Mythes &amp; Marmites — le jeu de récit coopératif",
+        "Mythes &amp; Marmites · le jeu de récit coopératif",
         "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.",
         "website",
     ),
     "parcours/index.html": (
         "/parcours",
-        "Parcours — Maud Lenoir, maquettiste indépendante",
-        "Le parcours de Maud Lenoir : design, communication, édition et recherche en littérature d'enfance et de jeunesse, en master à l'université d'Artois.",
+        "Parcours · Maud Lenoir, graphiste et maquettiste",
+        "Deux fois majore de promotion en design et en communication, un an chargée de communication en collectivité, master de littérature jeunesse en cours.",
         "website",
     ),
     "contact/index.html": (
         "/contact",
-        "Contact — un livre, un texte, une exposition",
-        "Un livre à mettre en pages, un manuscrit jeunesse à corriger, une exposition à habiller : écrivez-moi, réponse sous deux jours ouvrés, à Rouen.",
+        "Contact · Mythes &amp; Marmites",
+        "Un livret, un guide, une exposition, un livre jeunesse : écrivez-moi quelques lignes. Réponse sous deux jours ouvrés. Studio à Rouen, missions partout en France.",
         "website",
     ),
 }
@@ -79,7 +73,7 @@ PERSON = {
     "@type": "Person",
     "name": "Maud Lenoir",
     "jobTitle": "Graphiste et maquettiste indépendante",
-    "description": "Graphiste et maquettiste indépendante, spécialisée en édition jeunesse et en médiation culturelle.",
+    "description": "Graphiste et maquettiste indépendante : supports pédagogiques et culturels, mise en pages pour l'édition jeunesse.",
     "url": DOMAIN + "/",
     "workLocation": {
         "@type": "Place",
@@ -93,9 +87,9 @@ PERSON = {
     "areaServed": ["Rouen", "Métropole Rouen Normandie", "Normandie"],
     "knowsAbout": [
         "Maquette et mise en pages",
+        "Supports pédagogiques et de médiation",
+        "Panneaux d'exposition",
         "Édition jeunesse",
-        "Correction et relecture",
-        "Signalétique et panneaux d'exposition",
         "Identité visuelle",
     ],
     "hasCredential": {
@@ -112,7 +106,7 @@ PROFESSIONAL_SERVICE = {
     "name": "Mythes & Marmites",
     "url": DOMAIN + "/",
     "image": OG_IMAGE,
-    "description": "Studio d'édition et de récits : maquette et mise en pages pour l'édition jeunesse, correction et relecture, signalétique d'exposition.",
+    "description": "Studio graphique : conception et mise en pages de supports pédagogiques et culturels, maquette pour l'édition jeunesse.",
     "founder": {"@type": "Person", "name": "Maud Lenoir"},
     "areaServed": [
         {"@type": "City", "name": "Rouen"},
@@ -123,10 +117,9 @@ PROFESSIONAL_SERVICE = {
         "@type": "OfferCatalog",
         "name": "Prestations",
         "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages pour l'édition jeunesse"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Correction et relecture de manuscrits jeunesse et scolaires"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets et panneaux d'exposition, signalétique"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Identité visuelle et charte graphique"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets pédagogiques, guides pour les familles, fiches d'activité, livrets de visite et panneaux d'exposition"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maquette et mise en pages d'albums, de livres et de collections jeunesse"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Identité visuelle"}},
         ],
     },
 }

@@ -80,12 +80,8 @@ def header_footer():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     header = slice_between(html, '<header class="nav">', "</header>")
     footer = slice_between(html, '<footer class="foot">', "</footer>")
-    # marque « À table » comme rubrique active
-    header = header.replace(
-        '<a class="navlink" href="/a-table" data-route="a-table">',
-        '<a class="navlink is-on" href="/a-table" data-route="a-table" aria-current="page">',
-        1,
-    )
+    # « À table » ne figure plus dans le menu principal (lien discret dans
+    # « Qui suis-je » et dans le pied de page) : aucune rubrique active.
     return header, footer
 
 
@@ -98,7 +94,7 @@ CAT_LABEL = {
 def build_page(art, header, footer):
     slug, title, chapeau = art["slug"], art["title"], art["chapeau"]
     url = f"{DOMAIN}/a-table/{slug}"
-    full_title = f"{title} — Mythes &amp; Marmites"
+    full_title = f"{title} · Mythes &amp; Marmites"
     if len(re.sub("&amp;", "&", full_title)) > 60:
         full_title = title  # titre d'article long : on garde < 60 sans le suffixe
     title_plain = re.sub("&amp;", "&", full_title).replace('"', "&quot;")
@@ -154,14 +150,14 @@ def build_page(art, header, footer):
 <link rel="icon" href="/images/favicon-orange.svg">
 <link rel="apple-touch-icon" href="/images/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=3">
+<link rel="stylesheet" href="/style.css?v=7">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
 
 {header}
 
-<main id="main">
+<main id="main" tabindex="-1">
 <div class="band"><div class="wrap" style="padding-top:52px;padding-bottom:72px">
 {art['html']}
 </div></div>

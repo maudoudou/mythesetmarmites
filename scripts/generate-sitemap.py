@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Réécrit sitemap.xml à partir des pages réellement présentes : l'accueil,
-les six pages de rubrique, et une entrée par article du blog (dossiers
+les cinq pages de rubrique, et une entrée par article du blog (dossiers
 a-table/<slug>/). À relancer après generate-article-pages.py si des articles
 ont été ajoutés ou renommés.
 """
@@ -15,10 +15,9 @@ DOMAIN = "https://mythesetmarmites.fr"
 FIXED = [
     ("/", "weekly", "1.0"),
     ("/studio", "monthly", "0.9"),
-    ("/correction", "monthly", "0.9"),
-    ("/a-table", "weekly", "0.8"),
-    ("/jeu", "monthly", "0.7"),
-    ("/parcours", "monthly", "0.5"),
+    ("/a-table", "weekly", "0.6"),
+    ("/jeu", "monthly", "0.5"),
+    ("/parcours", "monthly", "0.7"),
     ("/contact", "yearly", "0.6"),
 ]
 

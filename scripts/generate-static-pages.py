@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Génère de vraies pages HTML statiques pour les six routes principales
-du site (studio, correction, a-table, jeu, parcours, contact).
+du site (studio, a-table, jeu, parcours, contact).
 
 Pourquoi ce script existe
 --------------------------
@@ -10,7 +10,7 @@ de recherche n'indexent pas les fragments comme des URL distinctes :
 tout le site finissait indexé sous une seule adresse. Ce script prend
 le contenu déjà écrit dans index.html (l'en-tête, le pied de page, et
 chaque section <section data-page="...">) et en fait une page HTML
-autonome par route, à sa propre URL réelle (/studio/, /correction/,
+autonome par route, à sa propre URL réelle (/studio/, /parcours/,
 etc.), tout en laissant le routage en #/ fonctionner comme avant sur
 la page d'accueil (pour les liens existants et les articles du blog,
 qui n'ont pas de page statique dédiée).
@@ -22,12 +22,12 @@ Quand le relancer
 depuis la racine du dépôt pour répercuter le changement dans les pages
 statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
-dossiers /studio/, /correction/, /a-table/, /jeu/, /parcours/, /contact/.
+dossiers /studio/, /a-table/, /jeu/, /parcours/, /contact/.
 
 Pipeline complet, à relancer dans cet ordre après toute modification de
 contenu (index.html ou script.js) :
 
-    python3 scripts/generate-static-pages.py    # /studio, /correction, ...
+    python3 scripts/generate-static-pages.py    # /studio, /parcours, ...
     python3 scripts/inject-head-tags.py         # <head> des 7 pages
     python3 scripts/generate-article-pages.py   # /a-table/<slug>/ (macOS)
     python3 scripts/generate-sitemap.py         # sitemap.xml
@@ -52,13 +52,17 @@ JS_MARK = (
     "for(var i=0;i<r.length;i++)r[i].classList.add('in')},500)})</script>"
 )
 
+# Version de la feuille de style : à incrémenter quand style.css change,
+# pour que les navigateurs ne gardent pas l'ancienne en cache.
+CSS_VERSION = '7'
+
+# Titres provisoires : inject-head-tags.py pose ensuite les titres définitifs.
 ROUTES = {
-    'studio':     'Le studio — Mythes & Marmites',
-    'correction': 'Correction et relecture — Mythes & Marmites',
-    'a-table':    'À table — Mythes & Marmites',
-    'jeu':        'Le jeu — Mythes & Marmites',
-    'parcours':   'Mon parcours — Mythes & Marmites',
-    'contact':    "Parler d'un projet — Mythes & Marmites",
+    'studio':   'Le studio · Mythes & Marmites',
+    'a-table':  'À table · Mythes & Marmites',
+    'jeu':      'Le jeu · Mythes & Marmites',
+    'parcours': 'Parcours · Mythes & Marmites',
+    'contact':  'Contact · Mythes & Marmites',
 }
 
 
@@ -72,11 +76,18 @@ def extract_block(html, open_tag, close_tag, start=0):
 
 
 def extract_section(html, page_id):
+    """Renvoie la <section data-page="..."> complète. Les pages contiennent
+    elles-mêmes des <section> (une par titre courant) : on compte donc
+    l'imbrication pour trouver le </section> qui ferme la page."""
     marker = f'data-page="{page_id}"'
     tag_start = html.rindex('<section', 0, html.index(marker))
-    tag_open_end = html.index('>', tag_start) + 1
-    close = html.index('</section>', tag_open_end) + len('</section>')
-    return html[tag_start:close]
+    depth, pos = 0, tag_start
+    for m in re.finditer(r'<section\b|</section>', html[tag_start:]):
+        depth += -1 if m.group(0) == '</section>' else 1
+        if depth == 0:
+            pos = tag_start + m.end()
+            break
+    return html[tag_start:pos]
 
 
 def main():
@@ -113,6 +124,11 @@ def main():
         nav_link = f'<a class="navlink" href="/{route}" data-route="{route}">'
         nav_link_active = f'<a class="navlink is-on" href="/{route}" data-route="{route}" aria-current="page">'
         page_header = header.replace(nav_link, nav_link_active, 1)
+        # « Contact » est un bouton dans le menu : même marquage de page courante.
+        contact_btn = '<a class="btn btn--sm" href="/contact" data-route="contact">'
+        if route == 'contact':
+            page_header = page_header.replace(
+                contact_btn, contact_btn[:-1] + ' aria-current="page">', 1)
 
         doc = f'''<!DOCTYPE html>
 <html lang="fr">
@@ -125,13 +141,13 @@ def main():
 <link rel="apple-touch-icon" href="/images/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://mythesetmarmites.fr/{route}">
-<link rel="stylesheet" href="/style.css?v=3">
+<link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
 </head>
 <body>
 
 {page_header}
 
-<main id="main">
+<main id="main" tabindex="-1">
 
 {section}
 

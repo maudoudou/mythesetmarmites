@@ -3,31 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mythes &amp; Marmites — le jeu de récit coopératif</title>
+<title>Mythes &amp; Marmites · le jeu de récit coopératif</title>
 <meta name="description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.">
 <link rel="canonical" href="https://mythesetmarmites.fr/jeu">
-<meta property="og:title" content="Mythes & Marmites — le jeu de récit coopératif">
+<meta property="og:title" content="Mythes & Marmites · le jeu de récit coopératif">
 <meta property="og:description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.">
 <meta property="og:image" content="https://mythesetmarmites.fr/images/og-share.png">
 <meta property="og:url" content="https://mythesetmarmites.fr/jeu">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mythes & Marmites — le jeu de récit coopératif">
+<meta name="twitter:title" content="Mythes & Marmites · le jeu de récit coopératif">
 <meta name="twitter:description" content="Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie de 45 minutes. Prototype en test, cherche un éditeur et des tables pour jouer.">
 <meta name="twitter:image" content="https://mythesetmarmites.fr/images/og-share.png">
 <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){var r=document.querySelectorAll('.rise:not(.in)');for(var i=0;i<r.length;i++)r[i].classList.add('in')},500)})</script>
 <link rel="icon" href="/images/favicon-orange.svg">
 <link rel="apple-touch-icon" href="/images/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=3">
+<link rel="stylesheet" href="/style.css?v=7">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Game", "name": "Mythes & Marmites", "url": "https://mythesetmarmites.fr/jeu", "image": "https://mythesetmarmites.fr/images/og-share.png", "description": "Un jeu de récit coopératif à partir de 6 ans, pour 2 à 6 joueurs, une partie d'environ 45 minutes.", "genre": "Jeu de récit coopératif", "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 6}, "typicalAgeRange": "6-", "author": {"@type": "Person", "name": "Maud Lenoir"}, "additionalProperty": [{"@type": "PropertyValue", "name": "Durée d'une partie", "value": "45 minutes"}, {"@type": "PropertyValue", "name": "Statut", "value": "Prototype en test, à la recherche d'un éditeur"}]}</script>
 </head>
 <body>
 
 <header class="nav">
+  <a class="skip" href="#main">Aller au contenu</a>
   <div class="nav__in">
-    <a class="nav__logo" href="/" aria-label="Mythes &amp; Marmites — accueil">
+    <a class="nav__logo" href="/" aria-label="Mythes &amp; Marmites, accueil">
       <img src="/images/logo-orange.svg" alt="Mythes &amp; Marmites" style="height:45px;width:auto" width="708" height="296" loading="eager">
     </a>
     <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
@@ -35,15 +36,13 @@
     </button>
     <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
       <a class="navlink" href="/studio" data-route="studio">Le studio</a>
-      <a class="navlink" href="/correction" data-route="correction">Correction &amp; relecture</a>
-      <a class="navlink" href="/a-table" data-route="a-table">À table</a>
-      <a class="navlink is-on" href="/jeu" data-route="jeu" aria-current="page">Le jeu</a>
-      <a class="btn btn--sm" href="/contact">Parler d'un projet</a>
+      <a class="navlink" href="/parcours" data-route="parcours">Parcours</a>
+      <a class="btn btn--sm" href="/contact" data-route="contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
 <article class="page" data-page="jeu">
 
@@ -146,24 +145,26 @@
 
 <footer class="foot">
   <div class="foot__in">
-    <div style="max-width:300px">
+    <div class="foot__id">
       <a href="/" aria-label="Retour à l'accueil"><img src="/images/logo-cream.svg" alt="Mythes &amp; Marmites" style="height:40px;width:auto;margin-bottom:16px" width="708" height="296" loading="lazy"></a>
-      <p style="font-size:14px;line-height:1.6;color:rgba(248,245,244,.7)">Maud Lenoir, graphiste et maquettiste indépendante. Édition jeunesse, médiation culturelle, correction. Rouen et sa métropole.</p>
+      <p>Le studio de Maud Lenoir, graphiste et maquettiste. Micro-entreprise à Rouen, missions à distance partout en France.</p>
+      <p style="margin-top:10px"><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></p>
     </div>
-    <div style="display:flex;gap:54px;flex-wrap:wrap">
-      <nav style="display:flex;flex-direction:column;gap:12px;font-size:14.5px" aria-label="Navigation du pied de page">
-        <a class="navlink" href="/studio">Le studio</a>
-        <a class="navlink" href="/correction">Correction &amp; relecture</a>
-        <a class="navlink" href="/a-table">À table</a>
-        <a class="navlink" href="/jeu">Le jeu</a>
-        <a class="navlink" href="/contact">Parler d'un projet</a>
-      </nav>
-      <div style="font-size:14px;color:rgba(248,245,244,.7);line-height:1.7">
-        <div>mythesetmarmites.fr</div>
-        <div><a href="mailto:lnrmaud@gmail.com">bonjour@mythesetmarmites.fr</a></div>
-        <div style="margin-top:10px">Illustrations&nbsp;: © Christelle Louiset</div>
-        <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Raconter de belles histoires. »</p>
-      </div>
+    <nav class="foot__col" aria-label="Navigation du pied de page">
+      <p class="foot__h">Sommaire</p>
+      <a class="navlink" href="/studio">Le studio</a>
+      <a class="navlink" href="/parcours">Parcours</a>
+      <a class="navlink" href="/contact">Contact</a>
+    </nav>
+    <div class="foot__col">
+      <p class="foot__h">Hors collection</p>
+      <a class="navlink" href="/a-table">À table, le blog</a>
+      <a class="navlink" href="/jeu">Le jeu</a>
+    </div>
+    <div class="foot__col foot__colophon">
+      <p class="foot__h">Colophon</p>
+      <p>Conception et textes&nbsp;: Maud Lenoir.<br>Illustrations&nbsp;: © Christelle Louiset.<br>Composé en Pacaembu et IM Fell English, notes en Homemade Apple.</p>
+      <p class="serif" style="margin-top:10px;font-size:16px;color:var(--or)">« Raconter de belles histoires. »</p>
     </div>
   </div>
 </footer>
