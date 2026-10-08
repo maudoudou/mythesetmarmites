@@ -155,7 +155,7 @@ def build_page(art, header, footer):
 <link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=9">
+<link rel="stylesheet" href="/style.css?v=10">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>

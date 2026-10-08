@@ -1,6 +1,6 @@
 # Ajouter un projet au portfolio
 
-Les projets réalisés sont décrits à un seul endroit : la page Studio, dans l'entrée qui correspond (`id="mediation"` pour les supports pédagogiques, `id="livres"` pour les livres et ouvrages, `id="papeterie"` pour la papeterie personnalisée). Tout vit dans [index.html](index.html), à l'intérieur de la section `data-page="studio"`.
+Les projets réalisés sont décrits à un seul endroit : la page Studio, dans l'entrée qui correspond (`id="mediation"` pour les supports pédagogiques, `id="papeterie"` pour la papeterie personnalisée, `id="jeux"` pour les jeux de société, `id="livres"` pour les livres et ouvrages). Tout vit dans [index.html](index.html), à l'intérieur de la section `data-page="studio"`.
 
 Pour ajouter un projet :
 

@@ -610,11 +610,13 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
 .skip:focus,.skip:focus-visible{top:12px;color:var(--pot-au-lait)}
 main:focus{outline:none;box-shadow:none}
 
-/* Chiffres romains : vert, jaune, violet, dans l'ordre des plis du logo.
-   Ornement (aria-hidden) : l'intitulé qui suit porte le sens, en Encre. */
+/* Chiffres romains : vert, jaune, violet, puis vert foncé pour le IV, dans
+   l'ordre des plis du logo. Ornement (aria-hidden) : l'intitulé qui suit
+   porte le sens, en Encre. */
 .c-haricot{color:var(--haricot)}
 .c-boucle-dor{color:var(--boucle-dor-2)}
 .c-violet{color:var(--violet)}
+.c-haricot-2{color:var(--haricot-2)}
 
 /* Accueil : mots mis en avant dans le grand titre, surlignés en vert
    (texte Encre : 3,56:1 sur Haricot, grand texte). */
@@ -662,7 +664,8 @@ main:focus{outline:none;box-shadow:none}
 /* Chiffres romains : IM Fell English en romain droit (lisible à cette taille). */
 .num{display:block;font-family:var(--serif);font-style:normal;font-weight:400;font-size:clamp(52px,6vw,76px);line-height:.85;letter-spacing:.01em;margin-bottom:14px}
 
-.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px}
+.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}
+@media (max-width:1000px){.offers{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 44px}}
 .offer{display:flex;flex-direction:column;align-items:flex-start}
 .offer__t{font-size:clamp(20px,1.9vw,23px);line-height:1.2;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
 .offer__t .badge-or{display:table;margin-top:10px}
@@ -717,6 +720,10 @@ main:focus{outline:none;box-shadow:none}
 .project__gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
 .project__gallery figure:first-child img{aspect-ratio:1500/857}
 .project__gallery figcaption{font-size:13px;color:var(--encre-55);margin-top:6px}
+/* Galerie de quatre photos : grille 2 x 2, sans image pleine largeur. */
+.project__gallery--grille figure:first-child{grid-column:auto}
+.project__gallery--grille figure:first-child img{aspect-ratio:4/3}
+.project__more{margin-top:20px;font-size:16px}
 .project__t{font-size:clamp(20px,2vw,24px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin-bottom:18px}
 .facts{margin:0}
 .facts dt{font-weight:800;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-55);margin-top:14px}

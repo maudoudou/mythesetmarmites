@@ -43,7 +43,7 @@ PAGES = {
     "studio/index.html": (
         "/studio",
         "Le studio · supports pédagogiques, livres, papeterie",
-        "Supports pédagogiques et médiation, livres et ouvrages, papeterie personnalisée : mise en pages à partir de votre charte ou d'une direction typographique.",
+        "Supports pédagogiques et médiation, papeterie personnalisée, jeux de société, livres et ouvrages : mise en pages à partir de votre charte ou d'une direction typographique.",
         "website",
     ),
     "a-table/index.html": (
@@ -122,8 +122,9 @@ PROFESSIONAL_SERVICE = {
         "name": "Prestations",
         "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets pédagogiques, guides pour les familles, fiches d'activité, livrets de visite et panneaux d'exposition"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en pages de livres et d'ouvrages : livres de famille, ouvrages d'associations, catalogues, recueils"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Papeterie personnalisée : faire-part de naissance et de mariage, cartes"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Conception et mise en pages de jeux de société et de jeux pédagogiques : cartes à jouer, livrets de règles, boîtes et emballages, éléments de jeu"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en pages de livres et d'ouvrages : livres de famille, ouvrages d'associations, catalogues, recueils"}},
         ],
     },
 }
