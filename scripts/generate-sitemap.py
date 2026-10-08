@@ -9,7 +9,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOMAIN = "https://mythesetmarmites.fr"
+DOMAIN = "https://studiomillepages.fr"
 
 # (chemin, changefreq, priority)
 FIXED = [

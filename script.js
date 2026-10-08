@@ -653,8 +653,8 @@ if ($('#form')) $('#form').addEventListener('submit', async e => {
 
 /* ---------------------------- Démarrage ---------------------------- */
 if (IS_SPA_SHELL) {
-  /* Coquille (/). Servie par le repli _redirects pour une URL sans
-     fichier ? on renvoie à l'accueil. Sinon on redirige un éventuel
+  /* Coquille (/). Servie à une autre adresse que / (ancien repli
+     d'hébergement) ? on renvoie à l'accueil. Sinon on redirige un éventuel
      ancien lien #/… puis on affiche l'accueil. */
   const p = location.pathname.replace(/\/index\.html$/, '').replace(/(.)\/+$/, '$1');
   if (p && p !== '/') {

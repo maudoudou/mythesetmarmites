@@ -25,7 +25,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOMAIN = "https://mythesetmarmites.fr"
+DOMAIN = "https://studiomillepages.fr"
 # Image de partage du studio (logo carré sur Pot au Lait). Le jeu et le
 # blog À table, projets Mythes & Marmites, gardent l'image d'origine.
 OG_IMAGE = f"{DOMAIN}/images/og-studio-mille-pages.png"

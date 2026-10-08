@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mythesetmarmites.fr/sitemap.xml
+Sitemap: https://studiomillepages.fr/sitemap.xml

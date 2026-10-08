@@ -24,7 +24,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOMAIN = "https://mythesetmarmites.fr"
+DOMAIN = "https://studiomillepages.fr"
 OG_FALLBACK = f"{DOMAIN}/images/og-share.png"
 
 JS_MARK = (

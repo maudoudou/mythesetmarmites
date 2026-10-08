@@ -142,7 +142,7 @@ def main():
 <link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="canonical" href="https://mythesetmarmites.fr/{route}">
+<link rel="canonical" href="https://studiomillepages.fr/{route}">
 <link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
 </head>
 <body>
