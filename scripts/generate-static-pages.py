@@ -56,6 +56,12 @@ JS_MARK = (
 # pour que les navigateurs ne gardent pas l'ancienne en cache.
 CSS_VERSION = '9'
 
+# Favicon et icônes (logo rond Studio Mille Pages, scripts/generate-logos.py).
+ICON_LINKS = '''<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">'''
+
 # Titres provisoires : inject-head-tags.py pose ensuite les titres définitifs.
 ROUTES = {
     'studio':   'Le studio · Studio Mille Pages',
@@ -137,10 +143,7 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {JS_MARK}
 <title>{title}</title>
-<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
-<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+{ICON_LINKS}
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://studiomillepages.fr/{route}">
 <link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
@@ -167,6 +170,53 @@ def main():
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(doc)
         generated.append(f'/{route}/index.html')
+
+    # Page 404 : GitHub Pages la sert, à l'adresse demandée, pour toute URL
+    # sans fichier. Tous les chemins sont absolus, elle s'affiche donc
+    # correctement à n'importe quelle profondeur. Pas de canonical, et
+    # noindex : elle ne doit pas être indexée.
+    doc = f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{JS_MARK}
+<title>Page introuvable · Studio Mille Pages</title>
+<meta name="robots" content="noindex">
+{ICON_LINKS}
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
+</head>
+<body>
+
+{header}
+
+<main id="main" tabindex="-1">
+
+<article class="page">
+  <div class="wrap pagehead has-anchor" style="padding-bottom:88px">
+    <img class="sec-anchor" src="/images/livre-violet.svg" alt="" width="112" height="169" style="width:170px;right:0;top:40px" loading="lazy">
+    <p class="kicker">Erreur 404</p>
+    <h1 class="page-title">Cette page n'existe pas, ou plus.</h1>
+    <p class="lede">L'adresse a peut-être changé, ou la page a été retirée. Le reste du site est toujours là.</p>
+    <div class="hero__actions" style="justify-content:flex-start">
+      <a class="btn" href="/">Revenir à l'accueil</a>
+      <a class="btn btn--ghost" href="/studio">Voir le studio</a>
+    </div>
+  </div>
+</article>
+
+</main>
+
+{footer}
+
+<script src="/script.js"></script>
+</body>
+</html>
+'''
+    with open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8') as f:
+        f.write(doc)
+    generated.append('/404.html')
 
     print(f"{len(generated)} pages générées :")
     for g in generated:
