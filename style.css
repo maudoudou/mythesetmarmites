@@ -628,7 +628,7 @@ main:focus{outline:none;box-shadow:none}
 .mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:48px;
   max-width:var(--main);margin:0 auto;padding:28px 40px 4px}
 .mast>.navlink:first-child{justify-self:end}
-.mast>.navlink:last-child{justify-self:start}
+.mast>.navlink[data-route="contact"]{justify-self:start}
 .mast .navlink{font-size:15.5px;font-weight:700;color:var(--encre)}
 .mast__logo{display:block}
 .mast__logo img{height:60px;width:auto;transition:transform .25s var(--ease)}
@@ -866,20 +866,80 @@ main:focus{outline:none;box-shadow:none}
 .mast__logo img{height:auto;width:320px;transform:none;transition:none}
 .mast__logo:hover img{transform:none}
 .foot__logo{display:block;width:240px;height:auto;margin-bottom:18px}
-@media (max-width:1000px){.mast__logo img{width:280px}}
-@media (max-width:820px){.mast__logo img{width:220px}}
+@media (max-width:1000px){.mast{gap:28px}.mast__logo img{width:240px}}
+@media (max-width:820px){.mast{gap:22px}.mast__logo img{width:220px}}
 @media (max-width:600px){
   .mast{gap:14px}
   .mast .navlink{white-space:nowrap}
   .mast__logo img{width:150px}
 }
-/* Très petits écrans : le logo passe au-dessus des deux liens pour garder
+/* Petits écrans : le logo passe au-dessus des trois liens pour garder
    sa taille minimale et sa zone de protection. */
-@media (max-width:359px){
-  .mast{grid-template-columns:1fr 1fr;row-gap:12px}
-  .mast__logo{grid-column:1/-1;grid-row:1;justify-self:center}
-  .mast__logo img{width:180px}
+@media (max-width:760px){
+  .mast{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px}
+  .mast .navlink{white-space:nowrap}
+  .mast__logo{flex:0 0 100%;order:-1}
+  .mast__logo img{width:180px;margin:0 auto}
 }
 
 /* Appel du jeu sur aplat Violet clair : jamais sous 24px (grand texte). */
 .panel--violet .panel__appel{font-size:clamp(24px,2.4vw,26px) !important}
+
+.mast .navlink{white-space:nowrap}
+.mast .navlink--discret{font-weight:500}
+/* Mille Feuilles, projet à part : seul à droite de la page, hors de la grille
+   centrée (Le studio, logo, Contact). Centré sur la hauteur du logo. */
+@media (min-width:761px){
+  .mast .navlink--mf{position:absolute;right:40px;top:53px;transform:translateY(-50%)}
+}
+@media (max-width:760px){
+  .mast{row-gap:8px}
+  .mast::after{content:"";flex:0 0 100%;order:1}
+  .mast .navlink--mf{order:2}
+}
+@media (min-width:761px) and (max-width:1000px){.mast .navlink--mf{right:24px;top:47px}}
+@media (min-width:761px) and (max-width:820px){.mast .navlink--mf{top:37px}}
+
+/* ==========================================================================
+   Mille Feuilles : tout ce qui y renvoie reprend sa charte. Aplat Bleuet
+   (Encre 5,2:1), onglet Guimauve (Encre 4,25:1, 19 px gras : grand texte),
+   intercalaires arrondis à droite, feuille qui se déplie (mf-deplie),
+   onglets qui glissent un par un (mf-glisse).
+   ========================================================================== */
+:root{--guimauve:#FF8FC2;--bleuet:#9CCBEF;--praline:#F6AA95}
+@keyframes mf-glisse{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes mf-deplie{from{clip-path:inset(-4px 100% -4px 0);transform:translateX(-14px)}to{clip-path:inset(-4px -40px -4px 0);transform:none}}
+
+.mf{--mf-pad:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px 40px;
+  padding:0 var(--mf-pad) 40px;margin-right:24px;overflow:visible;background:var(--bleuet);color:var(--encre);border-radius:0 18px 18px 0}
+.mf__txt{flex:1 1 420px;min-width:0}
+.mf__onglet{display:table;margin:0 0 22px calc(-1 * var(--mf-pad));padding:8px 20px 8px 16px;border-radius:0 0 14px 0;
+  background:var(--guimauve);color:var(--encre);font-weight:800;font-size:19px;line-height:1.25;letter-spacing:0}
+.mf__p{font-size:clamp(21px,2.3vw,25px);line-height:1.35;letter-spacing:0;max-width:40ch}
+.mf__note{font-size:14.5px;margin-top:10px}
+.mf .btn{transition:transform .2s var(--ease),background .15s ease}
+.mf .btn:hover,.mf .btn:focus-visible{transform:translateX(10px)}
+/* Six intercalaires qui dépassent du classeur, à droite. */
+.mf__tabs{position:absolute;left:100%;top:14px;bottom:14px;display:flex;flex-direction:column;gap:4px}
+.mf__tabs i{flex:1;width:20px;border-radius:0 8px 8px 0;background:var(--c)}
+.mf__tabs i:nth-child(1){--c:var(--guimauve);--i:0}
+.mf__tabs i:nth-child(2){--c:var(--boucle-dor);--i:1}
+.mf__tabs i:nth-child(3){--c:var(--violet);--i:2}
+.mf__tabs i:nth-child(4){--c:var(--haricot);--i:3}
+.mf__tabs i:nth-child(5){--c:var(--praline);--i:4}
+.mf__tabs i:nth-child(6){--c:var(--encre);--i:5}
+.js .mf.rise{opacity:1;transform:none;transition:none;clip-path:inset(-4px 100% -4px 0)}
+.js .mf.rise.in{animation:mf-deplie .45s var(--ease) both}
+.js .mf.rise.in .mf__tabs i{animation:mf-glisse .35s var(--ease) calc(.25s + var(--i) * .07s) backwards}
+@media (max-width:820px){.mf{--mf-pad:26px;margin-right:16px;padding-top:0 !important;padding-bottom:30px !important}.mf__tabs i{width:14px}}
+@media (max-width:600px){.mf{--mf-pad:22px}}
+
+/* Liens : petit onglet Guimauve, bande Guimauve et Bleuet qui se déplie. */
+.navlink--mf::before{content:"";display:inline-block;width:8px;height:.8em;margin-right:6px;border-radius:0 3px 3px 0;background:var(--guimauve)}
+.navlink--mf::after{background:linear-gradient(90deg,var(--guimauve) 50%,var(--bleuet) 0);border-radius:0 6px 6px 0;clip-path:inset(0 100% 0 0)}
+.navlink--mf:hover::after,.navlink--mf:focus-visible::after{animation:mf-deplie .45s var(--ease) both}
+@media (prefers-reduced-motion:reduce){
+  .js .mf.rise,.js .mf.rise.in{clip-path:none;animation:none}
+  .js .mf.rise.in .mf__tabs i{animation:none}
+  .navlink--mf:hover::after,.navlink--mf:focus-visible::after{animation:none !important;clip-path:none !important}
+}

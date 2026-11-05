@@ -537,7 +537,17 @@ function articleHTML(a) {
       <p class="serif" style="font-size:28px;line-height:1.35">${next.title} — ${next.resume}</p>
     </div>
     <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/a-table/${next.slug}">Lire <span class="ar">→</span></a>
-  </div>`;
+  </div>
+
+  <aside class="panel mf rise" aria-labelledby="t-mf" style="margin-bottom:30px">
+    <span class="mf__tabs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <div class="mf__txt">
+      <p class="mf__onglet">Mille Feuilles</p>
+      <h2 class="serif mf__p" id="t-mf">Envie d'autres idées pour ce soir&nbsp;?</h2>
+      <p class="mf__note">Mille Feuilles, le classeur de recettes du Studio Mille Pages&nbsp;: plus de 700 recettes rangées par situation.</p>
+    </div>
+    <a class="btn btn--ink" href="https://millefeuilles.studiomillepages.fr/" target="_blank" rel="noopener">Ouvrir le classeur <span class="ar" aria-hidden="true">→</span><span class="sr-only"> (nouvel onglet)</span></a>
+  </aside>`;
 }
 
 /* Conversion « 12 août 2026 » -> « 2026-08-12 » pour datePublished.
