@@ -627,7 +627,7 @@ main:focus{outline:none;box-shadow:none}
 .nav{position:relative;background:none;backdrop-filter:none;border:0}
 .mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:48px;
   max-width:var(--main);margin:0 auto;padding:28px 40px 4px}
-.mast>.navlink:first-child{justify-self:end}
+.mast__side{justify-self:end;display:flex;align-items:center;gap:28px}
 .mast>.navlink:last-child{justify-self:start}
 .mast .navlink{font-size:15.5px;font-weight:700;color:var(--encre)}
 .mast__logo{display:block}
@@ -866,20 +866,31 @@ main:focus{outline:none;box-shadow:none}
 .mast__logo img{height:auto;width:320px;transform:none;transition:none}
 .mast__logo:hover img{transform:none}
 .foot__logo{display:block;width:240px;height:auto;margin-bottom:18px}
-@media (max-width:1000px){.mast__logo img{width:280px}}
-@media (max-width:820px){.mast__logo img{width:220px}}
+@media (max-width:1000px){.mast{gap:28px}.mast__side{gap:20px}.mast__logo img{width:240px}}
+@media (max-width:820px){.mast{gap:22px}.mast__side{gap:18px}.mast__logo img{width:220px}}
 @media (max-width:600px){
   .mast{gap:14px}
   .mast .navlink{white-space:nowrap}
   .mast__logo img{width:150px}
 }
-/* Très petits écrans : le logo passe au-dessus des deux liens pour garder
+/* Petits écrans : le logo passe au-dessus des trois liens pour garder
    sa taille minimale et sa zone de protection. */
-@media (max-width:359px){
-  .mast{grid-template-columns:1fr 1fr;row-gap:12px}
-  .mast__logo{grid-column:1/-1;grid-row:1;justify-self:center}
-  .mast__logo img{width:180px}
+@media (max-width:720px){
+  .mast{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px}
+  .mast__side{display:contents}
+  .mast .navlink{white-space:nowrap}
+  .mast__logo{flex:0 0 100%;order:-1}
+  .mast__logo img{width:180px;margin:0 auto}
 }
 
 /* Appel du jeu sur aplat Violet clair : jamais sous 24px (grand texte). */
 .panel--violet .panel__appel{font-size:clamp(24px,2.4vw,26px) !important}
+
+/* Mille Feuilles, projet hors collection : aplat Boucle d'Or, texte Encre (5,85:1). */
+.mf{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px 40px;padding:44px 48px}
+.mf__txt{flex:1 1 420px;min-width:0}
+.mf__p{font-size:clamp(21px,2.3vw,25px);line-height:1.35;letter-spacing:0;max-width:40ch;margin-top:12px}
+h2.mf__p{margin-top:0}
+.mf__note{font-size:14.5px;margin-top:10px}
+.mast .navlink{white-space:nowrap}
+.mast .navlink--discret{font-weight:500}
