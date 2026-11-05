@@ -22,7 +22,7 @@
 <link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/style.css?v=11">
+<link rel="stylesheet" href="/style.css?v=13">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Maud Lenoir", "jobTitle": "Designer éditoriale et maquettiste", "description": "Designer éditoriale et maquettiste : supports pédagogiques et de médiation, livres et ouvrages, papeterie personnalisée.", "url": "https://studiomillepages.fr/", "workLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Rouen", "addressRegion": "Normandie", "addressCountry": "FR"}}, "areaServed": ["Rouen", "Métropole Rouen Normandie", "Normandie"], "knowsAbout": ["Maquette et mise en pages", "Design éditorial", "Direction typographique", "Supports pédagogiques et de médiation", "Papeterie personnalisée"], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Master", "name": "Master Littérature d'enfance et de jeunesse (en cours)", "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Université d'Artois"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Studio Mille Pages", "url": "https://studiomillepages.fr/", "image": "https://studiomillepages.fr/images/og-studio-mille-pages.png", "description": "Studio de design éditorial : mise en pages de supports pédagogiques et de médiation, de livres et ouvrages, et de papeterie personnalisée.", "founder": {"@type": "Person", "name": "Maud Lenoir"}, "areaServed": [{"@type": "City", "name": "Rouen"}, {"@type": "AdministrativeArea", "name": "Métropole Rouen Normandie"}, {"@type": "AdministrativeArea", "name": "Normandie"}], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Prestations", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets pédagogiques, guides pour les familles, fiches d'activité, livrets de visite et panneaux d'exposition"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Papeterie personnalisée : faire-part de naissance et de mariage, cartes"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Conception et mise en pages de jeux de société et de jeux pédagogiques : cartes à jouer, livrets de règles, boîtes et emballages, éléments de jeu"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en pages de livres et d'ouvrages : livres de famille, ouvrages d'associations, catalogues, recueils"}}]}}</script>
 </head>
@@ -32,12 +32,10 @@
 <header class="nav">
   <a class="skip" href="#main">Aller au contenu</a>
   <nav class="mast" aria-label="Navigation principale">
-    <div class="mast__side">
-      <a class="navlink" href="/studio" data-route="studio">Le studio</a>
-      <a class="navlink navlink--discret" href="https://millefeuilles.studiomillepages.fr/" target="_blank" rel="noopener">Mille Feuilles<span class="sr-only"> (nouvel onglet)</span></a>
-    </div>
+    <a class="navlink" href="/studio" data-route="studio">Le studio</a>
     <a class="mast__logo" href="/" aria-label="Studio Mille Pages, accueil"><img src="/images/charte/web/smp-horizontal-couleur.svg" alt="Studio Mille Pages" width="1470" height="234" loading="eager"></a>
     <a class="navlink" href="/contact" data-route="contact">Contact</a>
+    <a class="navlink navlink--discret navlink--mf" href="https://millefeuilles.studiomillepages.fr/" target="_blank" rel="noopener">Mille Feuilles<span class="sr-only"> (nouvel onglet)</span></a>
   </nav>
 </header>
 
@@ -93,9 +91,10 @@
   </section>
 
   <section class="block wrap" aria-labelledby="t-mf">
-    <div class="panel panel--jaune mf rise">
+    <div class="panel mf rise">
+      <span class="mf__tabs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
       <div class="mf__txt">
-        <h2 class="eyebrow eyebrow--green" id="t-mf">Hors collection · Mille Feuilles</h2>
+        <h2 class="mf__onglet" id="t-mf">Hors collection · Mille Feuilles</h2>
         <p class="serif mf__p">Il est 19&nbsp;h et vous ne savez pas quoi cuisiner&nbsp;? Plus de 700 recettes rangées par situation, testées à la maison.</p>
         <p class="mf__note">Un projet du Studio Mille Pages.</p>
       </div>
@@ -576,7 +575,7 @@
       <p class="foot__h">Hors collection</p>
       <a class="navlink" href="/a-table">À table, le blog</a>
       <a class="navlink" href="/jeu">Le jeu</a>
-      <a class="navlink" href="https://millefeuilles.studiomillepages.fr/" target="_blank" rel="noopener">Mille Feuilles<span class="sr-only"> (nouvel onglet)</span></a>
+      <a class="navlink navlink--mf" href="https://millefeuilles.studiomillepages.fr/" target="_blank" rel="noopener">Mille Feuilles<span class="sr-only"> (nouvel onglet)</span></a>
     </div>
     <div class="foot__col foot__colophon">
       <p class="foot__h">Colophon</p>

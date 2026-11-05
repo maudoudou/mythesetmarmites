@@ -539,8 +539,10 @@ function articleHTML(a) {
     <a class="btn btn--ghost-light" style="position:relative;font-size:15px;padding:13px 26px" href="/a-table/${next.slug}">Lire <span class="ar">→</span></a>
   </div>
 
-  <aside class="panel panel--jaune mf" aria-labelledby="t-mf" style="margin-bottom:30px">
+  <aside class="panel mf rise" aria-labelledby="t-mf" style="margin-bottom:30px">
+    <span class="mf__tabs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
     <div class="mf__txt">
+      <p class="mf__onglet">Mille Feuilles</p>
       <h2 class="serif mf__p" id="t-mf">Envie d'autres idées pour ce soir&nbsp;?</h2>
       <p class="mf__note">Mille Feuilles, le classeur de recettes du Studio Mille Pages&nbsp;: plus de 700 recettes rangées par situation.</p>
     </div>
