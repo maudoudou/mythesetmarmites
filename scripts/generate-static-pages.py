@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Génère de vraies pages HTML statiques pour les six routes principales
-du site (studio, a-table, jeu, parcours, contact).
+du site (studio, jeu, parcours, contact).
 
 Pourquoi ce script existe
 --------------------------
@@ -12,8 +12,7 @@ le contenu déjà écrit dans index.html (l'en-tête, le pied de page, et
 chaque section <section data-page="...">) et en fait une page HTML
 autonome par route, à sa propre URL réelle (/studio/, /parcours/,
 etc.), tout en laissant le routage en #/ fonctionner comme avant sur
-la page d'accueil (pour les liens existants et les articles du blog,
-qui n'ont pas de page statique dédiée).
+la page d'accueil (pour les liens existants).
 
 Quand le relancer
 -----------------
@@ -22,14 +21,13 @@ Quand le relancer
 depuis la racine du dépôt pour répercuter le changement dans les pages
 statiques correspondantes. Le script ne touche jamais index.html,
 script.js, ni style.css : il ne fait que lire index.html et écrire les
-dossiers /studio/, /a-table/, /jeu/, /parcours/, /contact/.
+dossiers /studio/, /jeu/, /parcours/, /contact/.
 
 Pipeline complet, à relancer dans cet ordre après toute modification de
 contenu (index.html ou script.js) :
 
     python3 scripts/generate-static-pages.py    # /studio, /parcours, ...
     python3 scripts/inject-head-tags.py         # <head> des 7 pages
-    python3 scripts/generate-article-pages.py   # /a-table/<slug>/ (macOS)
     python3 scripts/generate-sitemap.py         # sitemap.xml
     python3 scripts/generate-web-images.py      # .webp redimensionnés (si
                                                 # nouvelle photo)
@@ -65,7 +63,6 @@ ICON_LINKS = '''<link rel="icon" href="/images/charte/web/favicon.svg" type="ima
 # Titres provisoires : inject-head-tags.py pose ensuite les titres définitifs.
 ROUTES = {
     'studio':   'Le studio · Studio Mille Pages',
-    'a-table':  'À table · Mythes & Marmites',
     'jeu':      'Le jeu · Mythes & Marmites',
     'parcours': 'Parcours · Studio Mille Pages',
     'contact':  'Contact · Studio Mille Pages',
@@ -113,11 +110,8 @@ def main():
 
         # Sur la page autonome, le contenu est une composition complète et
         # unique : <section> devient <article> (balise sémantique du brief).
-        # a-table reste une <section> : c'est une liste, et ses vignettes
-        # sont déjà des <article> (voir cardHTML dans script.js).
-        if route != 'a-table':
-            section = '<article' + section[len('<section'):]
-            section = section[:-len('</section>')] + '</article>'
+        section = '<article' + section[len('<section'):]
+        section = section[:-len('</section>')] + '</article>'
 
         # Dans la coquille SPA, le titre de chaque section secondaire est un
         # <h2 class="page-title"> : ça garde un seul <h1> sur la page d'accueil.

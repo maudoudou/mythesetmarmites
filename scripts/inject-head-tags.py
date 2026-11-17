@@ -9,10 +9,7 @@ Ce script est idempotent : il remplace les balises déjà posées plutôt
 que de les dupliquer, donc on peut le relancer sans risque après
 avoir modifié PAGES ou JSON_LD ci-dessous. Le contenu des pages
 elles-mêmes (dans index.html) n'est jamais touché : seul le <head>
-l'est. Les données BlogPosting (une par article du blog À table) ne
-sont pas ici : elles sont injectées côté client par script.js, voir
-setArticleJsonLd() — les articles n'ont pas encore de page statique
-dédiée (voir RAPPORT-REFONTE.md).
+l'est.
 
 À relancer avec `python3 scripts/inject-head-tags.py` après toute
 modification des titres/descriptions/JSON-LD ci-dessous, ou après une
@@ -26,11 +23,11 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://studiomillepages.fr"
-# Image de partage du studio (logo carré sur Pot au Lait). Le jeu et le
-# blog À table, projets Mythes & Marmites, gardent l'image d'origine.
+# Image de partage du studio (logo carré sur Pot au Lait). Le jeu, projet
+# Mythes & Marmites, garde l'image d'origine.
 OG_IMAGE = f"{DOMAIN}/images/og-studio-mille-pages.png"
 OG_IMAGE_MM = f"{DOMAIN}/images/og-share.png"
-OG_BY_PAGE = {"a-table/index.html": OG_IMAGE_MM, "jeu/index.html": OG_IMAGE_MM}
+OG_BY_PAGE = {"jeu/index.html": OG_IMAGE_MM}
 
 # path relatif du fichier -> (URL absolue, title, description, og:type)
 PAGES = {
@@ -44,12 +41,6 @@ PAGES = {
         "/studio",
         "Le studio · supports pédagogiques, livres, papeterie",
         "Supports pédagogiques et médiation, papeterie personnalisée, jeux de société, livres et ouvrages : mise en pages à partir de votre charte ou d'une direction typographique.",
-        "website",
-    ),
-    "a-table/index.html": (
-        "/a-table",
-        "À table · une recette et le récit qui va avec",
-        "Deux fois par mois, une recette et le conte, le mythe ou l'album qui l'accompagne, plus des notes de lecture sur la nourriture dans les livres pour enfants.",
         "website",
     ),
     "jeu/index.html": (

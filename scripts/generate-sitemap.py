@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """Réécrit sitemap.xml à partir des pages réellement présentes : l'accueil,
-les cinq pages de rubrique, et une entrée par article du blog (dossiers
-a-table/<slug>/). À relancer après generate-article-pages.py si des articles
-ont été ajoutés ou renommés.
+et les quatre pages de rubrique. À relancer si une page est ajoutée ou
+retirée.
 """
-import glob
 import os
 import sys
 
@@ -15,7 +13,6 @@ DOMAIN = "https://studiomillepages.fr"
 FIXED = [
     ("/", "weekly", "1.0"),
     ("/studio", "monthly", "0.9"),
-    ("/a-table", "weekly", "0.6"),
     ("/jeu", "monthly", "0.5"),
     ("/parcours", "monthly", "0.7"),
     ("/contact", "yearly", "0.6"),
@@ -23,11 +20,7 @@ FIXED = [
 
 
 def main():
-    slugs = sorted(
-        os.path.basename(os.path.dirname(p))
-        for p in glob.glob(os.path.join(ROOT, "a-table", "*", "index.html"))
-    )
-    rows = list(FIXED) + [(f"/a-table/{s}", "yearly", "0.6") for s in slugs]
+    rows = list(FIXED)
 
     body = "\n".join(
         f"  <url>\n    <loc>{DOMAIN}{loc}</loc>\n"
@@ -42,7 +35,7 @@ def main():
     )
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(xml)
-    print(f"sitemap.xml : {len(rows)} URL ({len(slugs)} articles)")
+    print(f"sitemap.xml : {len(rows)} URL")
     return 0
 
 
