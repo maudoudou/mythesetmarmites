@@ -664,21 +664,25 @@ main:focus{outline:none;box-shadow:none}
 /* Chiffres romains : IM Fell English en romain droit (lisible à cette taille). */
 .num{display:block;font-family:var(--serif);font-style:normal;font-weight:400;font-size:clamp(52px,6vw,76px);line-height:.85;letter-spacing:.01em;margin-bottom:14px}
 
-/* Cinq offres. Bureau : 3 + 2 sur une grille de 6 colonnes (les deux
-   dernières s'élargissent, aucune carte seule). Tablette : l'offre
-   principale en pleine largeur, puis 2 + 2. Mobile : une colonne. */
-.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:36px}
+/* Cinq offres, sans fond. Bureau : 2 offres (la principale et la II) puis
+   3, sur une grille de 6 colonnes. Tablette : l'offre principale en
+   pleine largeur, puis 2 + 2. Mobile : une colonne. Le chiffre romain,
+   plus petit, se place à gauche du titre et du texte. */
+.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:40px 36px}
 .offers>li{grid-column:span 2}
-.offers>li:nth-child(n+4){grid-column:span 3}
+.offers>li:nth-child(-n+2){grid-column:span 3}
 @media (max-width:1000px){
-  .offers{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 44px}
-  .offers>li,.offers>li:nth-child(n+4){grid-column:auto}
+  .offers{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px}
+  .offers>li,.offers>li:nth-child(-n+2){grid-column:auto}
   .offers>li:first-child{grid-column:1/-1}
 }
-.offer{display:flex;flex-direction:column;align-items:flex-start}
-.offer__t{font-size:clamp(20px,1.9vw,23px);line-height:1.2;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
-.offer__t .badge-or{display:table;margin-top:10px}
-.offer__d{font-weight:300;font-size:17px;line-height:1.55;margin-bottom:14px;flex:1}
+.offer{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto 1fr auto;column-gap:16px;align-items:start}
+.offer>*{grid-column:2}
+.offer>.num{grid-column:1;grid-row:1/-1;font-size:clamp(34px,3.2vw,42px);margin:2px 0 0;min-width:1.15em}
+.offer__t{font-size:clamp(18px,1.6vw,20px);line-height:1.25;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.offer__t .badge-or{display:table;margin-top:8px}
+.offer__d{font-weight:300;font-size:16px;line-height:1.55;margin-bottom:12px}
+.offer .more{justify-self:start;align-self:end}
 
 .badge-or{display:inline-block;background:var(--boucle-dor);color:var(--encre);font-weight:800;font-size:11.5px;letter-spacing:.08em;
   text-transform:uppercase;border-radius:999px;padding:4px 11px 3px;line-height:1.35;vertical-align:middle}
@@ -796,7 +800,7 @@ main:focus{outline:none;box-shadow:none}
   .mast{padding:20px var(--gut) 0;gap:22px}
   .mast__logo img{height:42px}
   .mast .navlink{font-size:14.5px}
-  .offers{grid-template-columns:minmax(0,1fr);gap:36px}
+  .offers{grid-template-columns:minmax(0,1fr);gap:32px}
   .glance{grid-template-columns:minmax(0,1fr);gap:28px}
   .glance__img{max-width:260px}
   .project{grid-template-columns:minmax(0,1fr);gap:22px}
