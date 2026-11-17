@@ -40,7 +40,7 @@ PAGES = {
     "studio/index.html": (
         "/studio",
         "Le studio · supports pédagogiques, web, livres, papeterie",
-        "Supports pédagogiques et médiation, réseaux sociaux et sites web, papeterie personnalisée, jeux de société, livres et ouvrages : mise en pages à partir de votre charte ou d'une direction typographique.",
+        "Supports pédagogiques et médiation, community management et sites web, papeterie personnalisée, jeux de société, livres et ouvrages : mise en pages à partir de votre charte ou d'une direction typographique.",
         "website",
     ),
     "jeu/index.html": (
@@ -85,7 +85,7 @@ PERSON = {
         "Design éditorial",
         "Direction typographique",
         "Supports pédagogiques et de médiation",
-        "Réseaux sociaux et sites web",
+        "Community management et sites web",
         "Papeterie personnalisée",
     ],
     "hasCredential": {
@@ -114,7 +114,7 @@ PROFESSIONAL_SERVICE = {
         "name": "Prestations",
         "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Livrets pédagogiques, guides pour les familles, fiches d'activité, livrets de visite et panneaux d'exposition"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Réseaux sociaux et sites web : publications et carrousels pour Instagram et Facebook, gabarits, calendrier éditorial, site vitrine WordPress"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Community management et sites web : animation des comptes au quotidien, publications et carrousels pour Instagram et Facebook, gabarits, calendrier éditorial, site vitrine WordPress"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Papeterie personnalisée : faire-part de naissance et de mariage, cartes"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Conception et mise en pages de jeux de société et de jeux pédagogiques : cartes à jouer, livrets de règles, boîtes et emballages, éléments de jeu"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en pages de livres et d'ouvrages : livres de famille, ouvrages d'associations, catalogues, recueils"}},
