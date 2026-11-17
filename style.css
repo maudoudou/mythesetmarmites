@@ -664,8 +664,17 @@ main:focus{outline:none;box-shadow:none}
 /* Chiffres romains : IM Fell English en romain droit (lisible à cette taille). */
 .num{display:block;font-family:var(--serif);font-style:normal;font-weight:400;font-size:clamp(52px,6vw,76px);line-height:.85;letter-spacing:.01em;margin-bottom:14px}
 
-.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}
-@media (max-width:1000px){.offers{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 44px}}
+/* Cinq offres. Bureau : 3 + 2 sur une grille de 6 colonnes (les deux
+   dernières s'élargissent, aucune carte seule). Tablette : l'offre
+   principale en pleine largeur, puis 2 + 2. Mobile : une colonne. */
+.offers{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:36px}
+.offers>li{grid-column:span 2}
+.offers>li:nth-child(n+4){grid-column:span 3}
+@media (max-width:1000px){
+  .offers{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 44px}
+  .offers>li,.offers>li:nth-child(n+4){grid-column:auto}
+  .offers>li:first-child{grid-column:1/-1}
+}
 .offer{display:flex;flex-direction:column;align-items:flex-start}
 .offer__t{font-size:clamp(20px,1.9vw,23px);line-height:1.2;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
 .offer__t .badge-or{display:table;margin-top:10px}
