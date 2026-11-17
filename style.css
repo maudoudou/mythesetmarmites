@@ -723,6 +723,10 @@ main:focus{outline:none;box-shadow:none}
 /* Galerie de quatre photos : grille 2 x 2, sans image pleine largeur. */
 .project__gallery--grille figure:first-child{grid-column:auto}
 .project__gallery--grille figure:first-child img{aspect-ratio:4/3}
+/* Maquettes détourées (fond transparent) : pas de recadrage, deux images côte à côte. */
+.project__gallery--maquettes figure:first-child{grid-column:auto}
+.project__gallery--maquettes img,.project__gallery--maquettes figure:first-child img{aspect-ratio:1/1;object-fit:contain;border-radius:0}
+.project__media--maquette img{border-radius:0}
 .project__more{margin-top:20px;font-size:16px}
 .project__t{font-size:clamp(20px,2vw,24px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin-bottom:18px}
 .facts{margin:0}
