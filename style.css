@@ -651,6 +651,11 @@ main:focus{outline:none;box-shadow:none}
 .hero__sub{font-weight:400;font-size:clamp(18px,2vw,24px);color:var(--encre-80);margin-top:16px;text-wrap:balance}
 .hero__place{font-weight:300;font-size:clamp(18px,1.9vw,22px);margin-top:26px}
 .hero__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+/* Photo du haut de page : une seule couche de matière réelle (livrets
+   imprimés, papier scanné, tampon). Sous le titre, dans la grille : si
+   l'image ne charge pas, le titre et les boutons tiennent seuls. */
+.hero__matiere{margin:clamp(40px,6vw,64px) auto 0;max-width:880px}
+.hero__matiere img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
 
 .block{padding-top:clamp(56px,7vw,96px);padding-bottom:8px}
 .block[id]{scroll-margin-top:20px}

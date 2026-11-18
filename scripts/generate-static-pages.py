@@ -52,7 +52,7 @@ JS_MARK = (
 
 # Version de la feuille de style : à incrémenter quand style.css change,
 # pour que les navigateurs ne gardent pas l'ancienne en cache.
-CSS_VERSION = '13'
+CSS_VERSION = '14'
 
 # Favicon et icônes (logo rond Studio Mille Pages, scripts/generate-logos.py).
 ICON_LINKS = '''<link rel="icon" href="/images/charte/web/favicon.svg" type="image/svg+xml">
