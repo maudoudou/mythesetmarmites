@@ -297,8 +297,6 @@ a.card,.card--link{display:block;cursor:pointer;color:inherit}
 .panel--reverie{background:var(--violet);color:var(--pot-au-lait)}
 .panel--jaune{background:var(--boucle-dor);color:var(--encre)}
 .panel--or{background:var(--boucle-dor);color:var(--encre);border-radius:20px;padding:34px 36px}
-.panel__ill{position:absolute;pointer-events:none;transition:transform .5s var(--ease)}
-.panel:hover .panel__ill{transform:translateY(-6px) rotate(-2deg)}
 .on-ink{color:rgba(248,245,244,.8)}
 .on-light{color:var(--encre)}
 .tile{background:rgba(248,245,244,.06);border-radius:16px;padding:26px;transition:background .18s ease,transform .2s var(--ease)}
@@ -534,7 +532,6 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
   /* En-tÃªte opaque : le contenu ne fantomise plus derriÃ¨re en dÃ©filant */
   .nav{background:var(--pot-au-lait);backdrop-filter:none}
   .panel{padding:32px 26px !important;border-radius:20px}
-  .panel__ill{width:118px !important;opacity:.13 !important;right:18px !important;bottom:-8px !important}
   .panel--or{padding:28px 26px}
   .card{padding:28px !important}
   .card[style*="padding:0"]{padding:0 !important}
@@ -647,8 +644,7 @@ main:focus{outline:none;box-shadow:none}
    et la taille suit la largeur d'écran ((100vw - 80px) / 25,6, arrondi
    par défaut) pour que cette ligne tienne toujours dans le contenu de
    .hero__in (1080px au plus). Sous 820px, le titre s'écoule librement
-   sur trois ou quatre lignes équilibrées. La poule décorative est posée
-   à hauteur du sous-titre (top:270px) pour ne pas passer sous le titre. */
+   sur trois ou quatre lignes équilibrées. */
 .hero__title{font-size:clamp(28px,calc(3.9vw - 4px),42px);line-height:1.12;letter-spacing:-.022em;font-weight:800;max-width:25.6em;margin:0 auto;text-wrap:balance}
 .hero__br{display:none}
 @media (min-width:821px){.hero__br{display:inline}}
@@ -706,7 +702,6 @@ main:focus{outline:none;box-shadow:none}
 .pagehead .page-title{max-width:20ch;font-size:clamp(34px,5vw,56px);text-wrap:balance}
 .pagehead .lede{margin-top:22px;max-width:54ch}
 [data-page="contact"] .pagehead{padding-bottom:72px}
-.contact__ill{width:min(240px,60%);height:auto}
 
 /* Studio : une entrée par public */
 .entry__head{display:flex;gap:22px;align-items:flex-start;margin-bottom:20px}
